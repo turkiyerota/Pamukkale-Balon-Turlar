@@ -1,10 +1,14 @@
 import { SITE, type Lang } from "@/config/site";
+import defaultOg from "@/assets/hero-1.webp";
 
 type Alt = { tr?: string | undefined; en?: string | undefined };
 
 export function abs(path: string) {
-  return `${SITE.url}${path}`;
+  return /^https?:\/\//.test(path) ? path : `${SITE.url}${path}`;
 }
+
+/** Default social preview image (hero photo); articles pass their own cover. */
+export const DEFAULT_OG_IMAGE = defaultOg;
 
 export function seo(opts: {
   lang: Lang;
@@ -15,8 +19,10 @@ export function seo(opts: {
   type?: "website" | "article";
   jsonLd?: object[];
   noindex?: boolean;
+  image?: string;
+  imageAlt?: string;
 }) {
-  const { lang, title, description, path, alt, type = "website", jsonLd = [], noindex } = opts;
+  const { lang, title, description, path, alt, type = "website", jsonLd = [], noindex, image = DEFAULT_OG_IMAGE, imageAlt } = opts;
   const meta: Record<string, string>[] = [
     { title },
     { name: "description", content: description },
@@ -29,7 +35,11 @@ export function seo(opts: {
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
+    { property: "og:image", content: abs(image) },
+    { name: "twitter:image", content: abs(image) },
   ];
+  if (imageAlt) meta.push({ property: "og:image:alt", content: imageAlt }, { name: "twitter:image:alt", content: imageAlt });
+  if (alt?.tr && alt?.en) meta.push({ property: "og:locale:alternate", content: lang === "tr" ? "en_GB" : "tr_TR" });
   if (noindex) meta.push({ name: "robots", content: "noindex" });
   const links: Record<string, string>[] = [{ rel: "canonical", href: abs(path) }];
   if (alt?.tr && alt?.en) {
@@ -64,6 +74,7 @@ export const organizationLd = {
   "@type": "Organization",
   name: SITE.name,
   url: SITE.url,
+  logo: abs(SITE.logo.onLight),
   email: SITE.contact.email,
   telephone: SITE.contact.phoneE164,
   address: {

@@ -15,28 +15,38 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header, Footer } from "@/components/layout";
 import { langFromPath, PAGES } from "@/lib/paths";
+import { SITE } from "@/config/site";
+import notFoundBg from "@/assets/hero-3.webp";
 
 function NotFoundComponent() {
   const lang = langFromPath(useRouterState({ select: (s) => s.location.pathname }));
   const tr = lang === "tr";
+  const links = [
+    { href: PAGES.home[lang], label: tr ? "Ana sayfa" : "Home" },
+    { href: PAGES.prices[lang], label: tr ? "Fiyatlar" : "Prices" },
+    { href: PAGES.blog[lang], label: tr ? "Keşfet" : "Insights" },
+    { href: PAGES.contact[lang], label: tr ? "İletişim" : "Contact" },
+  ];
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">{tr ? "Sayfa bulunamadı" : "Page not found"}</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          {tr ? "Aradığınız sayfa mevcut değil veya taşınmış olabilir." : "The page you're looking for doesn't exist or has been moved."}
+    <main id="main" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-navy-deep px-4 py-16 text-on-dark">
+      <img src={notFoundBg} alt="" width={1600} height={907} className="absolute inset-0 h-full w-full object-cover opacity-30" />
+      <div className="relative max-w-xl text-center">
+        <img src={SITE.logo.onDark} alt={SITE.name} width={480} height={250} className="mx-auto h-20 w-auto" />
+        <p className="mt-10 font-display text-8xl">404</p>
+        <h1 className="mt-2 text-3xl md:text-4xl">{tr ? "Bu sayfa rüzgârla uçup gitmiş olmalı" : "This page seems to have drifted away"}</h1>
+        <p className="mt-4 text-on-dark-muted">
+          {tr ? "Aradığınız sayfa mevcut değil veya taşınmış olabilir. Aşağıdaki bağlantılardan devam edebilirsiniz." : "The page you're looking for doesn't exist or has moved. You can carry on from one of these links."}
         </p>
-        <div className="mt-6">
-          <Link
-            to={PAGES.home[lang] as never}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            {tr ? "Ana sayfaya dön" : "Go home"}
-          </Link>
-        </div>
+        <nav aria-label={tr ? "Önerilen sayfalar" : "Suggested pages"} className="mt-8 flex flex-wrap justify-center gap-3">
+          {links.map((l, i) => (
+            <a key={l.href} href={l.href} className={`inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold ${i === 0 ? "bg-amber text-navy-deep" : "border border-white/40 hover:bg-white/10"}`}>{l.label}</a>
+          ))}
+        </nav>
+        <p className="mt-8 text-sm text-on-dark-muted">
+          <a href={tr ? "/en/" : "/"} hrefLang={tr ? "en" : "tr"} className="underline">{tr ? "English" : "Türkçe"}</a>
+        </p>
       </div>
-    </div>
+    </main>
   );
 }
 
@@ -95,9 +105,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" },
     ],
   }),
   shellComponent: RootShell,

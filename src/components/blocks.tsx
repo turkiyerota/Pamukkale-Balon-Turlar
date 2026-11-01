@@ -11,7 +11,7 @@ export function ArticleCard({ a }: { a: Article }) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-lg bg-card shadow-soft transition-transform duration-300 hover:-translate-y-1 reveal">
       <L href={articlePath(a.lang, a.body.slug)} className="block overflow-hidden" tabIndex={-1} aria-hidden="true">
-        <img src={a.cover} alt="" width={1280} height={864} loading="lazy" className="aspect-[3/2] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <img src={a.cover} alt="" width={1024} height={768} loading="lazy" className="aspect-[3/2] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
       </L>
       <div className="flex flex-1 flex-col p-6">
         <p className="text-xs font-semibold uppercase tracking-widest text-sage">{CATEGORY_LABELS[a.category][a.lang]}</p>

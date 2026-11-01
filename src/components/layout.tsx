@@ -41,7 +41,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur">
       <div className="container-page flex h-18 items-center justify-between gap-4 py-3">
         <L href={PAGES.home[lang]} aria-label={SITE.name} className="shrink-0">
-          <img src={SITE.logo.onLight} alt={SITE.name} width={1920} height={980} className="h-11 w-auto md:h-12" />
+          <img src={SITE.logo.onLight} alt={SITE.name} width={480} height={242} className="h-11 w-auto md:h-12" />
         </L>
         <nav aria-label={lang === "tr" ? "Ana menü" : "Main menu"} className="hidden lg:block">
           <ul className="flex items-center gap-6 text-sm font-medium">
@@ -105,7 +105,7 @@ export function Footer() {
     <footer className="bg-navy text-on-dark">
       <div className="container-page grid gap-10 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <img src={SITE.logo.onDark} alt={SITE.name} width={1920} height={980} loading="lazy" className="h-14 w-auto" />
+          <img src={SITE.logo.onDark} alt={SITE.name} width={480} height={250} loading="lazy" className="h-14 w-auto" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-on-dark-muted">
             {tr
               ? "Pamukkale'nin travertenleri üzerinde balon turu hakkında bilgi alın, sorularınızı iletin ve size uygun seçenekleri birlikte değerlendirelim."
