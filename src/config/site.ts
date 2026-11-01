@@ -3,8 +3,9 @@
  * Everything marked `confirmed: false` / `null` is awaiting verification from the operator
  * and is rendered as "to be confirmed" — never as a real offer or fact.
  */
-import logoDark from "@/assets/logo-dark.png.asset.json";
-import logoLight from "@/assets/logo-light.png.asset.json";
+// Supplied brand logos (original files kept in src/assets/logo-*.webp; these are proportional 480px-wide copies).
+import logoDark from "@/assets/logo-dark-480.webp";
+import logoLight from "@/assets/logo-light-480.webp";
 
 export type Lang = "tr" | "en";
 
@@ -17,9 +18,9 @@ export const SITE = {
   languages: ["tr", "en"] as Lang[],
   logo: {
     /** Navy logo — for light backgrounds */
-    onLight: logoDark.url,
+    onLight: logoDark,
     /** White logo — for dark backgrounds */
-    onDark: logoLight.url,
+    onDark: logoLight,
   },
   colors: {
     navy: "#18354A",

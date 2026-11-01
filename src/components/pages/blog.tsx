@@ -4,6 +4,7 @@ import { getPage, totalPages, relatedArticles, CATEGORY_LABELS, type Article } f
 import { PageHero } from "../page-hero";
 import { ArticleCard, CtaBand } from "../blocks";
 import { L, Rich, Breadcrumbs, btn } from "../ui-kit";
+import type { Section } from "@/content/types";
 import hero2 from "@/assets/hero-2.webp";
 
 export function BlogListPage({ lang, page }: { lang: Lang; page: number }) {
@@ -37,7 +38,7 @@ export function ArticlePage({ a }: { a: Article }) {
   return (
     <>
       <header className="relative isolate overflow-hidden bg-navy text-on-dark">
-        <img src={a.cover} alt={a.coverAlt[lang]} width={1280} height={864} fetchPriority="high" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-55" />
+        <img src={a.cover} alt={a.coverAlt[lang]} width={1024} height={768} fetchPriority="high" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-55" />
         <div className="absolute inset-0 -z-10 bg-hero-overlay" />
         <div className="container-page py-20 md:py-28">
           <Breadcrumbs items={[{ name: PAGE_LABELS.home[lang], path: PAGES.home[lang] }, { name: PAGE_LABELS.blog[lang], path: PAGES.blog[lang] }, { name: b.title }]} />
@@ -52,9 +53,10 @@ export function ArticlePage({ a }: { a: Article }) {
           {b.sections.map((s) => (
             <section key={s.id} aria-labelledby={s.id}>
               <h2 id={s.id}>{s.h}</h2>
-              {s.p.map((p, i) => <p key={i}><Rich text={p} /></p>)}
+              {!listFirst(s) && s.p.map((p, i) => <p key={i}><Rich text={p} /></p>)}
               {s.list && <ul>{s.list.map((x, i) => <li key={i}><Rich text={x} /></li>)}</ul>}
               {s.sub?.map((x) => <div key={x.h}><h3>{x.h}</h3>{x.p.map((p, i) => <p key={i}><Rich text={p} /></p>)}</div>)}
+              {listFirst(s) && s.p.map((p, i) => <p key={i}><Rich text={p} /></p>)}
             </section>
           ))}
           <aside className="mt-12 rounded-lg bg-secondary p-6 not-prose">
@@ -82,6 +84,12 @@ export function ArticlePage({ a }: { a: Article }) {
       <CtaBand lang={lang} />
     </>
   );
+}
+
+/** A section written as `{ list, p }` (list key before p) shows the paragraphs after the list. */
+function listFirst(s: Section) {
+  const k = Object.keys(s);
+  return !!s.list && k.indexOf("list") < k.indexOf("p");
 }
 
 export { articlePath };

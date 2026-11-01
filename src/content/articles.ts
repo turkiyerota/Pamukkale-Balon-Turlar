@@ -4,18 +4,30 @@ import type { ArticleBody } from "./types";
 import { TR } from "./articles-tr";
 import { EN } from "./articles-en";
 
-import imgBurner from "@/assets/img-burner.webp";
-import hero1 from "@/assets/hero-1.webp";
-import hero2 from "@/assets/hero-2.webp";
-import hero3 from "@/assets/hero-3.webp";
-import hero4 from "@/assets/hero-4.webp";
-import hero5 from "@/assets/hero-5.webp";
-import imgClothing from "@/assets/img-clothing.webp";
-import imgWeather from "@/assets/img-weather.webp";
-import imgInflation from "@/assets/img-inflation.webp";
-import imgSeason from "@/assets/img-season.webp";
-import imgCappadocia from "@/assets/img-cappadocia.webp";
-import imgHierapolis from "@/assets/img-hierapolis.webp";
+import c_prices_tr from "@/assets/covers/prices-tr.webp";
+import c_prices_en from "@/assets/covers/prices-en.webp";
+import c_start_tr from "@/assets/covers/start-tr.webp";
+import c_start_en from "@/assets/covers/start-en.webp";
+import c_duration_tr from "@/assets/covers/duration-tr.webp";
+import c_duration_en from "@/assets/covers/duration-en.webp";
+import c_clothing_tr from "@/assets/covers/clothing-tr.webp";
+import c_clothing_en from "@/assets/covers/clothing-en.webp";
+import c_cancel_tr from "@/assets/covers/cancel-tr.webp";
+import c_cancel_en from "@/assets/covers/cancel-en.webp";
+import c_safety_tr from "@/assets/covers/safety-tr.webp";
+import c_safety_en from "@/assets/covers/safety-en.webp";
+import c_booking_tr from "@/assets/covers/booking-tr.webp";
+import c_booking_en from "@/assets/covers/booking-en.webp";
+import c_included_tr from "@/assets/covers/included-tr.webp";
+import c_included_en from "@/assets/covers/included-en.webp";
+import c_best_time_tr from "@/assets/covers/best-time-tr.webp";
+import c_best_time_en from "@/assets/covers/best-time-en.webp";
+import c_compare_tr from "@/assets/covers/compare-tr.webp";
+import c_compare_en from "@/assets/covers/compare-en.webp";
+import c_children_tr from "@/assets/covers/children-tr.webp";
+import c_children_en from "@/assets/covers/children-en.webp";
+import c_before_tr from "@/assets/covers/before-tr.webp";
+import c_before_en from "@/assets/covers/before-en.webp";
 
 export type Category = "pricing" | "flight" | "planning" | "compare";
 
@@ -34,26 +46,26 @@ type Meta = {
   /** Tie-breaker for articles published on the same day (higher = newer). */
   order: number;
   category: Category;
-  cover: string;
+  covers: Record<Lang, string>;
   coverAlt: Record<Lang, string>;
 };
 
 const META: Meta[] = ([
-  { id: "prices", order: 12, category: "pricing", cover: imgBurner, coverAlt: { tr: "Balon brülörünün alevi ve gün doğumunda balon kumaşı", en: "Balloon burner flame lighting the envelope at dawn" } },
-  { id: "start", order: 11, category: "flight", cover: hero4, coverAlt: { tr: "Gün doğumunda Pamukkale üzerinde balon siluetleri", en: "Balloon silhouettes over Pamukkale at sunrise" } },
-  { id: "duration", order: 10, category: "flight", cover: hero5, coverAlt: { tr: "Balon sepetinden Pamukkale travertenlerine bakış", en: "View over Pamukkale travertines from a balloon basket" } },
-  { id: "clothing", order: 9, category: "planning", cover: imgClothing, coverAlt: { tr: "Sabah uçuşu için mont, atkı ve ayakkabı", en: "Jacket, scarf and shoes laid out for a dawn flight" } },
-  { id: "cancel", order: 8, category: "flight", cover: imgWeather, coverAlt: { tr: "Bulutlu havada yerde bekleyen balonlar", en: "Balloons waiting on the ground under cloudy skies" } },
-  { id: "safety", order: 7, category: "flight", cover: imgInflation, coverAlt: { tr: "Şafak öncesi balonun şişirilmesi", en: "A balloon being inflated before dawn" } },
-  { id: "booking", order: 6, category: "pricing", cover: hero2, coverAlt: { tr: "Altın saatte Hierapolis üzerinde tek balon", en: "A single balloon over Hierapolis at golden hour" } },
-  { id: "included", order: 5, category: "pricing", cover: hero3, coverAlt: { tr: "Şafakta yukarıdan Pamukkale traverten havuzları", en: "Pamukkale travertine pools seen from above at dawn" } },
-  { id: "best-time", order: 4, category: "planning", cover: imgSeason, coverAlt: { tr: "İlkbaharda kır çiçekleri ve Pamukkale üzerinde balonlar", en: "Spring wildflowers with balloons above Pamukkale" } },
-  { id: "compare", order: 3, category: "compare", cover: imgCappadocia, coverAlt: { tr: "Kapadokya peri bacaları üzerinde balonlar", en: "Balloons above Cappadocia's fairy chimneys" } },
-  { id: "children", order: 2, category: "planning", cover: hero1, coverAlt: { tr: "Gün doğumunda travertenler üzerinde renkli balonlar", en: "Colourful balloons over the travertines at sunrise" } },
-  { id: "before", order: 1, category: "planning", cover: imgHierapolis, coverAlt: { tr: "Sabah ışığında Hierapolis antik tiyatrosu", en: "The Hierapolis theatre in morning light" } },
+  { id: "prices", order: 12, category: "pricing", covers: { tr: c_prices_tr, en: c_prices_en }, coverAlt: { tr: "Gün doğumunda travertenlerin önünde boş balon sepeti", en: "The leather rim of a balloon basket above the Pamukkale pools" } },
+  { id: "start", order: 11, category: "flight", covers: { tr: c_start_tr, en: c_start_en }, coverAlt: { tr: "Mavi saatte brülör ışığıyla şişirilen balonlar", en: "A colourful balloon lifting off at sunrise" } },
+  { id: "duration", order: 10, category: "flight", covers: { tr: c_duration_tr, en: c_duration_en }, coverAlt: { tr: "Pamukkale travertenleri ve kasaba üzerinde yüksekte tek balon", en: "Looking down from the basket at balloon shadows on the ground" } },
+  { id: "clothing", order: 9, category: "planning", covers: { tr: c_clothing_tr, en: c_clothing_en }, coverAlt: { tr: "Bankta lacivert mont, atkı ve ayakkabı; arkada balonlar", en: "A beanie, gloves, fleece and thermos laid out flat" } },
+  { id: "cancel", order: 8, category: "flight", covers: { tr: c_cancel_tr, en: c_cancel_en }, coverAlt: { tr: "Gri yağmur altında yerde sönük balon kumaşları", en: "An orange windsock in the fog" } },
+  { id: "safety", order: 7, category: "flight", covers: { tr: c_safety_tr, en: c_safety_en }, coverAlt: { tr: "Balon brülörünün alevine yakın plan", en: "An upright balloon tethered to a vehicle beside a windsock" } },
+  { id: "booking", order: 6, category: "pricing", covers: { tr: c_booking_tr, en: c_booking_en }, coverAlt: { tr: "Telefon, Türk çayı ve not defteri", en: "A map and travel journal by a window" } },
+  { id: "included", order: 5, category: "pricing", covers: { tr: c_included_tr, en: c_included_en }, coverAlt: { tr: "İnişten sonra balon ve römork", en: "A white transfer minibus waiting at blue hour" } },
+  { id: "best-time", order: 4, category: "planning", covers: { tr: c_best_time_tr, en: c_best_time_en }, coverAlt: { tr: "Sonbahar yaprakları ve uzakta balonlar", en: "Balloons over the travertines on a misty winter morning with snowy mountains" } },
+  { id: "compare", order: 3, category: "compare", covers: { tr: c_compare_tr, en: c_compare_en }, coverAlt: { tr: "Gün doğumunda Kapadokya vadisi üzerinde balonlar", en: "Balloons reflected in a Pamukkale travertine pool" } },
+  { id: "children", order: 2, category: "planning", covers: { tr: c_children_tr, en: c_children_en }, coverAlt: { tr: "Taş duvarda çocuk montu, sırt çantası ve ayakkabılar; arkada balonlar", en: "A family seen from behind watching the balloons" } },
+  { id: "before", order: 1, category: "planning", covers: { tr: c_before_tr, en: c_before_en }, coverAlt: { tr: "Sabah ışığında Hierapolis antik tiyatrosu ve uzakta bir balon", en: "A colonnaded ancient street in Hierapolis with balloons in the sky" } },
 ] as Omit<Meta, "published">[]).map((m) => ({ ...m, published: "2026-10-29" }));
 
-export type Article = Meta & { body: ArticleBody; lang: Lang; readingMinutes: number };
+export type Article = Meta & { body: ArticleBody; lang: Lang; readingMinutes: number; /** Cover for this language (each language has its own image). */ cover: string; wordCount: number };
 
 const BODIES: Record<Lang, Record<string, ArticleBody>> = { tr: TR, en: EN };
 
@@ -70,7 +82,8 @@ export function getArticles(lang: Lang): Article[] {
   return META.filter((m) => BODIES[lang][m.id])
     .map((m) => {
       const body = BODIES[lang][m.id]!;
-      return { ...m, body, lang, readingMinutes: Math.max(2, Math.round(words(body) / 200)) };
+      const wc = words(body);
+      return { ...m, body, lang, cover: m.covers[lang], wordCount: wc, readingMinutes: Math.max(2, Math.round(wc / 200)) };
     })
     .sort((a, b) => b.published.localeCompare(a.published) || b.order - a.order);
 }

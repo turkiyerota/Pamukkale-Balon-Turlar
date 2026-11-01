@@ -1,3 +1,4 @@
+/** Paragraphs render before the list, unless `list` is written before `p` in the object (then they close the section). */
 export type Section = {
   id: string;
   h: string;

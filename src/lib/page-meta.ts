@@ -42,10 +42,10 @@ export function articleHead(a: Article) {
   const otherSlug = translatedSlug(a.lang, a.body.slug, other);
   const path = articlePath(a.lang, a.body.slug);
   return seo({
-    lang: a.lang, type: "article", title: a.body.seoTitle, description: a.body.description, path,
+    lang: a.lang, type: "article", title: a.body.seoTitle, description: a.body.description, path, image: a.cover, imageAlt: a.coverAlt[a.lang],
     alt: otherSlug ? { [a.lang]: path, [other]: articlePath(other, otherSlug) } : undefined,
     jsonLd: [
-      { "@context": "https://schema.org", "@type": "BlogPosting", headline: a.body.title, description: a.body.description, datePublished: a.published, dateModified: a.updated ?? a.published, inLanguage: a.lang, mainEntityOfPage: abs(path), author: { "@type": "Organization", name: SITE.name }, publisher: { "@type": "Organization", name: SITE.name } },
+      { "@context": "https://schema.org", "@type": "BlogPosting", headline: a.body.title, image: abs(a.cover), wordCount: a.wordCount, description: a.body.description, datePublished: a.published, dateModified: a.updated ?? a.published, inLanguage: a.lang, mainEntityOfPage: abs(path), author: { "@type": "Organization", name: SITE.name }, publisher: { "@type": "Organization", name: SITE.name, logo: { "@type": "ImageObject", url: abs(SITE.logo.onLight) } } },
       breadcrumbLd([{ name: PAGE_LABELS.home[a.lang], path: PAGES.home[a.lang] }, { name: PAGE_LABELS.blog[a.lang], path: PAGES.blog[a.lang] }, { name: a.body.title, path }]),
     ],
   });
