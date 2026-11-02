@@ -17,7 +17,11 @@ export function alternatePath(pathname: string): { lang: Lang; target: Lang; hre
     const pageMatch = rest.match(/^(sayfa|page)\/(\d+)$/);
     if (pageMatch) {
       const n = Number(pageMatch[2]);
-      return { lang, target, href: n <= totalPages(target) ? blogListPath(target, n) : PAGES.blog[target] };
+      return {
+        lang,
+        target,
+        href: n <= totalPages(target) ? blogListPath(target, n) : PAGES.blog[target],
+      };
     }
     if (rest && !rest.includes("/")) {
       const slug = translatedSlug(lang, rest, target);

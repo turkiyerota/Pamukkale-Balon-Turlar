@@ -5,8 +5,10 @@ export const EN_3: Record<string, ArticleBody> = {
     slug: "how-to-book-a-pamukkale-balloon-tour",
     title: "How to Book a Pamukkale Balloon Tour",
     seoTitle: "How to Book a Pamukkale Balloon Tour | Step by Step",
-    description: "A step-by-step guide to requesting a Pamukkale balloon tour: what details to prepare, how to send your request, what a written confirmation should include and how to prepare for flight day.",
-    excerpt: "Have your date, group size and contact details ready, send your request, and don't treat the booking as confirmed until you have it in writing.",
+    description:
+      "A step-by-step guide to requesting a Pamukkale balloon tour: what details to prepare, how to send your request, what a written confirmation should include and how to prepare for flight day.",
+    excerpt:
+      "Have your date, group size and contact details ready, send your request, and don't treat the booking as confirmed until you have it in writing.",
     intro: [
       "Booking a balloon ride only takes a few steps, but the most important one is often skipped: written confirmation. Filling in a form or sending a message doesn't mean your place is confirmed. It's confirmed when the price, date, pick-up arrangements and cancellation terms have been sent to you in writing.",
       "This guide walks through what to prepare, how to send your request, what the confirmation should contain and how to get ready for the morning itself.",
@@ -23,7 +25,9 @@ export const EN_3: Record<string, ArticleBody> = {
       {
         id: "prepare",
         h: "Step 1: Get Your Details Ready",
-        p: ["Gathering this information before you get in touch shortens the back-and-forth and gets you a clear answer faster:"],
+        p: [
+          "Gathering this information before you get in touch shortens the back-and-forth and gets you a clear answer faster:",
+        ],
         list: [
           "Your preferred date, plus an alternative if possible",
           "Number of adults and children, and the children's ages",
@@ -54,8 +58,18 @@ export const EN_3: Record<string, ArticleBody> = {
           "When you'll be told your pick-up time",
         ],
         sub: [
-          { h: "If something's missing, ask", p: ["If any of the above isn't in the confirmation, asking before flight day saves surprises. Our checklist of [what's included in a balloon tour](/en/insights/what-is-included-in-a-pamukkale-balloon-tour/) can help."] },
-          { h: "Payment", p: ["**Our payment methods are not yet published on this site.** Payment details are shared in your confirmation. Never send card details by message or email."] },
+          {
+            h: "If something's missing, ask",
+            p: [
+              "If any of the above isn't in the confirmation, asking before flight day saves surprises. Our checklist of [what's included in a balloon tour](/en/insights/what-is-included-in-a-pamukkale-balloon-tour/) can help.",
+            ],
+          },
+          {
+            h: "Payment",
+            p: [
+              "**Payment methods and details are shared in your booking confirmation.** Never send card details by message or email.",
+            ],
+          },
         ],
       },
       {
@@ -98,17 +112,21 @@ export const EN_3: Record<string, ArticleBody> = {
     slug: "what-is-included-in-a-pamukkale-balloon-tour",
     title: "What Is Included in a Pamukkale Balloon Tour?",
     seoTitle: "What's Included in a Pamukkale Balloon Tour? A Checklist",
-    description: "What may or may not be included in the price of a Pamukkale balloon tour, a practical checklist for comparing quotes, and where extra costs can appear.",
-    excerpt: "Pin down transfers, refreshments, certificates, insurance and photos at the quote stage.",
+    description:
+      "What may or may not be included in the price of a Pamukkale balloon tour, a practical checklist for comparing quotes, and where extra costs can appear.",
+    excerpt:
+      "Pin down transfers, refreshments, certificates, insurance and photos at the quote stage.",
     intro: [
       "Most of the price difference between two balloon quotes usually comes down to what's included. One may cover only the flight; another may add hotel transfers, a breakfast snack and a post-flight celebration. That's why it pays to compare what you're getting before you compare the numbers.",
-      "**Our service inclusions are not yet published as final on this site.** The list below shows the items you'll commonly see and the questions to ask; we'll confirm in writing what's included in your quote when you book.",
+      "The list below shows the items you'll commonly see and the questions to ask. **We confirm in writing what's included in your quote when you book.**",
     ],
     sections: [
       {
         id: "checklist",
         h: "Quote Checklist",
-        p: ["For every quote, check whether these items are included. Putting them in a table makes comparison much easier:"],
+        p: [
+          "For every quote, check whether these items are included. Putting them in a table makes comparison much easier:",
+        ],
         list: [
           "Hotel pick-up and drop-off",
           "Pre-flight refreshments (tea, coffee, a light snack)",
@@ -123,11 +141,36 @@ export const EN_3: Record<string, ArticleBody> = {
         id: "items",
         h: "The Items, One by One",
         sub: [
-          { h: "Transfers", p: ["If you're staying in Pamukkale village, the transfer may be short; if you're in Karahayıt or central Denizli, whether it's included can make a real difference to the price. Ask which areas pick-up covers."] },
-          { h: "Refreshments", p: ["A hot drink at dawn is a nice touch, but it shouldn't decide between two offers. If breakfast is mentioned, ask whether it's a full breakfast or a light snack."] },
-          { h: "Insurance", p: ["Ask whether there's insurance covering passengers and what it covers. This matters for peace of mind as much as for price. For all the safety questions, see our [safety guide](/en/insights/are-pamukkale-hot-air-balloon-rides-safe/)."] },
-          { h: "Photos and video", p: ["Many operators charge separately for professional photos or video. Don't forget you can take your own photos on your phone."] },
-          { h: "Certificate and celebration", p: ["Some tours include a short celebration after landing and a flight certificate. Details like this vary by operator."] },
+          {
+            h: "Transfers",
+            p: [
+              "If you're staying in Pamukkale village, the transfer may be short; if you're in Karahayıt or central Denizli, whether it's included can make a real difference to the price. Ask which areas pick-up covers.",
+            ],
+          },
+          {
+            h: "Refreshments",
+            p: [
+              "A hot drink at dawn is a nice touch, but it shouldn't decide between two offers. If breakfast is mentioned, ask whether it's a full breakfast or a light snack.",
+            ],
+          },
+          {
+            h: "Insurance",
+            p: [
+              "Ask whether there's insurance covering passengers and what it covers. This matters for peace of mind as much as for price. For all the safety questions, see our [safety guide](/en/insights/are-pamukkale-hot-air-balloon-rides-safe/).",
+            ],
+          },
+          {
+            h: "Photos and video",
+            p: [
+              "Many operators charge separately for professional photos or video. Don't forget you can take your own photos on your phone.",
+            ],
+          },
+          {
+            h: "Certificate and celebration",
+            p: [
+              "Some tours include a short celebration after landing and a flight certificate. Details like this vary by operator.",
+            ],
+          },
         ],
         p: [],
       },
@@ -140,7 +183,9 @@ export const EN_3: Record<string, ArticleBody> = {
           "Personal spending and tips",
           "Transfers on other days (airport, bus station, etc.)",
         ],
-        p: ["Site entry fees and opening hours are published by official sources and can change; check the current details before your visit."],
+        p: [
+          "Site entry fees and opening hours are published by official sources and can change; check the current details before your visit.",
+        ],
       },
       {
         id: "extras",
@@ -170,11 +215,13 @@ export const EN_3: Record<string, ArticleBody> = {
     slug: "best-time-for-a-pamukkale-balloon-ride",
     title: "What Is the Best Time for a Pamukkale Balloon Ride?",
     seoTitle: "Best Time for a Pamukkale Balloon Ride | A Seasonal Guide",
-    description: "How a Pamukkale balloon ride can differ in spring, summer, autumn and winter, and how to weigh weather, crowds, light and flexibility when choosing a date.",
-    excerpt: "Every season has its own character. Balance weather, crowds, light and flexibility when you pick your date.",
+    description:
+      "How a Pamukkale balloon ride can differ in spring, summer, autumn and winter, and how to weigh weather, crowds, light and flexibility when choosing a date.",
+    excerpt:
+      "Every season has its own character. Balance weather, crowds, light and flexibility when you pick your date.",
     intro: [
       "The “best time” depends on you. Some travellers want mild mornings, some prefer quieter periods, and some are chasing a particular kind of light for photos. This guide summarises what each season is generally like and the questions to ask yourself when choosing a date.",
-      "One important point: no season guarantees a flight on a given date. Balloon flights are decided each morning based on that day's weather. **We don't yet publish a verified calendar of the months in which flights operate;** we confirm availability for your date when you book.",
+      "One important point: no season guarantees a flight on a given date. Balloon flights are decided each morning based on that day's weather. **We confirm availability for your date in writing when you book.**",
     ],
     sections: [
       {
@@ -232,7 +279,9 @@ export const EN_3: Record<string, ArticleBody> = {
           "How important is avoiding crowds?",
           "How many mornings do I have in Pamukkale, and can I be flexible?",
         ],
-        p: ["Your answers point to your best time. Once you've chosen, use our [reservation request form](/en/reservation/), or see how the morning works on our [flight information page](/en/flight-information/)."],
+        p: [
+          "Your answers point to your best time. Once you've chosen, use our [reservation request form](/en/reservation/), or see how the morning works on our [flight information page](/en/flight-information/).",
+        ],
       },
     ],
     takeaways: [

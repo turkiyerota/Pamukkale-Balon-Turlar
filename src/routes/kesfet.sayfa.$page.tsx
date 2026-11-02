@@ -11,7 +11,10 @@ export const Route = createFileRoute("/kesfet/sayfa/$page")({
     if (!Number.isInteger(n) || n < 1 || n > totalPages("tr")) throw notFound();
     return { page: n };
   },
-  head: ({ loaderData }) => loaderData ? blogHead("tr", loaderData.page, totalPages("tr")) : { meta: [{ title: "Not found" }, { name: "robots", content: "noindex" }] },
+  head: ({ loaderData }) =>
+    loaderData
+      ? blogHead("tr", loaderData.page, totalPages("tr"))
+      : { meta: [{ title: "Not found" }, { name: "robots", content: "noindex" }] },
   component: Page,
 });
 

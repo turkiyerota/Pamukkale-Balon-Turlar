@@ -5,8 +5,10 @@ export const TR_4: Record<string, ArticleBody> = {
     slug: "pamukkale-mi-kapadokya-mi-balon-turu",
     title: "Pamukkale mi Kapadokya mı? Balon Turu Karşılaştırması",
     seoTitle: "Pamukkale mi Kapadokya mı? Balon Turu Karşılaştırması",
-    description: "Pamukkale ve Kapadokya balon deneyimlerinin manzara, atmosfer, ulaşım, seyahat rotası ve planlama açısından dürüst bir karşılaştırması.",
-    excerpt: "İki deneyim de özel; fark manzarada, atmosferde ve seyahat rotanızda. Hangisinin size uyduğunu birlikte düşünelim.",
+    description:
+      "Pamukkale ve Kapadokya balon deneyimlerinin manzara, atmosfer, ulaşım, seyahat rotası ve planlama açısından dürüst bir karşılaştırması.",
+    excerpt:
+      "İki deneyim de özel; fark manzarada, atmosferde ve seyahat rotanızda. Hangisinin size uyduğunu birlikte düşünelim.",
     intro: [
       "Türkiye'de balon turu denince akla ilk Kapadokya gelir ve bunun iyi bir nedeni var: Peri bacaları üzerinde aynı sabah havalanan çok sayıda balon, dünyanın en çok fotoğraflanan manzaralarından biridir. Pamukkale ise bambaşka bir sahne sunar: Bembeyaz traverten terasları, turkuaz havuzlar ve hemen yanı başındaki Hierapolis antik kenti.",
       "Bu yazı “hangisi daha iyi” sorusuna kesin bir cevap vermiyor; çünkü doğru cevap sizin rotanıza, beklentinize ve zamanınıza bağlı. Pamukkale'de balon turu düzenleyen bir ekip olarak tarafsız olduğumuzu iddia etmiyoruz; ama karşılaştırmayı abartısız ve doğrulanabilir bilgilerle yapmaya özen gösterdik.",
@@ -71,7 +73,9 @@ export const TR_4: Record<string, ArticleBody> = {
           "Rotanızda hangisi daha kolay ulaşılabilir?",
           "Hava nedeniyle bir iptal olursa kaç yedek sabahınız var?",
         ],
-        p: ["Pamukkale'yi seçerseniz [fiyatlar](/fiyatlar/) ve [uçuş bilgileri](/ucus-bilgileri/) sayfalarımız size yol gösterir; tarihinizi [rezervasyon formuyla](/rezervasyon/) iletebilirsiniz."],
+        p: [
+          "Pamukkale'yi seçerseniz [fiyatlar](/fiyatlar/) ve [uçuş bilgileri](/ucus-bilgileri/) sayfalarımız size yol gösterir; tarihinizi [rezervasyon formuyla](/rezervasyon/) iletebilirsiniz.",
+        ],
       },
     ],
     takeaways: [
@@ -86,10 +90,12 @@ export const TR_4: Record<string, ArticleBody> = {
     slug: "pamukkale-balon-turuna-cocuklar-katilabilir-mi",
     title: "Pamukkale Balon Turuna Çocuklar Katılabilir mi?",
     seoTitle: "Pamukkale Balon Turuna Çocuklar Katılabilir mi? Aile Rehberi",
-    description: "Çocuklarla balon turu planlarken yaş ve boy kuralları, erken saatlere hazırlık, uçuş sırasında dikkat edilecekler ve sorulması gereken sorular.",
-    excerpt: "Yaş ve boy kuralları operatöre göre değişebilir; rezervasyon öncesinde mutlaka teyit edin ve çocuğunuzu erken kalkışa hazırlayın.",
+    description:
+      "Çocuklarla balon turu planlarken yaş ve boy kuralları, erken saatlere hazırlık, uçuş sırasında dikkat edilecekler ve sorulması gereken sorular.",
+    excerpt:
+      "Yaş ve boy kuralları operatöre göre değişebilir; rezervasyon öncesinde mutlaka teyit edin ve çocuğunuzu erken kalkışa hazırlayın.",
     intro: [
-      "Ailece balon turu yapmak unutulmaz bir anı olabilir. Ancak çocukların katılımına ilişkin yaş ve boy kuralları operatöre, sepet tipine ve o günkü koşullara göre değişebilir. **Bu sitede henüz doğrulanmış bir yaş veya boy sınırı yayınlamıyoruz;** çocuğunuzun katılıp katılamayacağını rezervasyon sırasında size özel olarak teyit ediyoruz.",
+      "Ailece balon turu yapmak unutulmaz bir anı olabilir. Ancak çocukların katılımına ilişkin yaş ve boy kuralları operatöre, sepet tipine ve o günkü koşullara göre değişebilir. **Çocuğunuzun katılıp katılamayacağını, yaşını ve boyunu bize ilettiğinizde rezervasyon öncesinde size özel olarak bildiririz.**",
       "Bu rehberde kuralların neden var olduğunu, çocuğunuzun bu deneyime hazır olup olmadığını nasıl değerlendirebileceğinizi, erken saatlere nasıl hazırlanacağınızı ve rezervasyon öncesinde sormanız gereken soruları anlatıyoruz.",
     ],
     sections: [
@@ -104,7 +110,9 @@ export const TR_4: Record<string, ArticleBody> = {
       {
         id: "hazir-mi",
         h: "Çocuğunuz Hazır mı?",
-        p: ["Kurallar dışında, çocuğunuzu en iyi siz tanırsınız. Karar verirken şu soruları düşünebilirsiniz:"],
+        p: [
+          "Kurallar dışında, çocuğunuzu en iyi siz tanırsınız. Karar verirken şu soruları düşünebilirsiniz:",
+        ],
         list: [
           "Talimatları dinleyip hemen uygulayabiliyor mu?",
           "Yükseklikten veya yüksek seslerden (brülör sesi gibi) korkar mı?",
@@ -112,7 +120,12 @@ export const TR_4: Record<string, ArticleBody> = {
           "Gün doğumundan önce kalkmak onu ne kadar yorar?",
         ],
         sub: [
-          { h: "Brülör sesi hakkında", p: ["Brülör çalıştığında kısa süreli, yüksek ve güçlü bir ses çıkar. Bazı çocuklar için bu heyecan verici, bazıları için ürkütücü olabilir. Önceden anlatmak ve video izletmek sürprizi azaltır."] },
+          {
+            h: "Brülör sesi hakkında",
+            p: [
+              "Brülör çalıştığında kısa süreli, yüksek ve güçlü bir ses çıkar. Bazı çocuklar için bu heyecan verici, bazıları için ürkütücü olabilir. Önceden anlatmak ve video izletmek sürprizi azaltır.",
+            ],
+          },
         ],
       },
       {
@@ -151,11 +164,13 @@ export const TR_4: Record<string, ArticleBody> = {
           "Çocuklu aileler için özel sepet seçeneği var mı?",
           "Çocuğa yönelik ayrı bir bilgilendirme yapılıyor mu?",
         ],
-        p: ["Sorularınızı ve çocuklarınızın yaşlarını [rezervasyon formuyla](/rezervasyon/) iletebilirsiniz. Genel güvenlik soruları için [güvenlik rehberimize](/kesfet/pamukkale-balon-turu-guvenli-mi/) de bakabilirsiniz."],
+        p: [
+          "Sorularınızı ve çocuklarınızın yaşlarını [rezervasyon formuyla](/rezervasyon/) iletebilirsiniz. Genel güvenlik soruları için [güvenlik rehberimize](/kesfet/pamukkale-balon-turu-guvenli-mi/) de bakabilirsiniz.",
+        ],
       },
     ],
     takeaways: [
-      "Yaş ve boy kuralları operatöre göre değişir; bu sitede henüz doğrulanmış bir sınır yayınlanmıyor.",
+      "Yaş ve boy kuralları operatöre göre değişir; çocuğunuz için uygunluğu rezervasyondan önce sorun.",
       "Kurallar, sepet yüksekliği ve iniş pozisyonu gibi güvenlik nedenlerine dayanır.",
       "Çocuğunuzu erken kalkışa, sabah serinliğine ve brülör sesine hazırlayın.",
       "Çocuk fiyatını ve şartlarını rezervasyondan önce yazılı sorun.",
@@ -166,11 +181,13 @@ export const TR_4: Record<string, ArticleBody> = {
     slug: "pamukkale-balon-turu-oncesi-bilmeniz-gerekenler",
     title: "Pamukkale Balon Turu Öncesi Bilmeniz Gerekenler",
     seoTitle: "Pamukkale Balon Turu Öncesi Bilmeniz Gerekenler | Kontrol Listesi",
-    description: "Pamukkale balon turundan önce rezervasyon, hava durumu, kıyafet, sağlık, uçuş sabahı ve uçuş sonrası için kapsamlı kontrol listesi.",
-    excerpt: "Rezervasyondan uçuş sonrasına kadar her aşama için pratik bir kontrol listesi ve ilgili rehberlerin bağlantıları.",
+    description:
+      "Pamukkale balon turundan önce rezervasyon, hava durumu, kıyafet, sağlık, uçuş sabahı ve uçuş sonrası için kapsamlı kontrol listesi.",
+    excerpt:
+      "Rezervasyondan uçuş sonrasına kadar her aşama için pratik bir kontrol listesi ve ilgili rehberlerin bağlantıları.",
     intro: [
       "Bu yazı, sitemizdeki diğer rehberleri tek bir kontrol listesinde toplar. Rezervasyon yapmadan önce, uçuştan bir gün önce ve uçuş sabahı göz atarak hiçbir ayrıntıyı atlamadığınızdan emin olabilirsiniz.",
-      "Her başlıkta konuyu daha ayrıntılı ele alan rehberimizin bağlantısını bulacaksınız. Fiyat, süre, yaş sınırı gibi bilgileri bu sitede henüz doğrulanmış olarak yayınlamadığımızı hatırlatalım; bu bilgileri rezervasyon sırasında size özel olarak teyit ediyoruz.",
+      "Her başlıkta konuyu daha ayrıntılı ele alan rehberimizin bağlantısını bulacaksınız. Fiyat, uçuş süresi ve yaş sınırı gibi bilgileri tarihinize göre netleştirip rezervasyon sırasında size yazılı olarak bildiriyoruz.",
     ],
     sections: [
       {
@@ -194,7 +211,9 @@ export const TR_4: Record<string, ArticleBody> = {
           "Sağlık durumunuzu ve hareket kısıtlılıklarınızı paylaşın — [güvenlik rehberi](/kesfet/pamukkale-balon-turu-guvenli-mi/)",
           "Sabah ulaşılabilecek bir telefon numarası verin",
         ],
-        p: ["Adım adım süreç için [rezervasyon rehberimize](/kesfet/pamukkale-balon-turu-rezervasyonu-nasil-yapilir/) bakabilirsiniz."],
+        p: [
+          "Adım adım süreç için [rezervasyon rehberimize](/kesfet/pamukkale-balon-turu-rezervasyonu-nasil-yapilir/) bakabilirsiniz.",
+        ],
       },
       {
         id: "onceki-gun",
@@ -238,7 +257,9 @@ export const TR_4: Record<string, ArticleBody> = {
       {
         id: "iletisim",
         h: "Sorunuz mu Var?",
-        p: ["Listede yanıtını bulamadığınız bir soru varsa [sık sorulan sorular](/sik-sorulan-sorular/) sayfamıza bakabilir veya [iletişim sayfamızdaki](/iletisim/) kanallardan bize ulaşabilirsiniz. Hazır olduğunuzda tarihinizi [rezervasyon formuyla](/rezervasyon/) iletebilirsiniz."],
+        p: [
+          "Listede yanıtını bulamadığınız bir soru varsa [sık sorulan sorular](/sik-sorulan-sorular/) sayfamıza bakabilir veya [iletişim sayfamızdaki](/iletisim/) kanallardan bize ulaşabilirsiniz. Hazır olduğunuzda tarihinizi [rezervasyon formuyla](/rezervasyon/) iletebilirsiniz.",
+        ],
       },
     ],
     takeaways: [

@@ -5,8 +5,10 @@ export const TR_2: Record<string, ArticleBody> = {
     slug: "pamukkale-balon-turunda-ne-giyilir",
     title: "Pamukkale Balon Turunda Ne Giyilir?",
     seoTitle: "Pamukkale Balon Turunda Ne Giyilir? Mevsime Göre Kıyafet",
-    description: "Sabah serinliği, sepet içinde rahat hareket ve iniş alanı için Pamukkale balon turuna uygun kıyafet, ayakkabı ve mevsime göre öneriler.",
-    excerpt: "Sabahın erken saatleri serin olabilir. Kat kat giyinmek ve kapalı, kaymaz ayakkabı seçmek en pratik çözümdür.",
+    description:
+      "Sabah serinliği, sepet içinde rahat hareket ve iniş alanı için Pamukkale balon turuna uygun kıyafet, ayakkabı ve mevsime göre öneriler.",
+    excerpt:
+      "Sabahın erken saatleri serin olabilir. Kat kat giyinmek ve kapalı, kaymaz ayakkabı seçmek en pratik çözümdür.",
     intro: [
       "Balon turu sabahın en serin saatlerinde başlar. Gün içinde 30 dereceyi aşan bir yaz gününde bile, gün doğumundan önce kalkış alanında beklerken üşüyebilirsiniz. Öte yandan sepette brülörün yakınında durmak, başınızın üstünde kısa süreli bir sıcaklık hissi yaratabilir. Doğru kıyafet, bu iki uç arasında rahat kalmanızı sağlar.",
       "Bu rehberde katmanlı giyinmenin mantığını, ayakkabı seçimini, mevsime göre önerileri ve yanınıza neleri almanız gerektiğini anlatıyoruz. Özel bir kıyafet kuralı olup olmadığını ise rezervasyon sırasında sormanızı öneririz.",
@@ -43,12 +45,34 @@ export const TR_2: Record<string, ArticleBody> = {
       {
         id: "mevsimler",
         h: "Mevsime Göre Öneriler",
-        p: ["Pamukkale'de iklim, sıcak ve kuru yazlar ile serin ve yağışlı kışlar şeklinde özetlenebilir. Sabahları ise her mevsimde gün içinden belirgin biçimde daha serindir."],
+        p: [
+          "Pamukkale'de iklim, sıcak ve kuru yazlar ile serin ve yağışlı kışlar şeklinde özetlenebilir. Sabahları ise her mevsimde gün içinden belirgin biçimde daha serindir.",
+        ],
         sub: [
-          { h: "İlkbahar (mart–mayıs)", p: ["Sabahlar serin, günler ılıktır. Uzun kollu üst, polar ve rüzgârlık iyi bir kombinasyondur. Mart ve nisan sabahlarında ince eldiven işe yarayabilir."] },
-          { h: "Yaz (haziran–ağustos)", p: ["Gün içinde sıcak olsa da gün doğumundan önce hafif bir üst katman alın. Turdan sonra hızla ısınacağı için güneş kremi, güneş gözlüğü ve şapka da yanınızda olsun."] },
-          { h: "Sonbahar (eylül–kasım)", p: ["Eylül sabahları yaza yakın olabilir; kasım sabahları ise belirgin biçimde soğuktur. Katmanları mevsimin başına mı sonuna mı denk geldiğinize göre ayarlayın."] },
-          { h: "Kış (aralık–şubat)", p: ["Bere, eldiven, atkı ve kalın bir mont düşünün. Kalkış alanında beklerken soğuk hissedilebilir; termal içlik iyi bir fikirdir."] },
+          {
+            h: "İlkbahar (mart–mayıs)",
+            p: [
+              "Sabahlar serin, günler ılıktır. Uzun kollu üst, polar ve rüzgârlık iyi bir kombinasyondur. Mart ve nisan sabahlarında ince eldiven işe yarayabilir.",
+            ],
+          },
+          {
+            h: "Yaz (haziran–ağustos)",
+            p: [
+              "Gün içinde sıcak olsa da gün doğumundan önce hafif bir üst katman alın. Turdan sonra hızla ısınacağı için güneş kremi, güneş gözlüğü ve şapka da yanınızda olsun.",
+            ],
+          },
+          {
+            h: "Sonbahar (eylül–kasım)",
+            p: [
+              "Eylül sabahları yaza yakın olabilir; kasım sabahları ise belirgin biçimde soğuktur. Katmanları mevsimin başına mı sonuna mı denk geldiğinize göre ayarlayın.",
+            ],
+          },
+          {
+            h: "Kış (aralık–şubat)",
+            p: [
+              "Bere, eldiven, atkı ve kalın bir mont düşünün. Kalkış alanında beklerken soğuk hissedilebilir; termal içlik iyi bir fikirdir.",
+            ],
+          },
         ],
       },
       {
@@ -91,17 +115,21 @@ export const TR_2: Record<string, ArticleBody> = {
     slug: "pamukkale-balon-turu-iptal-edilirse-ne-olur",
     title: "Pamukkale Balon Turu İptal Edilirse Ne Olur?",
     seoTitle: "Pamukkale Balon Turu İptal Olursa Ne Olur? İade ve Erteleme",
-    description: "Hava koşulları nedeniyle iptal edilen balon turlarında iade, tarih değişikliği, kendi iptalleriniz ve rezervasyon öncesinde sormanız gereken sorular.",
-    excerpt: "Balon uçuşları hava koşullarına bağlıdır. İptal durumunda ne olacağını önceden ve yazılı olarak öğrenin.",
+    description:
+      "Hava koşulları nedeniyle iptal edilen balon turlarında iade, tarih değişikliği, kendi iptalleriniz ve rezervasyon öncesinde sormanız gereken sorular.",
+    excerpt:
+      "Balon uçuşları hava koşullarına bağlıdır. İptal durumunda ne olacağını önceden ve yazılı olarak öğrenin.",
     intro: [
       "Balon uçuşları rüzgâr, görüş mesafesi ve yağış gibi hava koşullarına doğrudan bağlıdır. Uçuşun güvenli olmayacağı değerlendirilirse tur son dakikada, hatta siz kalkış alanına ulaştıktan sonra bile iptal edilebilir. Bu, balon turu planlamanın kaçınılmaz bir parçasıdır.",
-      "**İptal ve iade koşullarımız henüz bu sitede yayınlanmamıştır.** Koşulları rezervasyon sırasında yazılı olarak paylaşırız. Bu yazı, iptal kararlarının nasıl verildiğini, genel olarak hangi seçeneklerle karşılaşabileceğinizi ve seyahatinizi nasıl esnek planlayacağınızı anlatıyor.",
+      "**İptal ve iade koşullarımızı rezervasyon sırasında yazılı olarak paylaşırız.** Bu yazı, iptal kararlarının nasıl verildiğini, genel olarak hangi seçeneklerle karşılaşabileceğinizi ve seyahatinizi nasıl esnek planlayacağınızı anlatıyor.",
     ],
     sections: [
       {
         id: "neden-iptal",
         h: "Uçuşlar Neden İptal Edilir?",
-        p: ["Balon, rüzgârla birlikte hareket eden bir hava aracıdır ve iniş sırasında yer hızı önemlidir. Bu yüzden pilotlar ve yetkili kurumlar, aşağıdaki koşullarda uçuşu güvenli bulmayabilir:"],
+        p: [
+          "Balon, rüzgârla birlikte hareket eden bir hava aracıdır ve iniş sırasında yer hızı önemlidir. Bu yüzden pilotlar ve yetkili kurumlar, aşağıdaki koşullarda uçuşu güvenli bulmayabilir:",
+        ],
         list: [
           "Güçlü veya ani değişen rüzgâr (yerde ve farklı yüksekliklerde)",
           "Yağmur, kar veya fırtına ihtimali",
@@ -120,7 +148,9 @@ export const TR_2: Record<string, ArticleBody> = {
       {
         id: "secenekler",
         h: "İptal Durumunda Genel Seçenekler",
-        p: ["Koşullar operatöre göre değişmekle birlikte, hava nedeniyle yapılan iptallerde sık karşılaşılan seçenekler şunlardır:"],
+        p: [
+          "Koşullar operatöre göre değişmekle birlikte, hava nedeniyle yapılan iptallerde sık karşılaşılan seçenekler şunlardır:",
+        ],
         list: [
           "Bir sonraki uygun sabaha erteleme",
           "Ödenen ücretin iadesi",
@@ -128,7 +158,12 @@ export const TR_2: Record<string, ArticleBody> = {
           "Daha ileri bir tarihe açık rezervasyon",
         ],
         sub: [
-          { h: "Hangisi sizin için daha iyi?", p: ["Pamukkale'de birkaç gün kalıyorsanız erteleme mantıklı olabilir. Yalnızca bir sabahınız varsa, iadenin nasıl ve ne kadar sürede yapıldığı daha önemlidir. Bunu rezervasyondan önce öğrenmek, iptal sabahı yaşanacak belirsizliği azaltır."] },
+          {
+            h: "Hangisi sizin için daha iyi?",
+            p: [
+              "Pamukkale'de birkaç gün kalıyorsanız erteleme mantıklı olabilir. Yalnızca bir sabahınız varsa, iadenin nasıl ve ne kadar sürede yapıldığı daha önemlidir. Bunu rezervasyondan önce öğrenmek, iptal sabahı yaşanacak belirsizliği azaltır.",
+            ],
+          },
         ],
       },
       {
@@ -163,7 +198,9 @@ export const TR_2: Record<string, ArticleBody> = {
           "Ben iptal edersem kaç saat önceden haber vermeliyim, hangi koşullar geçerli?",
           "İptal haberini hangi kanaldan ve ne zaman alırım?",
         ],
-        p: ["Yanıtları yazılı olarak alın. Fiyatla ilgili genel değerlendirme için [fiyat rehberimize](/kesfet/pamukkale-balon-turu-fiyatlari-2026/), rezervasyon adımları için [rezervasyon rehberimize](/kesfet/pamukkale-balon-turu-rezervasyonu-nasil-yapilir/) bakabilirsiniz."],
+        p: [
+          "Yanıtları yazılı olarak alın. Fiyatla ilgili genel değerlendirme için [fiyat rehberimize](/kesfet/pamukkale-balon-turu-fiyatlari-2026/), rezervasyon adımları için [rezervasyon rehberimize](/kesfet/pamukkale-balon-turu-rezervasyonu-nasil-yapilir/) bakabilirsiniz.",
+        ],
       },
     ],
     takeaways: [
@@ -178,8 +215,10 @@ export const TR_2: Record<string, ArticleBody> = {
     slug: "pamukkale-balon-turu-guvenli-mi",
     title: "Pamukkale Balon Turu Güvenli mi?",
     seoTitle: "Pamukkale Balon Turu Güvenli mi? Bilinçli Seçim Rehberi",
-    description: "Balon turu seçerken güvenlik açısından neleri sorabileceğiniz, uçuş öncesi bilgilendirmenin ve iniş pozisyonunun önemi, sağlık durumuyla ilgili dikkat edilecekler.",
-    excerpt: "Garanti vermek yerine, bilinçli bir seçim yapmanız için sormanız gereken soruları ve uçuş sırasında size düşenleri derledik.",
+    description:
+      "Balon turu seçerken güvenlik açısından neleri sorabileceğiniz, uçuş öncesi bilgilendirmenin ve iniş pozisyonunun önemi, sağlık durumuyla ilgili dikkat edilecekler.",
+    excerpt:
+      "Garanti vermek yerine, bilinçli bir seçim yapmanız için sormanız gereken soruları ve uçuş sırasında size düşenleri derledik.",
     intro: [
       "Hiçbir hava aktivitesi için “sıfır risk” demek doğru değildir. Bu yüzden bu yazıda güvenlik garantisi vermiyoruz. Bunun yerine, sıcak hava balonu uçuşlarının nasıl düzenlendiğini, bir operatör seçerken neleri sorabileceğinizi ve uçuş sırasında size düşen sorumlulukları anlatıyoruz.",
       "Kısa cevap şudur: Balon uçuşları kurallara bağlı, denetlenen ve hava koşullarına göre kararı verilen faaliyetlerdir. Riskleri azaltan en önemli etkenler; deneyimli bir ekip, hava kararlarına saygı ve misafirin talimatlara uymasıdır.",
@@ -190,7 +229,7 @@ export const TR_2: Record<string, ArticleBody> = {
         h: "Balon Uçuşları Nasıl Düzenlenir?",
         p: [
           "Türkiye'de sıcak hava balonu işletmeciliği, Sivil Havacılık Genel Müdürlüğü (SHGM) mevzuatı kapsamında yürütülür. Balonların, pilotların ve işletmelerin bu mevzuatın öngördüğü lisans, sertifika ve denetim süreçlerine tabi olması beklenir.",
-          "Bir operatörün hangi izinlerle çalıştığını sormak tamamen olağandır. **Kendi işletme izni ve sertifika bilgilerimiz henüz bu sitede yayınlanmamıştır;** bu bilgileri doğrulandıktan sonra paylaşacağız ve talep ettiğinizde aktaracağız.",
+          "Bir operatörün hangi izinlerle çalıştığını sormak tamamen olağandır. **İzin ve sertifika bilgilerini sormanız hâlinde size yazılı olarak iletiriz.**",
         ],
       },
       {
@@ -204,7 +243,9 @@ export const TR_2: Record<string, ArticleBody> = {
           "Hava koşulları nasıl değerlendiriliyor, iptal kararını kim veriyor?",
           "Bir sepette en fazla kaç kişi uçuyor?",
         ],
-        p: ["Şeffaf bir operatör bu soruları yanıtlamaktan çekinmez. Yanıtlar belirsiz kalıyorsa veya sorularınız geçiştiriliyorsa, bunu karar verirken dikkate alın."],
+        p: [
+          "Şeffaf bir operatör bu soruları yanıtlamaktan çekinmez. Yanıtlar belirsiz kalıyorsa veya sorularınız geçiştiriliyorsa, bunu karar verirken dikkate alın.",
+        ],
       },
       {
         id: "uyari-isaretleri",
@@ -215,7 +256,9 @@ export const TR_2: Record<string, ArticleBody> = {
           "İzin, sigorta veya iletişim bilgisi paylaşmaktan kaçınma",
           "Piyasanın çok altında, açıklaması olmayan fiyatlar",
         ],
-        p: ["Hava kararlarına saygı duyan bir operatör, bazı sabahlar uçmamayı seçecektir. Bu bir zayıflık değil, güvenlik kültürünün göstergesidir."],
+        p: [
+          "Hava kararlarına saygı duyan bir operatör, bazı sabahlar uçmamayı seçecektir. Bu bir zayıflık değil, güvenlik kültürünün göstergesidir.",
+        ],
       },
       {
         id: "bilgilendirme",

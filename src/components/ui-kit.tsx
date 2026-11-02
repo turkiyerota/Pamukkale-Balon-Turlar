@@ -2,23 +2,48 @@ import { Link } from "@tanstack/react-router";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { Fragment } from "react";
 
-const base =
-  "inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold tracking-wide transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-2 disabled:opacity-60";
-
+/** Button styles live in styles.css (.btn*) — shine sweep, lift, press feedback, arrow slide, focus ring. */
 export const btn = {
-  primary: `${base} bg-primary text-primary-foreground hover:bg-navy-deep shadow-soft`,
-  accent: `${base} bg-amber text-navy-deep hover:brightness-105 shadow-soft`,
-  whatsapp: `${base} bg-whatsapp text-whatsapp-foreground hover:brightness-105 shadow-soft`,
-  outline: `${base} border border-primary/25 text-primary hover:bg-primary hover:text-primary-foreground`,
-  outlineLight: `${base} border border-on-dark/50 text-on-dark hover:bg-on-dark hover:text-navy`,
+  primary: "btn btn-navy",
+  accent: "btn btn-gold",
+  gold: "btn btn-gold",
+  whatsapp: "btn btn-wa",
+  glass: "btn btn-glass",
+  outline: "btn btn-outline",
+  outlineLight: "btn btn-outline-light",
 };
 
+export function Arrow({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={`btn-arrow ${className}`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
 /** Internal link that accepts plain path strings like "/fiyatlar/". */
-export function L({ href, children, ...rest }: { href: string; children: ReactNode } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">) {
+export function L({
+  href,
+  children,
+  ...rest
+}: { href: string; children: ReactNode } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">) {
   if (/^(https?:|mailto:|tel:)/.test(href)) {
     const external = href.startsWith("http");
     return (
-      <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} {...rest}>
+      <a
+        href={href}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...rest}
+      >
         {children}
       </a>
     );
@@ -37,7 +62,12 @@ export function Rich({ text }: { text: string }) {
     <>
       {parts.map((part, i) => {
         const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-        if (link) return <L key={i} href={link[2]!}>{link[1]}</L>;
+        if (link)
+          return (
+            <L key={i} href={link[2]!}>
+              {link[1]}
+            </L>
+          );
         const bold = part.match(/^\*\*([^*]+)\*\*$/);
         if (bold) return <strong key={i}>{bold[1]}</strong>;
         return <Fragment key={i}>{part}</Fragment>;
@@ -54,37 +84,62 @@ export function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) 
   );
 }
 
-export function SectionHeading({ eyebrow, title, intro, center }: { eyebrow?: string; title: string; intro?: string; center?: boolean }) {
+export function SectionHeading({
+  eyebrow,
+  title,
+  intro,
+  center,
+  dark,
+}: {
+  eyebrow?: string;
+  title: string;
+  intro?: string;
+  center?: boolean;
+  dark?: boolean;
+}) {
   return (
     <div className={`max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
-      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-      <h2 className="mt-3 text-4xl md:text-5xl">{title}</h2>
-      {intro && <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{intro}</p>}
+      {eyebrow && <p className={`eyebrow ${dark ? "!text-champagne" : ""}`}>{eyebrow}</p>}
+      <h2 className="mt-4 text-4xl leading-[1.05] md:text-[3.4rem]">{title}</h2>
+      {intro && (
+        <p
+          className={`mt-5 text-lg leading-relaxed ${dark ? "text-on-dark-muted" : "text-muted-foreground"}`}
+        >
+          {intro}
+        </p>
+      )}
     </div>
   );
 }
 
 export function Notice({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-md border-l-4 border-amber bg-amber/10 px-4 py-3 text-sm leading-relaxed text-foreground">
+    <div className="rounded-xl border border-gold/40 bg-champagne/35 px-5 py-4 text-[0.95rem] leading-relaxed text-foreground">
       {children}
     </div>
   );
 }
 
 export function Breadcrumbs({ items }: { items: { name: string; path?: string | undefined }[] }) {
+  const label = items[0]?.name === "Home" ? "Breadcrumb" : "Sayfa yolu";
   return (
-    <nav aria-label="Breadcrumb" className="text-sm">
-      <ol className="flex flex-wrap items-center gap-1.5 text-on-dark-muted">
+    <nav aria-label={label} className="text-sm font-medium">
+      <ol className="inline-flex flex-wrap items-center gap-1.5 rounded-full border border-white/20 bg-navy-deep/45 px-4 py-1.5 text-on-dark/85 backdrop-blur-md">
         {items.map((it, i) => (
           <li key={i} className="flex items-center gap-1.5">
-            {i > 0 && <span aria-hidden="true">/</span>}
+            {i > 0 && (
+              <span aria-hidden="true" className="text-champagne">
+                ›
+              </span>
+            )}
             {it.path ? (
               <L href={it.path} className="hover:text-on-dark underline-offset-4 hover:underline">
                 {it.name}
               </L>
             ) : (
-              <span aria-current="page" className="text-on-dark">{it.name}</span>
+              <span aria-current="page" className="text-on-dark">
+                {it.name}
+              </span>
             )}
           </li>
         ))}

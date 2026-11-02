@@ -4,13 +4,13 @@ export const TR_1: Record<string, ArticleBody> = {
   prices: {
     slug: "pamukkale-balon-turu-fiyatlari-2026",
     title: "Pamukkale Balon Turu Fiyatları: 2026 Rehberi",
-    seoTitle: "Pamukkale Balon Turu Fiyatları 2026 | Neye Göre Değişir?",
+    seoTitle: "Pamukkale Balon Turu Fiyatı Neye Göre Değişir? (2026 Rehberi)",
     description:
       "Pamukkale balon turu fiyatlarını etkileyen etkenler, teklifleri doğru karşılaştırma yöntemi ve 2026 için güncel fiyatı nasıl doğrulayacağınız.",
     excerpt:
-      "2026 fiyatları bu sitede henüz doğrulanmış olarak yayınlanmıyor. Bu rehber, fiyatı belirleyen etkenleri ve teklif alırken neyi sormanız gerektiğini anlatıyor.",
+      "Pamukkale balon turu fiyatları tarihe, sezona ve kişi sayısına göre değişir. Bu rehberde fiyatı belirleyen etkenleri ve doğru teklifi nasıl alacağınızı anlatıyoruz.",
     intro: [
-      "Pamukkale'de balon turu planlayan herkesin ilk sorusu genellikle aynıdır: “Ne kadar tutar?” Bu soruya dürüst bir cevap vermek istiyoruz: **2026 sezonu için doğrulanmış bir fiyat listesini bu sayfada yayınlamıyoruz.** Fiyatlar tarihe, sezona, kişi sayısına, seçtiğiniz uçuş tipine ve pakete dahil hizmetlere göre değişebiliyor. Bir rehberde sabit bir rakam görmek rahatlatıcı olabilir; ancak o rakam sizin tarihiniz için geçerli değilse, planınızı yanlış bir varsayıma dayandırmış olursunuz.",
+      "Pamukkale'de balon turu planlayan herkesin ilk sorusu genellikle aynıdır: “Ne kadar tutar?” Bu soruya dürüst bir cevap vermek istiyoruz: **sabit bir liste yerine tarihinize özel, yazılı fiyat veriyoruz.** Çünkü fiyatlar tarihe, sezona, kişi sayısına, seçtiğiniz uçuş tipine ve pakete dahil hizmetlere göre değişebiliyor. Bir rehberde sabit bir rakam görmek rahatlatıcı olabilir; ancak o rakam sizin tarihiniz için geçerli değilse, planınızı yanlış bir varsayıma dayandırmış olursunuz.",
       "Bu yazıda size uydurma bir fiyat aralığı sunmak yerine, internette gördüğünüz rakamları nasıl okuyacağınızı, iki teklifi nasıl adil biçimde karşılaştıracağınızı ve rezervasyon öncesinde hangi soruları sormanız gerektiğini anlatıyoruz. Güncel fiyat için [fiyatlar sayfamızı](/fiyatlar/) inceleyebilir veya [rezervasyon talep formu](/rezervasyon/) üzerinden tarihinizi ve kişi sayınızı iletebilirsiniz.",
     ],
     sections: [
@@ -25,7 +25,9 @@ export const TR_1: Record<string, ArticleBody> = {
       {
         id: "fiyati-etkileyenler",
         h: "Fiyatı Etkileyen Başlıca Etkenler",
-        p: ["Teklifleri değerlendirirken aşağıdaki etkenleri göz önünde bulundurmak, rakamlar arasındaki farkı anlamanızı kolaylaştırır:"],
+        p: [
+          "Teklifleri değerlendirirken aşağıdaki etkenleri göz önünde bulundurmak, rakamlar arasındaki farkı anlamanızı kolaylaştırır:",
+        ],
         list: [
           "**Sezon ve talep:** Bayramlar, okul tatilleri, yaz ayları ve hafta sonları talebin yüksek olduğu dönemlerdir.",
           "**Uçuş tipi:** Birden fazla misafirin aynı sepeti paylaştığı standart uçuş ile yalnızca sizin grubunuza ayrılan özel sepet arasında belirgin fark olabilir.",
@@ -43,9 +45,24 @@ export const TR_1: Record<string, ArticleBody> = {
           "Pratik bir yöntem: Aldığınız her teklifi aynı tabloya yazın ve her satırda aynı soruların cevabını doldurun. Transfer var mı? Kişi başı mı, toplam mı? Vergiler dahil mi? Hava nedeniyle iptalde ne oluyor? Boş kalan hücreler, sormanız gereken soruları gösterir. Fiyata nelerin dahil olabileceğini [ayrıntılı kontrol listemizde](/kesfet/pamukkale-balon-turunda-fiyata-neler-dahil/) ele aldık.",
         ],
         sub: [
-          { h: "Kişi başı mı, toplam mı?", p: ["Fiyatın kişi başı mı yoksa grup toplamı mı olduğunu, vergilerin dahil olup olmadığını mutlaka sorun. Özellikle özel sepet tekliflerinde fiyat bazen sepet başına verilir."] },
-          { h: "Çocuk fiyatı", p: ["Çocuklar için farklı bir fiyat uygulanıp uygulanmadığı ve hangi yaştan itibaren katılım kabul edildiği operatöre göre değişebilir. Bu konuyu [çocuklarla balon turu rehberimizde](/kesfet/pamukkale-balon-turuna-cocuklar-katilabilir-mi/) anlattık."] },
-          { h: "Yazılı teyit isteyin", p: ["Size verilen fiyatı, dahil olan hizmetleri ve iptal koşullarını e-posta veya mesajla yazılı olarak teyit ettirin. Telefonda konuşulan bir rakam, uçuş sabahı farklı hatırlanabilir."] },
+          {
+            h: "Kişi başı mı, toplam mı?",
+            p: [
+              "Fiyatın kişi başı mı yoksa grup toplamı mı olduğunu, vergilerin dahil olup olmadığını mutlaka sorun. Özellikle özel sepet tekliflerinde fiyat bazen sepet başına verilir.",
+            ],
+          },
+          {
+            h: "Çocuk fiyatı",
+            p: [
+              "Çocuklar için farklı bir fiyat uygulanıp uygulanmadığı ve hangi yaştan itibaren katılım kabul edildiği operatöre göre değişebilir. Bu konuyu [çocuklarla balon turu rehberimizde](/kesfet/pamukkale-balon-turuna-cocuklar-katilabilir-mi/) anlattık.",
+            ],
+          },
+          {
+            h: "Yazılı teyit isteyin",
+            p: [
+              "Size verilen fiyatı, dahil olan hizmetleri ve iptal koşullarını e-posta veya mesajla yazılı olarak teyit ettirin. Telefonda konuşulan bir rakam, uçuş sabahı farklı hatırlanabilir.",
+            ],
+          },
         ],
       },
       {
@@ -53,13 +70,15 @@ export const TR_1: Record<string, ArticleBody> = {
         h: "İptal ve İade Koşulları da Fiyatın Parçasıdır",
         p: [
           "Balon uçuşları hava koşullarına bağlıdır ve güvenlik nedeniyle son dakikada iptal edilebilir. Bu durumda ne olacağı — ücret iadesi mi, başka bir güne erteleme mi — toplam maliyetinizi doğrudan etkiler. Örneğin yalnızca tek bir sabahınız varsa, iade koşulları sizin için erteleme seçeneğinden daha önemli olabilir.",
-          "Kendi tarafınızdan yapılan iptallerde hangi sürelerin geçerli olduğunu da sorun. Bu konuyu [iptal rehberimizde](/kesfet/pamukkale-balon-turu-iptal-edilirse-ne-olur/) ayrıntılı olarak anlattık. **Kendi iptal ve iade koşullarımız henüz bu sitede yayınlanmamıştır;** talebinize yanıt verirken yazılı olarak paylaşırız.",
+          "Kendi tarafınızdan yapılan iptallerde hangi sürelerin geçerli olduğunu da sorun. Bu konuyu [iptal rehberimizde](/kesfet/pamukkale-balon-turu-iptal-edilirse-ne-olur/) ayrıntılı olarak anlattık. **İptal ve iade koşullarımızı, talebinize yanıt verirken yazılı olarak paylaşırız.**",
         ],
       },
       {
         id: "dikkat",
         h: "Dikkat Edilmesi Gereken Uyarı İşaretleri",
-        p: ["Fiyat araştırırken aşağıdaki durumlarda bir adım geri çekilip daha fazla soru sormanızı öneririz:"],
+        p: [
+          "Fiyat araştırırken aşağıdaki durumlarda bir adım geri çekilip daha fazla soru sormanızı öneririz:",
+        ],
         list: [
           "Fiyatın neleri kapsadığını açıklamayan, yalnızca rakam veren teklifler",
           "Hava nedeniyle iptal koşullarını yazılı olarak paylaşmaktan kaçınılması",
@@ -77,7 +96,7 @@ export const TR_1: Record<string, ArticleBody> = {
       },
     ],
     takeaways: [
-      "2026 fiyatları bu sitede henüz doğrulanmış olarak yayınlanmamaktadır; güncel fiyatı tarihinize göre teklif olarak alın.",
+      "Güncel fiyatı tarihinize ve kişi sayınıza göre yazılı teklif olarak alın; en hızlı yol WhatsApp'tır.",
       "Fiyatı sezon, uçuş tipi, transfer, para birimi ve ek hizmetler etkiler.",
       "Teklifleri rakama göre değil, dahil olan hizmetlere ve iptal koşullarına göre karşılaştırın.",
       "Fiyatı, kapsamı ve iptal koşullarını mutlaka yazılı teyit ettirin.",
@@ -90,7 +109,8 @@ export const TR_1: Record<string, ArticleBody> = {
     seoTitle: "Pamukkale Balon Turu Saat Kaçta Başlar? Gün Doğumu Rehberi",
     description:
       "Pamukkale balon turlarının neden gün doğumuna göre planlandığını, alış saatinin mevsime göre nasıl değiştiğini ve neyi teyit etmeniz gerektiğini öğrenin.",
-    excerpt: "Balon turları gün doğumuna göre planlanır; bu nedenle alış saati mevsimden mevsime belirgin biçimde değişir.",
+    excerpt:
+      "Balon turları gün doğumuna göre planlanır; bu nedenle alış saati mevsimden mevsime belirgin biçimde değişir.",
     intro: [
       "Balon turları sabahın erken saatlerinde, gün doğumuna yakın yapılır. Bu, Pamukkale'ye özgü bir alışkanlık değil; dünyanın pek çok yerinde sıcak hava balonu uçuşlarının ortak özelliğidir. Temel neden, sabah havasının çoğu zaman daha sakin ve daha serin olmasıdır.",
       "Bu nedenle “Tur saat kaçta başlıyor?” sorusunun tek bir cevabı yoktur. Haziranda ve aralıkta gün doğumu arasında iki buçuk saatten fazla fark vardır; alış saatiniz de buna göre değişir. Bu yazıda sabit bir saat vermek yerine, saatin nasıl belirlendiğini ve sizin tarihiniz için doğru bilgiyi nasıl alacağınızı anlatıyoruz.",
@@ -115,7 +135,9 @@ export const TR_1: Record<string, ArticleBody> = {
       {
         id: "sabah-akisi",
         h: "Tipik Bir Sabahın Akışı",
-        p: ["Kesin sıralama ve süreler operatöre göre değişebilir; ancak bir balon sabahı genellikle şu aşamalardan oluşur:"],
+        p: [
+          "Kesin sıralama ve süreler operatöre göre değişebilir; ancak bir balon sabahı genellikle şu aşamalardan oluşur:",
+        ],
         list: [
           "Otelden alış ve kalkış alanına transfer",
           "Kalkış alanında kısa bekleme ve güvenlik bilgilendirmesi",
@@ -125,7 +147,12 @@ export const TR_1: Record<string, ArticleBody> = {
           "Dönüş transferi",
         ],
         sub: [
-          { h: "Şişirme aşamasını kaçırmayın", p: ["Balonun yerde dev bir kumaş yığınından ayağa kalkışını izlemek, deneyimin en etkileyici anlarından biridir. Alış saatinde hazır olmak bu anı görmenizi sağlar."] },
+          {
+            h: "Şişirme aşamasını kaçırmayın",
+            p: [
+              "Balonun yerde dev bir kumaş yığınından ayağa kalkışını izlemek, deneyimin en etkileyici anlarından biridir. Alış saatinde hazır olmak bu anı görmenizi sağlar.",
+            ],
+          },
         ],
       },
       {
@@ -159,7 +186,9 @@ export const TR_1: Record<string, ArticleBody> = {
           "Hava nedeniyle erteleme olursa nasıl ve ne zaman bilgilendirileceğinizi",
           "Uçuştan sonra otele yaklaşık ne zaman döneceğinizi",
         ],
-        p: ["Bu soruları [rezervasyon talebinizle](/rezervasyon/) birlikte iletebilir veya [iletişim sayfamızdaki](/iletisim/) kanallardan sorabilirsiniz. **Kendi alış saatlerimiz henüz bu sitede yayınlanmamıştır;** tarihinize özel bilgiyi rezervasyon sırasında paylaşırız."],
+        p: [
+          "Bu soruları [rezervasyon talebinizle](/rezervasyon/) birlikte iletebilir veya [iletişim sayfamızdaki](/iletisim/) kanallardan sorabilirsiniz. **Alış saati gün doğumuna göre değiştiği için tarihinize özel saati rezervasyonda, kesin saati ise uçuştan bir gün önce bildiririz.**",
+        ],
       },
     ],
     takeaways: [
@@ -176,10 +205,11 @@ export const TR_1: Record<string, ArticleBody> = {
     seoTitle: "Pamukkale Balon Turu Ne Kadar Sürer? Uçuş ve Toplam Süre",
     description:
       "Pamukkale balon turunda uçuş süresi ile toplam deneyim süresi arasındaki farkı, sürenin neden değişebildiğini ve rezervasyondan önce sormanız gerekenleri öğrenin.",
-    excerpt: "Havada geçen süre ile otelden alıştan dönüşe kadar geçen toplam süre aynı şey değildir. İkisini ayrı ayrı sorun.",
+    excerpt:
+      "Havada geçen süre ile otelden alıştan dönüşe kadar geçen toplam süre aynı şey değildir. İkisini ayrı ayrı sorun.",
     intro: [
       "“Balon turu kaç dakika sürer?” sorusunun aslında iki cevabı vardır: havada geçen süre ve tüm sabahın süresi. Teklifleri karşılaştırırken ve gününüzü planlarken bu ikisini birbirinden ayırmak işinizi çok kolaylaştırır.",
-      "Havada geçen süre operatöre, seçtiğiniz pakete ve o sabahki rüzgâr koşullarına göre değişebilir. **Bu sitede henüz doğrulanmış bir uçuş süresi yayınlamıyoruz;** rezervasyon öncesinde size özel olarak teyit ediyoruz. Bu yazıda sürenin nelere bağlı olduğunu ve neyi sormanız gerektiğini anlatıyoruz.",
+      "Havada geçen süre operatöre, seçtiğiniz pakete ve o sabahki rüzgâr koşullarına göre değişebilir. Bölgedeki işletmelerin yayımladığı bilgilere göre havada geçen süre genellikle 45 dakika ile 1 saat arasındadır. **Paketinizin uçuş süresini teklifinizde yazılı olarak belirtiriz.** Bu yazıda sürenin nelere bağlı olduğunu ve neyi sormanız gerektiğini anlatıyoruz.",
     ],
     sections: [
       {
@@ -193,7 +223,9 @@ export const TR_1: Record<string, ArticleBody> = {
       {
         id: "toplam-sure",
         h: "Toplam Deneyim Neleri Kapsar?",
-        p: ["Toplam süre genellikle şu aşamalardan oluşur. Her birinin uzunluğu otelinizin konumuna, o sabahki koşullara ve operatörün işleyişine göre değişebilir:"],
+        p: [
+          "Toplam süre genellikle şu aşamalardan oluşur. Her birinin uzunluğu otelinizin konumuna, o sabahki koşullara ve operatörün işleyişine göre değişebilir:",
+        ],
         list: [
           "Otelden alış ve kalkış alanına transfer",
           "Bilgilendirme ve balonun şişirilmesini izleme",
@@ -211,7 +243,12 @@ export const TR_1: Record<string, ArticleBody> = {
           "Pilotun önceliği, güvenli ve erişilebilir bir iniş alanına ulaşmaktır. Rüzgâr beklenenden hızlıysa, uygun iniş alanlarını kaçırmamak için uçuş planlanandan kısa tutulabilir. Rüzgâr çok hafifse balon yavaş ilerler ve pilot iniş noktasını buna göre seçer. Bu kararlar sizin konforunuz kadar güvenliğiniz için de verilir.",
         ],
         sub: [
-          { h: "Yer ekibinin rolü", p: ["Uçuş boyunca bir yer ekibi balonu araçla takip eder ve iniş noktasına gelir. İnişten sonra balonun toplanması ve sepetin taşınması da zaman alır; bu süre toplam deneyime eklenir."] },
+          {
+            h: "Yer ekibinin rolü",
+            p: [
+              "Uçuş boyunca bir yer ekibi balonu araçla takip eder ve iniş noktasına gelir. İnişten sonra balonun toplanması ve sepetin taşınması da zaman alır; bu süre toplam deneyime eklenir.",
+            ],
+          },
         ],
       },
       {
@@ -239,13 +276,15 @@ export const TR_1: Record<string, ArticleBody> = {
           "Rüzgâr nedeniyle uçuş kısa sürerse fiyatta veya hizmette bir değişiklik olur mu?",
           "Otelime yaklaşık saat kaçta dönmüş olurum?",
         ],
-        p: ["Bu soruları [rezervasyon talebinize](/rezervasyon/) ekleyebilirsiniz. Uçuş sabahının genel akışını [uçuş bilgileri sayfamızda](/ucus-bilgileri/) anlattık."],
+        p: [
+          "Bu soruları [rezervasyon talebinize](/rezervasyon/) ekleyebilirsiniz. Uçuş sabahının genel akışını [uçuş bilgileri sayfamızda](/ucus-bilgileri/) anlattık.",
+        ],
       },
     ],
     takeaways: [
       "Uçuş süresi ile toplam deneyim süresi farklıdır; ikisini ayrı ayrı sorun.",
       "Uçuş süresi rüzgâr koşullarına ve güvenli iniş alanına göre değişebilir.",
-      "Bu sitede henüz doğrulanmış bir uçuş süresi yayınlanmamaktadır.",
+      "Paketinizin uçuş süresi teklifinizde yazılı olarak belirtilir.",
       "Aynı gün yolculuk yapacaksanız programınızda pay bırakın.",
     ],
   },

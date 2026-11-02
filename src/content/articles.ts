@@ -50,29 +50,150 @@ type Meta = {
   coverAlt: Record<Lang, string>;
 };
 
-const META: Meta[] = ([
-  { id: "prices", order: 12, category: "pricing", covers: { tr: c_prices_tr, en: c_prices_en }, coverAlt: { tr: "Gün doğumunda travertenlerin önünde boş balon sepeti", en: "The leather rim of a balloon basket above the Pamukkale pools" } },
-  { id: "start", order: 11, category: "flight", covers: { tr: c_start_tr, en: c_start_en }, coverAlt: { tr: "Mavi saatte brülör ışığıyla şişirilen balonlar", en: "A colourful balloon lifting off at sunrise" } },
-  { id: "duration", order: 10, category: "flight", covers: { tr: c_duration_tr, en: c_duration_en }, coverAlt: { tr: "Pamukkale travertenleri ve kasaba üzerinde yüksekte tek balon", en: "Looking down from the basket at balloon shadows on the ground" } },
-  { id: "clothing", order: 9, category: "planning", covers: { tr: c_clothing_tr, en: c_clothing_en }, coverAlt: { tr: "Bankta lacivert mont, atkı ve ayakkabı; arkada balonlar", en: "A beanie, gloves, fleece and thermos laid out flat" } },
-  { id: "cancel", order: 8, category: "flight", covers: { tr: c_cancel_tr, en: c_cancel_en }, coverAlt: { tr: "Gri yağmur altında yerde sönük balon kumaşları", en: "An orange windsock in the fog" } },
-  { id: "safety", order: 7, category: "flight", covers: { tr: c_safety_tr, en: c_safety_en }, coverAlt: { tr: "Balon brülörünün alevine yakın plan", en: "An upright balloon tethered to a vehicle beside a windsock" } },
-  { id: "booking", order: 6, category: "pricing", covers: { tr: c_booking_tr, en: c_booking_en }, coverAlt: { tr: "Telefon, Türk çayı ve not defteri", en: "A map and travel journal by a window" } },
-  { id: "included", order: 5, category: "pricing", covers: { tr: c_included_tr, en: c_included_en }, coverAlt: { tr: "İnişten sonra balon ve römork", en: "A white transfer minibus waiting at blue hour" } },
-  { id: "best-time", order: 4, category: "planning", covers: { tr: c_best_time_tr, en: c_best_time_en }, coverAlt: { tr: "Sonbahar yaprakları ve uzakta balonlar", en: "Balloons over the travertines on a misty winter morning with snowy mountains" } },
-  { id: "compare", order: 3, category: "compare", covers: { tr: c_compare_tr, en: c_compare_en }, coverAlt: { tr: "Gün doğumunda Kapadokya vadisi üzerinde balonlar", en: "Balloons reflected in a Pamukkale travertine pool" } },
-  { id: "children", order: 2, category: "planning", covers: { tr: c_children_tr, en: c_children_en }, coverAlt: { tr: "Taş duvarda çocuk montu, sırt çantası ve ayakkabılar; arkada balonlar", en: "A family seen from behind watching the balloons" } },
-  { id: "before", order: 1, category: "planning", covers: { tr: c_before_tr, en: c_before_en }, coverAlt: { tr: "Sabah ışığında Hierapolis antik tiyatrosu ve uzakta bir balon", en: "A colonnaded ancient street in Hierapolis with balloons in the sky" } },
-] as Omit<Meta, "published">[]).map((m) => ({ ...m, published: "2026-10-29" }));
+const META: Meta[] = (
+  [
+    {
+      id: "prices",
+      order: 12,
+      category: "pricing",
+      covers: { tr: c_prices_tr, en: c_prices_en },
+      coverAlt: {
+        tr: "Gün doğumunda travertenlerin önünde boş balon sepeti",
+        en: "The leather rim of a balloon basket above the Pamukkale pools",
+      },
+    },
+    {
+      id: "start",
+      order: 11,
+      category: "flight",
+      covers: { tr: c_start_tr, en: c_start_en },
+      coverAlt: {
+        tr: "Mavi saatte brülör ışığıyla şişirilen balonlar",
+        en: "A colourful balloon lifting off at sunrise",
+      },
+    },
+    {
+      id: "duration",
+      order: 10,
+      category: "flight",
+      covers: { tr: c_duration_tr, en: c_duration_en },
+      coverAlt: {
+        tr: "Pamukkale travertenleri ve kasaba üzerinde yüksekte tek balon",
+        en: "Looking down from the basket at balloon shadows on the ground",
+      },
+    },
+    {
+      id: "clothing",
+      order: 9,
+      category: "planning",
+      covers: { tr: c_clothing_tr, en: c_clothing_en },
+      coverAlt: {
+        tr: "Bankta lacivert mont, atkı ve ayakkabı; arkada balonlar",
+        en: "A beanie, gloves, fleece and thermos laid out flat",
+      },
+    },
+    {
+      id: "cancel",
+      order: 8,
+      category: "flight",
+      covers: { tr: c_cancel_tr, en: c_cancel_en },
+      coverAlt: {
+        tr: "Gri yağmur altında yerde sönük balon kumaşları",
+        en: "An orange windsock in the fog",
+      },
+    },
+    {
+      id: "safety",
+      order: 7,
+      category: "flight",
+      covers: { tr: c_safety_tr, en: c_safety_en },
+      coverAlt: {
+        tr: "Balon brülörünün alevine yakın plan",
+        en: "An upright balloon tethered to a vehicle beside a windsock",
+      },
+    },
+    {
+      id: "booking",
+      order: 6,
+      category: "pricing",
+      covers: { tr: c_booking_tr, en: c_booking_en },
+      coverAlt: {
+        tr: "Telefon, Türk çayı ve not defteri",
+        en: "A map and travel journal by a window",
+      },
+    },
+    {
+      id: "included",
+      order: 5,
+      category: "pricing",
+      covers: { tr: c_included_tr, en: c_included_en },
+      coverAlt: {
+        tr: "İnişten sonra balon ve römork",
+        en: "A white transfer minibus waiting at blue hour",
+      },
+    },
+    {
+      id: "best-time",
+      order: 4,
+      category: "planning",
+      covers: { tr: c_best_time_tr, en: c_best_time_en },
+      coverAlt: {
+        tr: "Sonbahar yaprakları ve uzakta balonlar",
+        en: "Balloons over the travertines on a misty winter morning with snowy mountains",
+      },
+    },
+    {
+      id: "compare",
+      order: 3,
+      category: "compare",
+      covers: { tr: c_compare_tr, en: c_compare_en },
+      coverAlt: {
+        tr: "Gün doğumunda Kapadokya vadisi üzerinde balonlar",
+        en: "Balloons reflected in a Pamukkale travertine pool",
+      },
+    },
+    {
+      id: "children",
+      order: 2,
+      category: "planning",
+      covers: { tr: c_children_tr, en: c_children_en },
+      coverAlt: {
+        tr: "Taş duvarda çocuk montu, sırt çantası ve ayakkabılar; arkada balonlar",
+        en: "A family seen from behind watching the balloons",
+      },
+    },
+    {
+      id: "before",
+      order: 1,
+      category: "planning",
+      covers: { tr: c_before_tr, en: c_before_en },
+      coverAlt: {
+        tr: "Sabah ışığında Hierapolis antik tiyatrosu ve uzakta bir balon",
+        en: "A colonnaded ancient street in Hierapolis with balloons in the sky",
+      },
+    },
+  ] as Omit<Meta, "published">[]
+).map((m) => ({ ...m, published: "2026-10-29" }));
 
-export type Article = Meta & { body: ArticleBody; lang: Lang; readingMinutes: number; /** Cover for this language (each language has its own image). */ cover: string; wordCount: number };
+export type Article = Meta & {
+  body: ArticleBody;
+  lang: Lang;
+  readingMinutes: number;
+  /** Cover for this language (each language has its own image). */ cover: string;
+  wordCount: number;
+};
 
 const BODIES: Record<Lang, Record<string, ArticleBody>> = { tr: TR, en: EN };
 
 function words(b: ArticleBody) {
   const text = [
     ...b.intro,
-    ...b.sections.flatMap((s) => [s.h, ...s.p, ...(s.list ?? []), ...(s.sub ?? []).flatMap((x) => [x.h, ...x.p])]),
+    ...b.sections.flatMap((s) => [
+      s.h,
+      ...s.p,
+      ...(s.list ?? []),
+      ...(s.sub ?? []).flatMap((x) => [x.h, ...x.p]),
+    ]),
     ...b.takeaways,
   ].join(" ");
   return text.split(/\s+/).filter(Boolean).length;
@@ -83,7 +204,14 @@ export function getArticles(lang: Lang): Article[] {
     .map((m) => {
       const body = BODIES[lang][m.id]!;
       const wc = words(body);
-      return { ...m, body, lang, cover: m.covers[lang], wordCount: wc, readingMinutes: Math.max(2, Math.round(wc / 200)) };
+      return {
+        ...m,
+        body,
+        lang,
+        cover: m.covers[lang],
+        wordCount: wc,
+        readingMinutes: Math.max(2, Math.round(wc / 200)),
+      };
     })
     .sort((a, b) => b.published.localeCompare(a.published) || b.order - a.order);
 }
