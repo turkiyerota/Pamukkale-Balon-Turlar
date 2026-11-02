@@ -91,11 +91,11 @@ export const TR_4: Record<string, ArticleBody> = {
     title: "Pamukkale Balon Turuna Çocuklar Katılabilir mi?",
     seoTitle: "Pamukkale Balon Turuna Çocuklar Katılabilir mi? Aile Rehberi",
     description:
-      "Çocuklarla balon turu planlarken yaş ve boy kuralları, erken saatlere hazırlık, uçuş sırasında dikkat edilecekler ve sorulması gereken sorular.",
+      "Pamukkale balon turuna çocuklar katılabilir mi? Minimum yaş 6, boy kuralı, erken saate hazırlık, uçuşta dikkat edilecekler ve sorulacak sorular.",
     excerpt:
       "Yaş ve boy kuralları operatöre göre değişebilir; rezervasyon öncesinde mutlaka teyit edin ve çocuğunuzu erken kalkışa hazırlayın.",
     intro: [
-      "Ailece balon turu yapmak unutulmaz bir anı olabilir. Ancak çocukların katılımına ilişkin yaş ve boy kuralları operatöre, sepet tipine ve o günkü koşullara göre değişebilir. **Bizimle çocuklar genellikle 6 yaşından itibaren ve bir yetişkin eşliğinde uçabilir; yaşını ve boyunu ilettiğinizde uygunluğu rezervasyon öncesinde teyit ederiz.**",
+      "Pamukkale balon turuna çocuklar katılabilir mi? Ailece balon turu yapmak unutulmaz bir anı olabilir. Ancak çocukların katılımına ilişkin yaş ve boy kuralları operatöre, sepet tipine ve o günkü koşullara göre değişebilir. **Bizimle minimum yaş 6'dır; 6 yaşından küçük çocuklar uçuşa alınmaz. Çocuklar bir yetişkin eşliğinde uçar ve sepet kenarını rahatça görebilecek boyda olmalıdır. Hamile misafirler uçuşa alınmaz.**",
       "Bu rehberde kuralların neden var olduğunu, çocuğunuzun bu deneyime hazır olup olmadığını nasıl değerlendirebileceğinizi, erken saatlere nasıl hazırlanacağınızı ve rezervasyon öncesinde sormanız gereken soruları anlatıyoruz.",
     ],
     sections: [
@@ -132,8 +132,8 @@ export const TR_4: Record<string, ArticleBody> = {
         id: "erken-saat",
         h: "Erken Saatlere Hazırlık",
         p: [
-          "Gün doğumundan önce kalkmak çocuklar için zorlayıcı olabilir; özellikle yaz aylarında alış saatleri gecenin karanlığına denk gelir. Bir önceki akşam erken yatmak, kıyafetleri hazır bırakmak ve sabah için küçük bir atıştırmalık hazırlamak işinizi kolaylaştırır.",
-          "Çocuklar yetişkinlerden daha çabuk üşür. Sabah serinliği için ekstra bir katman, bere ve eldiven düşünün. [Kıyafet önerilerimize](/kesfet/pamukkale-balon-turunda-ne-giyilir/) göz atın. Mevsimin alış saatini nasıl etkilediğini [sabah kaçta başlar rehberimizde](/kesfet/pamukkale-balon-turu-sabah-kacta-basliyor/) anlattık.",
+          "Gün doğumundan önce kalkmak çocuklar için zorlayıcı olabilir; özellikle yaz aylarında buluşma saatleri gecenin karanlığına denk gelir. Bir önceki akşam erken yatmak, kıyafetleri hazır bırakmak ve sabah için küçük bir atıştırmalık hazırlamak işinizi kolaylaştırır.",
+          "Çocuklar yetişkinlerden daha çabuk üşür. Sabah serinliği için ekstra bir katman, bere ve eldiven düşünün. [Kıyafet önerilerimize](/kesfet/pamukkale-balon-turunda-ne-giyilir/) göz atın. Mevsimin buluşma saatini nasıl etkilediğini [sabah kaçta başlar rehberimizde](/kesfet/pamukkale-balon-turu-sabah-kacta-basliyor/) anlattık.",
         ],
       },
       {
@@ -180,13 +180,13 @@ export const TR_4: Record<string, ArticleBody> = {
   before: {
     slug: "pamukkale-balon-turu-oncesi-bilmeniz-gerekenler",
     title: "Pamukkale Balon Turu Öncesi Bilmeniz Gerekenler",
-    seoTitle: "Pamukkale Balon Turu Öncesi Bilmeniz Gerekenler | Kontrol Listesi",
+    seoTitle: "Pamukkale Balon Turu Öncesi Bilmeniz Gerekenler",
     description:
-      "Pamukkale balon turundan önce rezervasyon, hava durumu, kıyafet, sağlık, uçuş sabahı ve uçuş sonrası için kapsamlı kontrol listesi.",
+      "Pamukkale balon turu öncesi bilmeniz gerekenler: rezervasyon, hava durumu, kıyafet, sağlık, uçuş sabahı ve sonrası için kontrol listesi.",
     excerpt:
       "Rezervasyondan uçuş sonrasına kadar her aşama için pratik bir kontrol listesi ve ilgili rehberlerin bağlantıları.",
     intro: [
-      "Bu yazı, sitemizdeki diğer rehberleri tek bir kontrol listesinde toplar. Rezervasyon yapmadan önce, uçuştan bir gün önce ve uçuş sabahı göz atarak hiçbir ayrıntıyı atlamadığınızdan emin olabilirsiniz.",
+      "Pamukkale balon turu öncesi bilmeniz gerekenleri, sitemizdeki diğer rehberlerden derleyerek tek bir kontrol listesinde topladık. Rezervasyon yapmadan önce, uçuştan bir gün önce ve uçuş sabahı göz atarak hiçbir ayrıntıyı atlamadığınızdan emin olabilirsiniz.",
       "Her başlıkta konuyu daha ayrıntılı ele alan rehberimizin bağlantısını bulacaksınız. Fiyat, uçuş süresi ve yaş sınırı gibi bilgileri tarihinize göre netleştirip rezervasyon sırasında size yazılı olarak bildiriyoruz.",
     ],
     sections: [
@@ -219,7 +219,7 @@ export const TR_4: Record<string, ArticleBody> = {
         id: "onceki-gun",
         h: "Uçuştan Bir Gün Önce",
         list: [
-          "Alış saatini ve buluşma noktasını teyit edin — [sabah kaçta başlar?](/kesfet/pamukkale-balon-turu-sabah-kacta-basliyor/)",
+          "Buluşma saatini ve buluşma noktasını teyit edin — [sabah kaçta başlar?](/kesfet/pamukkale-balon-turu-sabah-kacta-basliyor/)",
           "Katmanlı kıyafetinizi ve kapalı ayakkabınızı hazırlayın — [ne giyilir?](/kesfet/pamukkale-balon-turunda-ne-giyilir/)",
           "Telefonunuzu ve kameranızı şarj edin, hafıza alanını kontrol edin",
           "Otel resepsiyonuna erken çıkacağınızı bildirin",
@@ -231,7 +231,7 @@ export const TR_4: Record<string, ArticleBody> = {
         id: "ucus-sabahi",
         h: "Uçuş Sabahı",
         p: [
-          "Alış noktasında zamanında hazır olun. Kalkış alanında balonun şişirilmesini izleyin; bu, deneyimin en etkileyici anlarından biridir. Bilgilendirmeyi dikkatle dinleyin, özellikle iniş pozisyonuna odaklanın ve pilotun talimatlarına uyun.",
+          "Buluşma noktasında zamanında hazır olun. Kalkış alanında balonun şişirilmesini izleyin; bu, deneyimin en etkileyici anlarından biridir. Bilgilendirmeyi dikkatle dinleyin, özellikle iniş pozisyonuna odaklanın ve pilotun talimatlarına uyun.",
           "Hava koşulları uygun değilse uçuş son dakikada ertelenebilir veya iptal edilebilir. Bu karar güvenliğiniz içindir. Uçuş sabahının genel akışını [uçuş bilgileri sayfamızda](/ucus-bilgileri/) anlattık.",
         ],
         list: [
@@ -243,7 +243,7 @@ export const TR_4: Record<string, ArticleBody> = {
         id: "havada",
         h: "Havada",
         p: [
-          "Fotoğraf çekmek için acele etmeyin; uçuşun ilk dakikalarında balon alçaktan ilerlerken travertenlerin ayrıntıları, yükseldikçe de Hierapolis ve çevredeki dağlar görünür hale gelir. Bir süre telefonu bırakıp sadece izlemek, anının tadını çıkarmanın en iyi yoludur.",
+          "Fotoğraf çekmek için acele etmeyin; uçuşun ilk dakikalarında balon alçaktan ilerlerken travertenlerin ayrıntıları, yükseldikçe de Hierapolis ve çevredeki dağlar görünür hâle gelir. Bir süre telefonu bırakıp sadece izlemek, anının tadını çıkarmanın en iyi yoludur.",
         ],
       },
       {
@@ -251,7 +251,7 @@ export const TR_4: Record<string, ArticleBody> = {
         h: "Uçuştan Sonra",
         p: [
           "Turdan sonra travertenleri ve Hierapolis antik kentini ziyaret edebilirsiniz. Sabahın erken saatleri, ören yerini daha sakin ve serin bir havada gezmenize olanak tanıyabilir. Travertenlerin üzerinde ayakkabıyla yürünmez; ayakkabılarınızı çıkarıp elinizde taşımanız gerekir.",
-          "Ören yeri giriş ücretleri ve çalışma saatleri resmi kaynaklarda yayınlanır ve değişebilir; ziyaretinizden önce güncel bilgiyi kontrol edin. Aynı gün yolculuk yapacaksanız uçuşun gecikebileceğini hesaba katarak programınızda pay bırakın.",
+          "Ören yeri giriş ücretleri ve çalışma saatleri resmi kaynaklarda yayımlanır ve değişebilir; ziyaretinizden önce güncel bilgiyi kontrol edin. Aynı gün yolculuk yapacaksanız uçuşun gecikebileceğini hesaba katarak programınızda pay bırakın.",
         ],
       },
       {
@@ -265,7 +265,7 @@ export const TR_4: Record<string, ArticleBody> = {
     takeaways: [
       "Turu Pamukkale'deki ilk sabahınıza planlayın.",
       "Fiyatı, kapsamı ve iptal koşullarını yazılı teyit ettirin.",
-      "Bir gün önce alış saatini teyit edin ve kıyafetinizi hazırlayın.",
+      "Bir gün önce buluşma saatini teyit edin ve kıyafetinizi hazırlayın.",
       "Uçuştan sonra travertenleri ve Hierapolis'i serin saatlerde gezin.",
     ],
   },

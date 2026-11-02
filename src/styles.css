@@ -1,29 +1,90 @@
 @import "tailwindcss" source(none);
 @source "../src";
-@import "tw-animate-css";
-/* Self-hosted fonts (no request to Google; latin + latin-ext cover Turkish). */
-@import "@fontsource/cormorant-garamond/latin-500.css";
-@import "@fontsource/cormorant-garamond/latin-ext-500.css";
-@import "@fontsource/cormorant-garamond/latin-600.css";
-@import "@fontsource/cormorant-garamond/latin-ext-600.css";
-@import "@fontsource/cormorant-garamond/latin-500-italic.css";
-@import "@fontsource/cormorant-garamond/latin-ext-500-italic.css";
-@import "@fontsource/cormorant-garamond/latin-700.css";
-@import "@fontsource/cormorant-garamond/latin-ext-700.css";
-@import "@fontsource/manrope/latin-400.css";
-@import "@fontsource/manrope/latin-ext-400.css";
-@import "@fontsource/manrope/latin-500.css";
-@import "@fontsource/manrope/latin-ext-500.css";
-@import "@fontsource/manrope/latin-600.css";
-@import "@fontsource/manrope/latin-ext-600.css";
-@import "@fontsource/manrope/latin-700.css";
-@import "@fontsource/manrope/latin-ext-700.css";
+/* shadcn/ui kit files are not used by any page; scanning them added ~60 KB of unused CSS. */
+@source not "./components/ui";
+/*
+ * Self-hosted fonts, one file per face (was 16 Fontsource files, ~250 KB): Google Fonts variable
+ * sources cut with fontTools to the weights we use (Manrope 400–700, Cormorant 500–700, Cormorant
+ * italic 500) and to Latin + Turkish characters (ğ ı İ ş Ş …), ~73 KB total. Characters outside
+ * the unicode-range fall back to the local fonts below. Rebuild: docs/fonts.md.
+ */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("./assets/fonts/manrope-var-tr.woff2") format("woff2");
+  unicode-range:
+    U+0020-007E, U+00A0, U+00A9, U+00AB, U+00B0, U+00B7, U+00BB, U+00C2, U+00C7, U+00C9, U+00CE,
+    U+00D6, U+00DB, U+00DC, U+00E2, U+00E7, U+00E9, U+00EE, U+00F6, U+00FB, U+00FC, U+011E-011F,
+    U+0130-0131, U+015E-015F, U+2013-2014, U+2018-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+20BA,
+    U+2122, U+2190-2193, U+2197, U+2264-2265;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  /* Static 600 instance (the only roman weight the site uses); the 500–700 range stops faux-bold. */
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("./assets/fonts/cormorant-garamond-600-tr.woff2") format("woff2");
+  unicode-range:
+    U+0020-007E, U+00A0, U+00A9, U+00AB, U+00B0, U+00B7, U+00BB, U+00C2, U+00C7, U+00C9, U+00CE,
+    U+00D6, U+00DB, U+00DC, U+00E2, U+00E7, U+00E9, U+00EE, U+00F6, U+00FB, U+00FC, U+011E-011F,
+    U+0130-0131, U+015E-015F, U+2013-2014, U+2018-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+20BA,
+    U+2122, U+2190-2193, U+2197, U+2264-2265;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/cormorant-garamond-italic-500-tr.woff2") format("woff2");
+  unicode-range:
+    U+0020-007E, U+00A0, U+00A9, U+00AB, U+00B0, U+00B7, U+00BB, U+00C2, U+00C7, U+00C9, U+00CE,
+    U+00D6, U+00DB, U+00DC, U+00E2, U+00E7, U+00E9, U+00EE, U+00F6, U+00FB, U+00FC, U+011E-011F,
+    U+0130-0131, U+015E-015F, U+2013-2014, U+2018-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+20BA,
+    U+2122, U+2190-2193, U+2197, U+2264-2265;
+}
+
+/*
+ * Metric-matched fallbacks: while the web fonts load (font-display: swap), text is drawn in a
+ * local Arial / Times face scaled to the web font's width and line metrics, so the swap does not
+ * re-wrap headings (layout shift). Values computed from the Fontsource files with fontTools.
+ */
+@font-face {
+  font-family: "Manrope Fallback";
+  src: local("Arial"), local("Liberation Sans"), local("Helvetica");
+  size-adjust: 102.9%;
+  ascent-override: 103.6%;
+  descent-override: 29.2%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Cormorant Fallback";
+  font-style: normal;
+  font-weight: 400 700;
+  src: local("Times New Roman Bold"), local("Liberation Serif Bold"), local("Times-Bold");
+  size-adjust: 91%;
+  ascent-override: 101.5%;
+  descent-override: 31.5%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Cormorant Fallback";
+  font-style: italic;
+  font-weight: 400 700;
+  src: local("Times New Roman Italic"), local("Liberation Serif Italic"), local("Times-Italic");
+  size-adjust: 88.4%;
+  ascent-override: 104.5%;
+  descent-override: 32.5%;
+  line-gap-override: 0%;
+}
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", "Cormorant Fallback", ui-serif, Georgia, serif;
+  --font-sans: "Manrope", "Manrope Fallback", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) + 2px);
@@ -103,9 +164,11 @@
   --input: oklch(0.85 0.02 80);
   --ring: var(--amber);
 
-  --shadow-soft: 0 1px 2px color-mix(in oklab, var(--navy) 6%, transparent),
+  --shadow-soft:
+    0 1px 2px color-mix(in oklab, var(--navy) 6%, transparent),
     0 18px 40px -22px color-mix(in oklab, var(--navy) 30%, transparent);
-  --shadow-lift: 0 2px 4px color-mix(in oklab, var(--navy) 6%, transparent),
+  --shadow-lift:
+    0 2px 4px color-mix(in oklab, var(--navy) 6%, transparent),
     0 30px 60px -28px color-mix(in oklab, var(--navy) 45%, transparent);
   --overlay-hero: linear-gradient(
     180deg,
@@ -173,8 +236,8 @@
     background: currentColor;
     opacity: 0.7;
   }
-  .on-dark & ,
-  .bg-navy & ,
+  .on-dark &,
+  .bg-navy &,
   .bg-navy-deep & {
     color: var(--champagne);
   }
@@ -354,7 +417,12 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(110deg, transparent 25%, rgb(255 255 255 / 0.5) 50%, transparent 75%);
+    background: linear-gradient(
+      110deg,
+      transparent 25%,
+      rgb(255 255 255 / 0.5) 50%,
+      transparent 75%
+    );
     transform: translateX(-130%);
     transition: transform 0.9s var(--ease-out);
     pointer-events: none;
@@ -460,10 +528,14 @@
   /* Text link with animated underline */
   .link-u {
     background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
-    transition: background-size 0.4s var(--ease-out), color 0.3s;
+    transition:
+      background-size 0.4s var(--ease-out),
+      color 0.3s;
   }
   .link-u:hover,
-  .link-u[data-status="active"] {
+  .link-u[data-status="active"],
+  a:hover > .link-u,
+  a[data-status="active"] > .link-u {
     background-size: 100% 1px;
   }
 
@@ -482,7 +554,9 @@
     background: #25d366;
     color: #fff;
     box-shadow: 0 14px 34px -10px rgb(18 140 85 / 0.75);
-    transition: transform 0.4s var(--ease-out), box-shadow 0.4s;
+    transition:
+      transform 0.4s var(--ease-out),
+      box-shadow 0.4s;
   }
   .wa-float::before,
   .wa-float::after {
@@ -519,7 +593,9 @@
     font-weight: 600;
     opacity: 0;
     transform: translateX(8px);
-    transition: opacity 0.3s, transform 0.4s var(--ease-out);
+    transition:
+      opacity 0.3s,
+      transform 0.4s var(--ease-out);
     pointer-events: none;
     box-shadow: var(--shadow-soft);
   }

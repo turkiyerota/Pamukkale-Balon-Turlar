@@ -91,11 +91,11 @@ export const EN_4: Record<string, ArticleBody> = {
     title: "Can Children Join a Pamukkale Balloon Tour?",
     seoTitle: "Can Children Join a Pamukkale Balloon Tour? A Family Guide",
     description:
-      "A family guide to balloon rides with children: age and height rules, preparing for the early start, what to watch during the flight and what to ask before booking.",
+      "Can children join a Pamukkale balloon tour? Minimum age 6, the height rule, the early start, what to watch in the air and what to ask before booking.",
     excerpt:
       "Age and height rules vary by operator — confirm them before you book, and prepare your child for the early start.",
     intro: [
-      "A balloon ride can be an unforgettable family memory. But the rules on children vary with the operator, the type of basket and conditions on the day. **With us, children can typically fly from age 6 with an adult; tell us their age and height and we'll confirm before you book.**",
+      "A Pamukkale balloon ride with children can be an unforgettable family memory. But the rules on children vary with the operator, the type of basket and conditions on the day. **With us, the minimum age is 6; children under 6 cannot fly. Children fly with an accompanying adult and must be tall enough to see over the basket edge comfortably. Pregnant guests cannot fly.**",
       "This guide explains why the rules exist, how to judge whether your child is ready, how to prepare for the early start and what to ask before booking.",
     ],
     sections: [
@@ -130,8 +130,8 @@ export const EN_4: Record<string, ArticleBody> = {
         id: "early-start",
         h: "Preparing for the Early Start",
         p: [
-          "Getting up before sunrise can be hard on children, especially in summer when pick-up can be in the dark. An early night, clothes laid out the evening before and a small snack for the morning all help.",
-          "Children get cold faster than adults. Pack an extra layer, a beanie and gloves for the dawn chill — see our [what to wear guide](/en/insights/what-to-wear-for-a-pamukkale-hot-air-balloon-ride/). How the season affects pick-up time is covered in [what time tours start](/en/insights/what-time-do-pamukkale-balloon-tours-start/).",
+          "Getting up before sunrise can be hard on children, especially in summer when the meeting time can be in the dark. An early night, clothes laid out the evening before and a small snack for the morning all help.",
+          "Children get cold faster than adults. Pack an extra layer, a beanie and gloves for the dawn chill — see our [what to wear guide](/en/insights/what-to-wear-for-a-pamukkale-hot-air-balloon-ride/). How the season affects the meeting time is covered in [what time tours start](/en/insights/what-time-do-pamukkale-balloon-tours-start/).",
         ],
       },
       {
@@ -184,7 +184,7 @@ export const EN_4: Record<string, ArticleBody> = {
     excerpt:
       "A practical checklist from booking to the end of your flight morning, with links to our detailed guides.",
     intro: [
-      "This article pulls our other guides together into one checklist. Look through it before you book, the day before you fly and on the morning itself to make sure nothing slips through the cracks.",
+      "Here's what to know before your Pamukkale balloon ride, in one checklist that pulls our other guides together. Look through it before you book, the day before you fly and on the morning itself to make sure nothing slips through the cracks.",
       "Each section links to the guide that covers the topic in more depth. Prices, flight times and age limits depend on your date and package, so we confirm them for you in writing when you book.",
     ],
     sections: [
@@ -217,7 +217,7 @@ export const EN_4: Record<string, ArticleBody> = {
         id: "day-before",
         h: "The Day Before",
         list: [
-          "Confirm pick-up time and meeting point — [what time tours start](/en/insights/what-time-do-pamukkale-balloon-tours-start/)",
+          "Confirm the meeting time and meeting point — [what time tours start](/en/insights/what-time-do-pamukkale-balloon-tours-start/)",
           "Lay out layers and closed shoes — [what to wear](/en/insights/what-to-wear-for-a-pamukkale-hot-air-balloon-ride/)",
           "Charge your phone and camera and check storage space",
           "Tell hotel reception you'll be leaving early",
@@ -229,7 +229,7 @@ export const EN_4: Record<string, ArticleBody> = {
         id: "flight-morning",
         h: "Flight Morning",
         p: [
-          "Be ready on time at the pick-up point. Watch the balloon being inflated at the launch site — it's one of the highlights. Listen carefully to the briefing, especially the landing position, and follow the pilot's instructions.",
+          "Be ready on time at the meeting point. Watch the balloon being inflated at the launch site — it's one of the highlights. Listen carefully to the briefing, especially the landing position, and follow the pilot's instructions.",
           "If the weather isn't suitable, the flight may be postponed or cancelled at the last minute. That decision is made for your safety. The flow of the morning is described on our [flight information page](/en/flight-information/).",
         ],
         list: [
@@ -263,7 +263,7 @@ export const EN_4: Record<string, ArticleBody> = {
     takeaways: [
       "Book your first morning in Pamukkale.",
       "Get the price, inclusions and cancellation terms in writing.",
-      "Confirm pick-up the day before and lay out your clothes.",
+      "Confirm the meeting time the day before and lay out your clothes.",
       "Visit the travertines and Hierapolis in the cool of the morning after your flight.",
     ],
   },

@@ -3,8 +3,22 @@ import { getArticles, getPage, totalPages, translatedSlug } from "@/content/arti
 import { alternatePath } from "@/lib/alternate";
 import { PAGES, articlePath } from "@/lib/paths";
 import { validate } from "@/components/pages/reservation";
+import { TR } from "@/content/articles-tr";
+import { EN } from "@/content/articles-en";
+import { SUMMARIES } from "@/content/article-index.gen";
+import { summarize } from "@/content/word-count";
+
+const BODIES = { tr: TR, en: EN };
 
 describe("articles", () => {
+  it("article-index.gen.ts is in sync with the bodies (else run node scripts/gen-article-index.mjs)", () => {
+    for (const l of ["tr", "en"] as const) {
+      const expected = Object.fromEntries(
+        Object.entries(BODIES[l]).map(([id, b]) => [id, summarize(b)]),
+      );
+      expect(SUMMARIES[l]).toEqual(expected);
+    }
+  });
   it("lists 9 articles on page 1 and 3 on page 2", () => {
     for (const l of ["tr", "en"] as const) {
       expect(getPage(l, 1)).toHaveLength(9);
@@ -49,7 +63,7 @@ describe("articles", () => {
     const bad: string[] = [];
     for (const l of ["tr", "en"] as const) {
       for (const a of getArticles(l)) {
-        const b = a.body;
+        const b = BODIES[l][a.id]!;
         const text = [
           ...b.intro,
           ...b.sections.flatMap((s) => [
@@ -76,12 +90,14 @@ describe("articles", () => {
     for (const l of ["tr", "en"] as const) {
       for (const a of getArticles(l)) {
         covers.add(a.cover);
-        expect(a.body.sections.length).toBeGreaterThanOrEqual(5);
-        expect(a.body.takeaways.length).toBeGreaterThanOrEqual(3);
+        expect(BODIES[l][a.id]!.sections.length).toBeGreaterThanOrEqual(5);
+        expect(BODIES[l][a.id]!.takeaways.length).toBeGreaterThanOrEqual(3);
         expect(a.wordCount).toBeGreaterThan(400);
         expect(a.coverAlt[l].length).toBeGreaterThan(10);
       }
     }
-    expect(covers.size).toBe(24);
+    // 12 articles x 2 languages, except "included": its EN cover showed a transfer minibus, and
+    // hotel transfer is NOT included (owner, Nov 2026), so both languages share the TR cover.
+    expect(covers.size).toBe(23);
   });
 });

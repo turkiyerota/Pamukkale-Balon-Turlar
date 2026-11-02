@@ -124,7 +124,7 @@ export function Breadcrumbs({ items }: { items: { name: string; path?: string | 
   const label = items[0]?.name === "Home" ? "Breadcrumb" : "Sayfa yolu";
   return (
     <nav aria-label={label} className="text-sm font-medium">
-      <ol className="inline-flex flex-wrap items-center gap-1.5 rounded-full border border-white/20 bg-navy-deep/45 px-4 py-1.5 text-on-dark/85 backdrop-blur-md">
+      <ol className="inline-flex flex-wrap items-center gap-1.5 rounded-full border border-white/20 bg-navy-deep/45 px-4 text-on-dark/85 backdrop-blur-md">
         {items.map((it, i) => (
           <li key={i} className="flex items-center gap-1.5">
             {i > 0 && (
@@ -133,7 +133,10 @@ export function Breadcrumbs({ items }: { items: { name: string; path?: string | 
               </span>
             )}
             {it.path ? (
-              <L href={it.path} className="hover:text-on-dark underline-offset-4 hover:underline">
+              <L
+                href={it.path}
+                className="inline-flex min-h-11 min-w-11 items-center justify-center underline-offset-4 hover:text-on-dark hover:underline"
+              >
                 {it.name}
               </L>
             ) : (

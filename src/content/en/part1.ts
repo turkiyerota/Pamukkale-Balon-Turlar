@@ -10,7 +10,7 @@ export const EN_1: Record<string, ArticleBody> = {
     excerpt:
       "Pamukkale balloon prices change with the date, season and group size. This guide explains what moves the price and how to get an accurate quote.",
     intro: [
-      "Price is usually the first question anyone asks about a Pamukkale balloon ride. So here's a straight answer: **our prices start from 6,666 TL, and we confirm the exact price for your date in writing.** That's because prices can vary with the date, the season, the size of your group, the type of flight and what's bundled into the package. A neat number in a blog post is reassuring, but if it doesn't apply to your date it just gives you a false baseline.",
+      "Pamukkale hot air balloon prices for 2026 are usually the first thing anyone asks about. So here's a straight answer: **our prices start from 6,666 TL, and we confirm the exact price for your date in writing.** That's because prices can vary with the date, the season, the size of your group, the type of flight and what's bundled into the package. A neat number in a blog post is reassuring, but if it doesn't apply to your date it just gives you a false baseline.",
       "This guide shows you how to read the figures you'll find online, how to compare two quotes like-for-like, and which questions to ask before you pay. For a current quote, see our [prices page](/en/prices/) or send your dates through the [reservation request form](/en/reservation/).",
     ],
     sections: [
@@ -31,7 +31,7 @@ export const EN_1: Record<string, ArticleBody> = {
         list: [
           "**Season and demand:** Turkish public holidays, school breaks, summer and weekends are the busiest times.",
           "**Type of flight:** A standard flight, where several guests share a basket, is priced differently from a private basket for your group only.",
-          "**Transfers:** Whether hotel pick-up and drop-off are included matters, especially if you're staying in Karahayıt or central Denizli.",
+          "**Transfers:** Some quotes include hotel transfers and some don't. **Hotel transfer is not included in our prices**; ask us on WhatsApp about getting to the meeting point.",
           "**Currency:** Quotes may be given in Turkish lira, euros or US dollars, and the exchange rate on the day you pay can change the total.",
           "**Booking window:** At peak times, last-minute availability can be limited.",
           "**Extras:** Photos, video and special celebrations are often charged separately.",
@@ -104,14 +104,14 @@ export const EN_1: Record<string, ArticleBody> = {
   start: {
     slug: "what-time-do-pamukkale-balloon-tours-start",
     title: "What Time Do Pamukkale Balloon Tours Start?",
-    seoTitle: "What Time Do Pamukkale Balloon Tours Start? Sunrise Explained",
+    seoTitle: "What Time Do Pamukkale Balloon Tours Start? Sunrise Guide",
     description:
-      "Why Pamukkale balloon flights are timed around sunrise, how much the pick-up time shifts through the year, and what to confirm before your flight.",
+      "What time do Pamukkale balloon tours start? Why flights are timed around sunrise, how the meeting time shifts through the year, and what to confirm.",
     excerpt:
-      "Balloon tours are planned around sunrise, so the pick-up time can differ by more than two hours between summer and winter.",
+      "Balloon tours are planned around sunrise, so the meeting time can differ by more than two hours between summer and winter.",
     intro: [
-      "Balloon flights take off early, close to sunrise. That isn't a Pamukkale quirk — hot air balloons fly at dawn almost everywhere in the world, mainly because the early-morning air tends to be calmer and cooler.",
-      "So there's no single answer to “what time does it start?”. In Denizli, sunrise in late June and late December is more than two hours apart, and your pick-up time moves with it. Rather than quote a fixed time, this guide explains how the time is set and how to get the right one for your date.",
+      "What time do Pamukkale balloon tours start? Early, close to sunrise. That isn't a Pamukkale quirk — hot air balloons fly at dawn almost everywhere in the world, mainly because the early-morning air tends to be calmer and cooler.",
+      "So there's no single answer to “what time does it start?”. In Denizli, sunrise in late June and late December is more than two hours apart, and your meeting time moves with it. Rather than quote a fixed time, this guide explains how the time is set and how to get the right one for your date.",
     ],
     sections: [
       {
@@ -127,7 +127,7 @@ export const EN_1: Record<string, ArticleBody> = {
         h: "The Time Changes With the Season",
         p: [
           "Türkiye uses the same time zone (UTC+3) all year and doesn't switch to summer time, so sunrise moves a lot across the year. Based on astronomical calculations, sunrise in Denizli is around 05:45 in late June and after 08:00 in late December. These are approximate — check an up-to-date sunrise table for your exact date.",
-          "Pick-up is set before sunrise, allowing for the transfer and preparation time. In summer that can mean leaving your hotel in the dark. In winter you'll get a little more sleep, but the chance of a weather cancellation can be higher. We compare the seasons in our [best time guide](/en/insights/best-time-for-a-pamukkale-balloon-ride/).",
+          "The meeting time is set before sunrise, allowing for preparation time. In summer that can mean leaving your hotel in the dark. In winter you'll get a little more sleep, but the chance of a weather cancellation can be higher. We compare the seasons in our [best time guide](/en/insights/best-time-for-a-pamukkale-balloon-ride/).",
         ],
       },
       {
@@ -137,12 +137,12 @@ export const EN_1: Record<string, ArticleBody> = {
           "The exact order and timings vary by operator, but a balloon morning usually looks like this:",
         ],
         list: [
-          "Hotel pick-up and transfer to the launch site",
+          "Meeting at the meeting point and heading to the launch site",
           "A short wait at the launch site and a safety briefing",
           "Inflation — first with cold air from a fan, then hot air from the burner",
           "Boarding the basket and lifting off towards the sunrise",
           "The flight, landing and packing away the balloon",
-          "Transfer back to your hotel",
+          "Return to the meeting point",
         ],
         sub: [
           {
@@ -155,23 +155,23 @@ export const EN_1: Record<string, ArticleBody> = {
       },
       {
         id: "pick-up",
-        h: "Hotel Pick-Up and Getting Ready",
+        h: "Meeting Point and Getting Ready",
         p: [
-          "If transfers are included, you'll usually be told your pick-up time the day before. Transfer times differ between Pamukkale village, Karahayıt and central Denizli, so your pick-up depends on where you're staying. Confirm the time, the meeting point and a phone number you can reach early in the morning.",
+          "We send the exact meeting time and meeting point the day before. Hotel transfer is not included, so if you're staying in Pamukkale village, Karahayıt or central Denizli, plan how long it takes you to reach the meeting point. Give us a phone number we can reach early in the morning (ideally on WhatsApp).",
           "It's also worth telling your hotel reception you'll be leaving early — some hotels can prepare a breakfast box or make sure the door is open. You'll find the details of the morning on our [flight information page](/en/flight-information/).",
         ],
         list: [
-          "Set your alarm at least 30 minutes before pick-up",
+          "Set your alarm with your travel time to the meeting point in mind",
           "Lay out your clothes the night before — see [what to wear](/en/insights/what-to-wear-for-a-pamukkale-hot-air-balloon-ride/)",
           "Charge your phone and bring ID",
-          "Be in the lobby a few minutes before pick-up",
+          "Be at the meeting point a few minutes before the set time",
         ],
       },
       {
         id: "weather",
         h: "What If the Weather Isn't Right?",
         p: [
-          "The final go/no-go decision is usually made early in the morning, using the latest weather data. Occasionally a flight is postponed or cancelled even after you've been picked up. Frustrating as it is, that's a normal part of a safety-first process.",
+          "The final go/no-go decision is usually made early in the morning, using the latest weather data. Occasionally a flight is postponed or cancelled even after you've arrived at the meeting point. Frustrating as it is, that's a normal part of a safety-first process.",
           "If you have more than one morning in Pamukkale, booking the first one leaves you a second chance. See our [cancellation guide](/en/insights/what-happens-if-a-pamukkale-balloon-tour-is-cancelled/) for the usual options.",
         ],
       },
@@ -179,20 +179,20 @@ export const EN_1: Record<string, ArticleBody> = {
         id: "confirm",
         h: "What to Confirm When You Book",
         list: [
-          "When, and through which channel (phone, WhatsApp, email), you'll get your pick-up time",
-          "Whether your hotel is inside the transfer area",
+          "When, and through which channel (phone, WhatsApp, email), you'll get your meeting time",
+          "Where the meeting point is and how you'll get there",
           "How and when you'll be told about a weather postponement",
-          "Roughly when you'll be back at your hotel",
+          "Roughly when you'll be back at the meeting point",
         ],
         p: [
-          "Add these questions to your [reservation request](/en/reservation/) or ask through our [contact page](/en/contact/). **Pick-up follows sunrise, so we give you the time for your date when you book and the exact time the day before.**",
+          "Add these questions to your [reservation request](/en/reservation/) or ask through our [contact page](/en/contact/). **The meeting time follows sunrise, so we give you the time for your date when you book and the exact time the day before.**",
         ],
       },
     ],
     takeaways: [
       "Flights are timed around sunrise, so there's no fixed start time.",
       "Sunrise in Denizli is before 06:00 in summer and around or after 08:00 in winter.",
-      "Your pick-up time depends on your date and hotel — confirm it the day before.",
+      "Your meeting time depends on your date — confirm it the day before.",
       "If you have more than one morning, book the first one.",
     ],
   },
@@ -202,11 +202,11 @@ export const EN_1: Record<string, ArticleBody> = {
     title: "How Long Does a Pamukkale Balloon Ride Last?",
     seoTitle: "How Long Is a Pamukkale Balloon Ride? Flight vs Total Time",
     description:
-      "The difference between time in the air and the length of the whole morning on a Pamukkale balloon ride, why flight time varies, and what to ask before booking.",
+      "How long does a Pamukkale balloon ride last? Time in the air vs the whole morning, why flight time varies, and what to ask before booking.",
     excerpt:
-      "Time in the air and the time from hotel pick-up to drop-off are two very different numbers. Ask about both.",
+      "Time in the air and the time from meeting to return are two very different numbers. Ask about both.",
     intro: [
-      "“How long is the balloon ride?” really has two answers: the time you spend in the air, and the length of the whole morning. Keeping them apart makes it much easier to compare offers and plan the rest of your day.",
+      "“How long is a Pamukkale balloon ride?” really has two answers: the time you spend in the air, and the length of the whole morning. Keeping them apart makes it much easier to compare offers and plan the rest of your day.",
       "Flight time can vary by operator, by package and with the wind on the day. According to information published by operators in the area, time in the air is usually 45 minutes to an hour. **With us, time in the air is typically 45–60 minutes, and the whole experience about 2.5–3 hours.** This guide explains what affects the timing and what to ask.",
     ],
     sections: [
@@ -214,7 +214,7 @@ export const EN_1: Record<string, ArticleBody> = {
         id: "two-durations",
         h: "Two Different Numbers: Flight Time and Total Time",
         p: [
-          "Flight time runs from the moment the basket leaves the ground to the moment it lands. Total time runs from hotel pick-up to drop-off, and can be several times longer than the flight itself.",
+          "Flight time runs from the moment the basket leaves the ground to the moment it lands. Total time runs from the moment you meet us to your return to the meeting point, and can be several times longer than the flight itself.",
           "When you see a duration online, check which one it means. A phrase like “a half-day tour” probably includes transfers; “an X-minute flight” refers to time in the air only. Mixing them up is the most common reason people are surprised on the day.",
         ],
       },
@@ -225,12 +225,12 @@ export const EN_1: Record<string, ArticleBody> = {
           "The total experience usually covers the stages below. How long each one takes depends on where you're staying, the conditions that morning and how the operator works:",
         ],
         list: [
-          "Hotel pick-up and transfer to the launch site",
+          "Meeting at the meeting point and heading to the launch site",
           "Briefing and watching the balloon being inflated",
           "Boarding and the flight itself",
           "Landing, deflating and packing up the balloon",
           "With some operators, a short post-flight celebration",
-          "Transfer back to your hotel",
+          "Return to the meeting point",
         ],
       },
       {
@@ -270,9 +270,9 @@ export const EN_1: Record<string, ArticleBody> = {
         h: "Questions to Ask Before Booking",
         list: [
           "Roughly how long is the time in the air?",
-          "How long is the whole morning, from pick-up to drop-off?",
+          "How long is the whole morning, from meeting to return?",
           "If wind shortens the flight, does anything change in the price or service?",
-          "Around what time will I be back at my hotel?",
+          "Around what time will I be back at the meeting point?",
         ],
         p: [
           "Add these to your [reservation request](/en/reservation/). The general flow of the morning is on our [flight information page](/en/flight-information/).",

@@ -6,11 +6,11 @@ export const TR_2: Record<string, ArticleBody> = {
     title: "Pamukkale Balon Turunda Ne Giyilir?",
     seoTitle: "Pamukkale Balon Turunda Ne Giyilir? Mevsime Göre Kıyafet",
     description:
-      "Sabah serinliği, sepet içinde rahat hareket ve iniş alanı için Pamukkale balon turuna uygun kıyafet, ayakkabı ve mevsime göre öneriler.",
+      "Pamukkale balon turunda ne giyilir? Sabah serinliği, sepet ve iniş alanı için uygun kıyafet, ayakkabı ve mevsime göre öneriler.",
     excerpt:
       "Sabahın erken saatleri serin olabilir. Kat kat giyinmek ve kapalı, kaymaz ayakkabı seçmek en pratik çözümdür.",
     intro: [
-      "Balon turu sabahın en serin saatlerinde başlar. Gün içinde 30 dereceyi aşan bir yaz gününde bile, gün doğumundan önce kalkış alanında beklerken üşüyebilirsiniz. Öte yandan sepette brülörün yakınında durmak, başınızın üstünde kısa süreli bir sıcaklık hissi yaratabilir. Doğru kıyafet, bu iki uç arasında rahat kalmanızı sağlar.",
+      "Pamukkale balon turunda ne giyilir? İlk ipucu saatte: tur sabahın en serin saatlerinde başlar. Gün içinde 30 dereceyi aşan bir yaz gününde bile, gün doğumundan önce kalkış alanında beklerken üşüyebilirsiniz. Öte yandan sepette brülörün yakınında durmak, başınızın üstünde kısa süreli bir sıcaklık hissi yaratabilir. Doğru kıyafet, bu iki uç arasında rahat kalmanızı sağlar.",
       "Bu rehberde katmanlı giyinmenin mantığını, ayakkabı seçimini, mevsime göre önerileri ve yanınıza neleri almanız gerektiğini anlatıyoruz. Özel bir kıyafet kuralı olup olmadığını ise rezervasyon sırasında sormanızı öneririz.",
     ],
     sections: [
@@ -116,12 +116,12 @@ export const TR_2: Record<string, ArticleBody> = {
     title: "Pamukkale Balon Turu İptal Edilirse Ne Olur?",
     seoTitle: "Pamukkale Balon Turu İptal Olursa Ne Olur? İade ve Erteleme",
     description:
-      "Hava koşulları nedeniyle iptal edilen balon turlarında iade, tarih değişikliği, kendi iptalleriniz ve rezervasyon öncesinde sormanız gereken sorular.",
+      "Pamukkale balon turu iptal edilirse ne olur? Hava nedeniyle iptalde ücretsiz yeni tarih veya tam iade, 24 saat kuralı ve rezervasyon öncesi sorular.",
     excerpt:
       "Balon uçuşları hava koşullarına bağlıdır. İptal durumunda ne olacağını önceden ve yazılı olarak öğrenin.",
     intro: [
-      "Balon uçuşları rüzgâr, görüş mesafesi ve yağış gibi hava koşullarına doğrudan bağlıdır. Uçuşun güvenli olmayacağı değerlendirilirse tur son dakikada, hatta siz kalkış alanına ulaştıktan sonra bile iptal edilebilir. Bu, balon turu planlamanın kaçınılmaz bir parçasıdır.",
-      "**Koşullarımız kısaca şöyle: Hava veya güvenlik nedeniyle iptal edilen uçuşlarda ücretsiz olarak başka bir güne geçebilir ya da ödemenizin tamamını geri alabilirsiniz. Kendi iptallerinizde uçuştan 24 saat öncesine kadar ücret alınmaz.** Bu yazı, iptal kararlarının nasıl verildiğini, genel olarak hangi seçeneklerle karşılaşabileceğinizi ve seyahatinizi nasıl esnek planlayacağınızı anlatıyor.",
+      "Pamukkale balon turu uçuşları rüzgâr, görüş mesafesi ve yağış gibi hava koşullarına doğrudan bağlıdır. Uçuşun güvenli olmayacağı değerlendirilirse tur son dakikada, hatta siz kalkış alanına ulaştıktan sonra bile iptal edilebilir. Bu, balon turu planlamanın kaçınılmaz bir parçasıdır.",
+      "**İptal koşullarımız nettir: Uçuş, hava koşulları veya güvenlik nedeniyle pilot ya da SHGM kararıyla iptal edilirse ücretsiz olarak yeni bir tarih seçebilir veya ödemenizin tamamını geri alabilirsiniz. Uçuştan 24 saat öncesine kadar yapılan iptal ve tarih değişiklikleri ücretsizdir; uçuşa 24 saatten az kala yapılan iptallerde ve uçuşa katılmama durumunda ücret iadesi yapılmaz.** Bu yazı, iptal kararlarının nasıl verildiğini, iptal durumunda neler olduğunu ve seyahatinizi nasıl esnek planlayacağınızı anlatıyor.",
     ],
     sections: [
       {
@@ -147,15 +147,13 @@ export const TR_2: Record<string, ArticleBody> = {
       },
       {
         id: "secenekler",
-        h: "İptal Durumunda Genel Seçenekler",
+        h: "Hava Nedeniyle İptalde Seçenekleriniz",
         p: [
-          "Koşullar operatöre göre değişmekle birlikte, hava nedeniyle yapılan iptallerde sık karşılaşılan seçenekler şunlardır:",
+          "Uçuşunuz hava koşulları veya güvenlik nedeniyle pilot ya da SHGM kararıyla iptal edilirse seçim sizindir:",
         ],
         list: [
-          "Bir sonraki uygun sabaha erteleme",
-          "Ödenen ücretin iadesi",
-          "Kısmi iade (örneğin transfer gibi verilmiş hizmetler düşülerek)",
-          "Daha ileri bir tarihe açık rezervasyon",
+          "Ücretsiz olarak yeni bir tarih seçmek (çoğu zaman bir sonraki uygun sabah)",
+          "Ödediğiniz ücretin tamamını geri almak",
         ],
         sub: [
           {
@@ -170,7 +168,7 @@ export const TR_2: Record<string, ArticleBody> = {
         id: "sizin-iptaliniz",
         h: "Siz İptal Etmek İsterseniz",
         p: [
-          "Plan değişiklikleri, hastalık veya ulaşım aksaklıkları nedeniyle turu sizin iptal etmeniz gerekebilir. Bu durumda geçerli olan koşullar, hava nedeniyle yapılan iptallerden farklı olabilir. Kaç saat veya gün önceden haber vermeniz gerektiğini ve bu sürenin altında ne olacağını önceden sorun.",
+          "Plan değişiklikleri, hastalık veya ulaşım aksaklıkları nedeniyle turu sizin iptal etmeniz gerekebilir. **Uçuştan 24 saat öncesine kadar yapılan iptal ve tarih değişiklikleri ücretsizdir. Uçuşa 24 saatten az kala yapılan iptallerde ve uçuşa katılmama durumunda ücret iadesi yapılmaz.** Bu yüzden planınız değişirse bize en kısa sürede WhatsApp'tan yazın.",
           "Seyahat sigortanız varsa, poliçenizin bu tür aktiviteleri ve iptalleri kapsayıp kapsamadığını da kontrol etmek isteyebilirsiniz.",
         ],
       },
@@ -186,17 +184,16 @@ export const TR_2: Record<string, ArticleBody> = {
         id: "bilgilendirme",
         h: "İptal Haberi Size Nasıl Ulaşır?",
         p: [
-          "İptal kararı alış saatinden önce verilirse, size genellikle telefon veya mesajla haber verilir. Bu yüzden rezervasyon sırasında sabah ulaşılabilecek bir numara (tercihen WhatsApp kullanan bir numara) vermeniz önemlidir. Telefonunuzu gece sessize alıyorsanız, bu numarayı istisna olarak ayarlamayı düşünebilirsiniz.",
+          "İptal kararı buluşma saatinden önce verilirse size telefonla veya WhatsApp'tan haber veririz. Bu yüzden rezervasyon sırasında sabah ulaşılabilecek bir numara (tercihen WhatsApp kullanan bir numara) vermeniz önemlidir. Telefonunuzu gece sessize alıyorsanız, bu numarayı istisna olarak ayarlamayı düşünebilirsiniz.",
         ],
       },
       {
         id: "sorulacaklar",
         h: "Rezervasyon Öncesi Sorulacaklar",
         list: [
-          "Hava nedeniyle iptalde iade mi, erteleme mi yapılıyor? Seçim bende mi?",
           "İade hangi yöntemle ve ne kadar sürede yapılıyor?",
-          "Ben iptal edersem kaç saat önceden haber vermeliyim, hangi koşullar geçerli?",
           "İptal haberini hangi kanaldan ve ne zaman alırım?",
+          "Yeni tarih için hangi sabahlar uygun?",
         ],
         p: [
           "Yanıtları yazılı olarak alın. Fiyatla ilgili genel değerlendirme için [fiyat rehberimize](/kesfet/pamukkale-balon-turu-fiyatlari-2026/), rezervasyon adımları için [rezervasyon rehberimize](/kesfet/pamukkale-balon-turu-rezervasyonu-nasil-yapilir/) bakabilirsiniz.",
@@ -205,8 +202,8 @@ export const TR_2: Record<string, ArticleBody> = {
     ],
     takeaways: [
       "İptal kararları güvenlik içindir ve son dakikada verilebilir.",
-      "Hava nedeniyle iptal ile sizin iptaliniz farklı koşullara tabi olabilir.",
-      "İade ve erteleme koşullarını rezervasyondan önce yazılı teyit edin.",
+      "Hava veya güvenlik nedeniyle iptalde ücretsiz yeni tarih ya da tam iade hakkınız vardır.",
+      "Uçuştan 24 saat öncesine kadar iptal ücretsizdir; daha geç iptallerde ve uçuşa katılmamada iade yapılmaz.",
       "Mümkünse turu konaklamanızın ilk sabahına planlayın.",
     ],
   },
@@ -216,11 +213,11 @@ export const TR_2: Record<string, ArticleBody> = {
     title: "Pamukkale Balon Turu Güvenli mi?",
     seoTitle: "Pamukkale Balon Turu Güvenli mi? Bilinçli Seçim Rehberi",
     description:
-      "Balon turu seçerken güvenlik açısından neleri sorabileceğiniz, uçuş öncesi bilgilendirmenin ve iniş pozisyonunun önemi, sağlık durumuyla ilgili dikkat edilecekler.",
+      "Pamukkale balon turu güvenli mi? Uçuşların nasıl düzenlendiği, operatöre sorulacaklar, uçuş öncesi bilgilendirme, iniş pozisyonu ve sağlık kuralları.",
     excerpt:
       "Garanti vermek yerine, bilinçli bir seçim yapmanız için sormanız gereken soruları ve uçuş sırasında size düşenleri derledik.",
     intro: [
-      "Hiçbir hava aktivitesi için “sıfır risk” demek doğru değildir. Bu yüzden bu yazıda güvenlik garantisi vermiyoruz. Bunun yerine, sıcak hava balonu uçuşlarının nasıl düzenlendiğini, bir operatör seçerken neleri sorabileceğinizi ve uçuş sırasında size düşen sorumlulukları anlatıyoruz.",
+      "“Pamukkale balon turu güvenli mi?” sorusuna dürüst yanıtla başlayalım: hiçbir hava aktivitesinin risksiz olduğunu söylemek doğru olmaz. Bu yüzden bu yazıda güvenlik garantisi vermiyoruz. Bunun yerine, sıcak hava balonu uçuşlarının nasıl düzenlendiğini, bir operatör seçerken neleri sorabileceğinizi ve uçuş sırasında size düşen sorumlulukları anlatıyoruz.",
       "Kısa cevap şudur: Balon uçuşları kurallara bağlı, denetlenen ve hava koşullarına göre kararı verilen faaliyetlerdir. Riskleri azaltan en önemli etkenler; deneyimli bir ekip, hava kararlarına saygı ve misafirin talimatlara uymasıdır.",
     ],
     sections: [
@@ -284,7 +281,7 @@ export const TR_2: Record<string, ArticleBody> = {
         id: "saglik",
         h: "Sağlık Durumu ve Uygunluk",
         p: [
-          "Balona binmek ve iniş sırasında pozisyon almak belirli bir fiziksel hareket gerektirir. Hamilelik, yakın zamanda geçirilmiş ameliyat, sırt, boyun veya diz sorunları, kalp rahatsızlıkları ya da yükseklik korkusu gibi durumlarda katılımın uygun olup olmadığını önceden sorun ve gerekirse doktorunuza danışın.",
+          "Balona binmek ve iniş sırasında pozisyon almak belirli bir fiziksel hareket gerektirir. **Hamile misafirler uçuşa alınmaz. Ciddi kalp, sırt veya boyun rahatsızlığı olan misafirler, ancak doktor onayını uçuştan önce bize iletmeleri hâlinde uçabilir.** Yakın zamanda ameliyat geçirdiyseniz, diz sorunlarınız veya yükseklik korkunuz varsa rezervasyondan önce bize danışın.",
           "Hareket kısıtlılığınız varsa bunu rezervasyon sırasında belirtmeniz, ekibin sizin için en uygun çözümü değerlendirmesine yardımcı olur. Çocuklarla ilgili konular için [çocuklar rehberimize](/kesfet/pamukkale-balon-turuna-cocuklar-katilabilir-mi/) bakın.",
         ],
       },
@@ -292,12 +289,12 @@ export const TR_2: Record<string, ArticleBody> = {
         id: "iptal",
         h: "İptal Kararlarına Güvenin",
         p: [
-          "Hava koşulları uygun görülmediğinde verilen iptal kararı, güvenlik sürecinin en görünür parçasıdır. Hayal kırıcı olsa da, bu kararları veren bir ekiple uçmak istersiniz. [İptal durumunda neler olacağını](/kesfet/pamukkale-balon-turu-iptal-edilirse-ne-olur/) önceden öğrenin; uçuş sabahının genel akışı için [uçuş bilgileri sayfamızı](/ucus-bilgileri/) okuyun.",
+          "Hava koşulları uygun görülmediğinde verilen iptal kararı, güvenlik sürecinin en görünür parçasıdır. Hayal kırıklığı yaratsa da, bu kararları veren bir ekiple uçmak istersiniz. [İptal durumunda neler olacağını](/kesfet/pamukkale-balon-turu-iptal-edilirse-ne-olur/) önceden öğrenin; uçuş sabahının genel akışı için [uçuş bilgileri sayfamızı](/ucus-bilgileri/) okuyun.",
         ],
       },
     ],
     takeaways: [
-      "Hiçbir hava aktivitesi sıfır riskli değildir; “garanti” iddialarına temkinli yaklaşın.",
+      "Hiçbir hava aktivitesinin risksiz olduğunu söylemek doğru olmaz; “garanti” iddialarına temkinli yaklaşın.",
       "İzin, pilot, bakım ve sigorta bilgilerini sormak olağandır.",
       "Bilgilendirmeyi dinleyin ve pilotun talimatlarına uyun.",
       "Sağlık durumunuzu ve hareket kısıtlılıklarınızı önceden paylaşın.",

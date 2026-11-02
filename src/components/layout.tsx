@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import { useRouterState } from "@tanstack/react-router";
 import { SITE, telLink, mailLink, whatsappLink, WA_CONTEXT, type Lang } from "@/config/site";
-import { PAGES, PAGE_LABELS, langFromPath, normalize, type PageKey } from "@/lib/paths";
+import {
+  PAGES,
+  PAGE_LABELS,
+  articlePath,
+  langFromPath,
+  normalize,
+  type PageKey,
+} from "@/lib/paths";
+import { getArticles } from "@/content/articles";
 import { alternatePath } from "@/lib/alternate";
 import { L, btn, Arrow, WhatsAppIcon } from "./ui-kit";
 
@@ -62,7 +70,7 @@ function LangSwitch({ className = "", light = false }: { className?: string; lig
     >
       <span
         aria-current="true"
-        className={`rounded-full px-2.5 py-1 ${light ? "bg-white text-navy" : "bg-navy text-on-dark"}`}
+        className={`inline-flex h-11 min-w-11 items-center justify-center rounded-full px-3 ${light ? "bg-white text-navy" : "bg-navy text-on-dark"}`}
       >
         {lang.toUpperCase()}
       </span>
@@ -71,7 +79,7 @@ function LangSwitch({ className = "", light = false }: { className?: string; lig
         hrefLang={target}
         lang={target}
         aria-label={target === "en" ? "English" : "Türkçe"}
-        className={`rounded-full px-2.5 py-1 transition-colors ${light ? "text-white hover:bg-white/15" : "hover:bg-navy/10"}`}
+        className={`inline-flex h-11 min-w-11 items-center justify-center rounded-full px-3 transition-colors ${light ? "text-white hover:bg-white/15" : "hover:bg-navy/10"}`}
       >
         {target.toUpperCase()}
       </L>
@@ -110,6 +118,25 @@ export function Header() {
   // Transparent over the home hero until the user scrolls (or opens the menu).
   const overHero = isHome && !scrolled && !open;
 
+  // Only the visible logo variant is requested during page load; the other one (needed for the
+  // scroll/menu fade) is added on the first interaction or a few seconds after load.
+  const [bothLogos, setBothLogos] = useState(false);
+  useEffect(() => {
+    if (bothLogos) return;
+    const show = () => setBothLogos(true);
+    const id = window.setTimeout(show, 4000);
+    const opts = { once: true, passive: true } as const;
+    window.addEventListener("scroll", show, opts);
+    window.addEventListener("pointerdown", show, opts);
+    window.addEventListener("keydown", show, opts);
+    return () => {
+      window.clearTimeout(id);
+      window.removeEventListener("scroll", show);
+      window.removeEventListener("pointerdown", show);
+      window.removeEventListener("keydown", show);
+    };
+  }, [bothLogos]);
+
   return (
     <>
       <header
@@ -125,27 +152,40 @@ export function Header() {
             aria-label={tr ? `${SITE.name} – Ana sayfa` : `${SITE.nameEn} – Home`}
             className="relative shrink-0"
           >
-            <img
-              src={SITE.logo.onLight}
-              alt=""
-              width={480}
-              height={242}
-              className={`h-11 w-auto transition-opacity duration-500 md:h-12 ${overHero ? "opacity-0" : "opacity-100"}`}
-            />
-            <img
-              src={SITE.logo.onDark}
-              alt=""
-              width={480}
-              height={250}
-              className={`absolute inset-0 h-11 w-auto transition-opacity duration-500 md:h-12 ${overHero ? "opacity-100" : "opacity-0"}`}
-            />
+            <span className="relative block h-11 w-[88px] md:h-12 md:w-24">
+              {(!overHero || bothLogos) && (
+                <img
+                  src={SITE.logo.onLightSm}
+                  alt=""
+                  width={260}
+                  height={131}
+                  fetchPriority="low"
+                  className={`absolute left-0 top-0 h-full w-auto transition-opacity duration-500 ${overHero ? "opacity-0" : "opacity-100"}`}
+                />
+              )}
+              {(overHero || bothLogos) && (
+                <img
+                  src={SITE.logo.onDarkSm}
+                  alt=""
+                  width={260}
+                  height={136}
+                  fetchPriority="low"
+                  className={`absolute left-0 top-0 h-full w-auto transition-opacity duration-500 ${overHero ? "opacity-100" : "opacity-0"}`}
+                />
+              )}
+            </span>
           </L>
           <nav aria-label={tr ? "Ana menü" : "Main menu"} className="hidden xl:block">
             <ul className="flex items-center gap-7 text-[0.95rem] font-semibold">
               {NAV.map((k) => (
                 <li key={k}>
-                  <L href={PAGES[k][lang]} className="link-u py-1.5">
-                    {k === "faq" && lang === "tr" ? "Sık Sorulanlar" : PAGE_LABELS[k][lang]}
+                  <L
+                    href={PAGES[k][lang]}
+                    className="inline-flex min-h-11 min-w-11 items-center justify-center"
+                  >
+                    <span className="link-u py-1">
+                      {k === "faq" && lang === "tr" ? "Sık Sorulanlar" : PAGE_LABELS[k][lang]}
+                    </span>
                   </L>
                 </li>
               ))}
@@ -305,6 +345,46 @@ export function FloatingContact() {
   );
 }
 
+/** Keyword-rich anchor text for the footer's HTML-sitemap links (see docs/keyword-mapping.md). */
+const FOOTER_LINKS: Record<"tour" | "company", { key: PageKey; label: Record<Lang, string> }[]> = {
+  tour: [
+    { key: "home", label: { tr: "Pamukkale balon turu", en: "Pamukkale hot air balloon rides" } },
+    {
+      key: "prices",
+      label: { tr: "Pamukkale balon turu fiyatları", en: "Pamukkale hot air balloon prices" },
+    },
+    {
+      key: "reservation",
+      label: { tr: "Pamukkale balon turu rezervasyonu", en: "Book a Pamukkale balloon ride" },
+    },
+    {
+      key: "flight",
+      label: { tr: "Pamukkale balon uçuşu bilgileri", en: "Pamukkale balloon flight information" },
+    },
+    {
+      key: "faq",
+      label: {
+        tr: "Pamukkale balon turu sık sorulan sorular",
+        en: "Pamukkale hot air balloon FAQ",
+      },
+    },
+  ],
+  company: [
+    {
+      key: "about",
+      label: { tr: "Pamukkale Balon Turları hakkında", en: "About Pamukkale Balloon Tours" },
+    },
+    {
+      key: "blog",
+      label: { tr: "Pamukkale balon turu rehberleri", en: "Pamukkale balloon ride guides" },
+    },
+    {
+      key: "contact",
+      label: { tr: "Pamukkale balon turu iletişim", en: "Contact Pamukkale Balloon Tours" },
+    },
+  ],
+};
+
 export function Footer() {
   const lang = useLang();
   const tr = lang === "tr";
@@ -314,13 +394,13 @@ export function Footer() {
   return (
     <footer className="relative bg-navy-deep pb-20 text-on-dark md:pb-0">
       <div className="h-px bg-gold-gradient opacity-70" aria-hidden="true" />
-      <div className="container-page grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1.2fr] md:py-20">
+      <div className="container-page grid gap-12 py-16 md:grid-cols-2 md:py-20 lg:grid-cols-[1.3fr_1.1fr_1fr_1.1fr]">
         <div>
           <img
-            src={SITE.logo.onDark}
+            src={SITE.logo.onDarkSm}
             alt={tr ? SITE.name : SITE.nameEn}
-            width={480}
-            height={250}
+            width={260}
+            height={136}
             loading="lazy"
             className="h-16 w-auto"
           />
@@ -344,11 +424,16 @@ export function Footer() {
           <h2 className="font-sans text-xs font-bold uppercase tracking-[0.24em] text-champagne">
             {tr ? "Balon Turu" : "Balloon Flight"}
           </h2>
-          <ul className="mt-5 space-y-3">
-            {(["prices", "reservation", "flight", "faq"] as PageKey[]).map((k) => (
-              <li key={k}>
-                <L href={PAGES[k][lang]} className="link-u text-on-dark/85 hover:text-white">
-                  {PAGE_LABELS[k][lang]}
+          <ul className="mt-3">
+            {FOOTER_LINKS.tour.map(({ key, label }) => (
+              <li key={key}>
+                <L
+                  href={PAGES[key][lang]}
+                  className="group inline-flex min-h-11 items-center text-on-dark/85 hover:text-white"
+                >
+                  <span className="link-u group-hover:[background-size:100%_1px]">
+                    {label[lang]}
+                  </span>
                 </L>
               </li>
             ))}
@@ -358,11 +443,16 @@ export function Footer() {
           <h2 className="font-sans text-xs font-bold uppercase tracking-[0.24em] text-champagne">
             {tr ? "Kurumsal" : "Company"}
           </h2>
-          <ul className="mt-5 space-y-3">
-            {(["about", "blog", "contact"] as PageKey[]).map((k) => (
-              <li key={k}>
-                <L href={PAGES[k][lang]} className="link-u text-on-dark/85 hover:text-white">
-                  {PAGE_LABELS[k][lang]}
+          <ul className="mt-3">
+            {FOOTER_LINKS.company.map(({ key, label }) => (
+              <li key={key}>
+                <L
+                  href={PAGES[key][lang]}
+                  className="group inline-flex min-h-11 items-center text-on-dark/85 hover:text-white"
+                >
+                  <span className="link-u group-hover:[background-size:100%_1px]">
+                    {label[lang]}
+                  </span>
                 </L>
               </li>
             ))}
@@ -372,14 +462,20 @@ export function Footer() {
           <h2 className="font-sans text-xs font-bold uppercase tracking-[0.24em] text-champagne">
             {tr ? "Bize Ulaşın" : "Get in Touch"}
           </h2>
-          <address className="mt-5 space-y-3 not-italic text-on-dark/85">
+          <address className="mt-3 space-y-1 not-italic text-on-dark/85">
             <p>
-              <a href={telLink} className="link-u text-lg font-semibold text-white">
+              <a
+                href={telLink}
+                className="inline-flex min-h-11 items-center text-lg font-semibold text-white hover:underline"
+              >
                 {SITE.contact.phoneDisplay}
               </a>
             </p>
             <p>
-              <a href={mailLink} className="link-u [overflow-wrap:anywhere] hover:text-white">
+              <a
+                href={mailLink}
+                className="inline-flex min-h-11 items-center [overflow-wrap:anywhere] hover:text-white hover:underline"
+              >
                 {SITE.contact.email}
               </a>
             </p>
@@ -391,7 +487,7 @@ export function Footer() {
                 href={mapsHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-u text-champagne"
+                className="inline-flex min-h-11 items-center text-champagne hover:underline"
               >
                 {tr ? "Haritada göster" : "Show on map"} ↗
               </a>
@@ -399,17 +495,42 @@ export function Footer() {
           </address>
         </div>
       </div>
+      <nav
+        aria-label={tr ? "Pamukkale balon turu rehberleri" : "Pamukkale balloon ride guides"}
+        className="container-page border-t border-white/10 py-10"
+      >
+        <h2 className="font-sans text-xs font-bold uppercase tracking-[0.24em] text-champagne">
+          {tr ? "Rehberler" : "Guides"}
+        </h2>
+        <ul className="mt-3 grid gap-x-8 text-sm sm:grid-cols-2 lg:grid-cols-3">
+          {getArticles(lang).map((a) => (
+            <li key={a.id}>
+              <L
+                href={articlePath(lang, a.body.slug)}
+                className="group inline-flex min-h-11 items-center text-on-dark/85 hover:text-white"
+              >
+                <span className="link-u group-hover:[background-size:100%_1px]">{a.kw[lang]}</span>
+              </L>
+            </li>
+          ))}
+        </ul>
+      </nav>
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col gap-3 py-6 text-sm text-on-dark/70 md:flex-row md:items-center md:justify-between">
           <p>
             © {year} {tr ? SITE.name : SITE.nameEn}.{" "}
             {tr ? "Tüm hakları saklıdır." : "All rights reserved."}
           </p>
-          <ul className="flex flex-wrap gap-x-5 gap-y-2">
+          <ul className="flex flex-wrap gap-x-5">
             {(["privacy", "cookies", "terms"] as PageKey[]).map((k) => (
               <li key={k}>
-                <L href={PAGES[k][lang]} className="link-u hover:text-white">
-                  {PAGE_LABELS[k][lang]}
+                <L
+                  href={PAGES[k][lang]}
+                  className="group inline-flex min-h-11 items-center hover:text-white"
+                >
+                  <span className="link-u group-hover:[background-size:100%_1px]">
+                    {PAGE_LABELS[k][lang]}
+                  </span>
                 </L>
               </li>
             ))}

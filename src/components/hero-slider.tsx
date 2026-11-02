@@ -8,6 +8,7 @@ import hero2 from "@/assets/hero-2.webp";
 import hero3 from "@/assets/hero-3.webp";
 import hero4 from "@/assets/hero-4.webp";
 import hero5 from "@/assets/hero-5.webp";
+import { rs } from "@/lib/img";
 
 const DURATION = 7000;
 
@@ -16,8 +17,8 @@ const SLIDES = [
     src: hero1,
     pos: "60% 50%",
     alt: {
-      tr: "Gün doğumunda Pamukkale travertenleri üzerinde renkli sıcak hava balonları",
-      en: "Colourful hot air balloons over Pamukkale's travertines at sunrise",
+      tr: "Pamukkale balon turu: gün doğumunda travertenler üzerinde renkli sıcak hava balonları",
+      en: "Pamukkale hot air balloon ride: colourful balloons over the travertines at sunrise",
     },
   },
   {
@@ -59,7 +60,7 @@ const COPY = {
     eyebrow: "Pamukkale · Gün doğumu uçuşu",
     h1a: "Pamukkale",
     h1b: "Balon Turu",
-    p: "Gün doğarken bembeyaz travertenlerin ve antik Hierapolis'in üzerinde süzülün. Sessiz, büyüleyici ve unutulmaz bir sabah sizi bekliyor.",
+    p: "Pamukkale balon turu ile gün doğarken bembeyaz travertenlerin ve antik Hierapolis'in üzerinde süzülün. Sessiz, büyüleyici ve unutulmaz bir sabah sizi bekliyor.",
     cta: "Hemen Rezervasyon Yap",
     wa: "WhatsApp'tan Fiyat Alın",
     chips: [
@@ -78,7 +79,7 @@ const COPY = {
     eyebrow: "Pamukkale · Sunrise flight",
     h1a: "Pamukkale",
     h1b: "Hot Air Balloon Ride",
-    p: "Drift above the white travertines and ancient Hierapolis as the sun comes up — a quiet, breathtaking morning you'll never forget.",
+    p: "On a Pamukkale hot air balloon ride you drift above the white travertines and ancient Hierapolis as the sun comes up — a quiet, breathtaking morning you'll never forget.",
     cta: "Book Your Flight",
     wa: "Get a Price on WhatsApp",
     chips: ["Prices from 6,666 TL", "Sunrise flights", "UNESCO World Heritage views"],
@@ -130,6 +131,7 @@ export function HeroSlider({ lang }: { lang: Lang }) {
           {loaded.has(n) && (
             <img
               src={s.src}
+              {...rs(s.src, "100vw")}
               alt={n === i ? s.alt[lang] : ""}
               width={1600}
               height={907}
@@ -188,7 +190,7 @@ export function HeroSlider({ lang }: { lang: Lang }) {
             <span className="font-display text-xl tabular-nums text-champagne" aria-hidden="true">
               0{i + 1}
             </span>
-            <div className="flex flex-1 gap-2" role="group" aria-label={t.slide}>
+            <div className="flex flex-1 gap-1" role="group" aria-label={t.slide}>
               {SLIDES.map((_, n) => (
                 <button
                   key={n}
@@ -196,7 +198,7 @@ export function HeroSlider({ lang }: { lang: Lang }) {
                   onClick={() => go(n)}
                   aria-label={`${t.slide} ${n + 1}`}
                   aria-current={n === i}
-                  className="group relative h-6 flex-1"
+                  className="group relative h-11 flex-1"
                 >
                   <span className="absolute inset-x-0 top-1/2 h-[2px] -translate-y-1/2 overflow-hidden rounded bg-white/30 transition-colors group-hover:bg-white/60">
                     {n === i && (

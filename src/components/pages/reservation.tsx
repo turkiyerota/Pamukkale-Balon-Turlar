@@ -40,7 +40,8 @@ export function validate(f: Fields, lang: Lang) {
   const e: Partial<Record<keyof Fields, string>> = {};
   if (f.name.trim().length < 2)
     e.name = tr ? "Lütfen adınızı ve soyadınızı yazın." : "Please enter your full name.";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email))
+  // Email is optional (WhatsApp is the primary channel) but must be valid if typed.
+  if (f.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim()))
     e.email = tr ? "Geçerli bir e-posta adresi girin." : "Enter a valid email address.";
   if (f.phone.replace(/\D/g, "").length < 7)
     e.phone = tr ? "Geçerli bir telefon numarası girin." : "Enter a valid phone number.";
@@ -86,8 +87,8 @@ export function ReservationPage({ lang }: { lang: Lang }) {
     const pkg = PACKAGES.find((p) => p.id === f.pkg)?.name[lang];
     const date = formatDate(lang, f.date);
     const msg = tr
-      ? `Merhaba, Pamukkale balon turu için rezervasyon talebimi iletiyorum:\nAd Soyad: ${f.name}\nTarih: ${date}\nKişi sayısı: ${f.guests}\nPaket: ${pkg || "Henüz karar vermedim"}\nOtel: ${f.hotel?.trim() || "-"}\nTelefon: ${f.phone}\nE-posta: ${f.email}\nTercih edilen dil: ${f.language || "-"}\nNot: ${f.message.trim() || "-"}`
-      : `Hello, here is my booking request for a Pamukkale hot air balloon ride:\nName: ${f.name}\nDate: ${date}\nGuests: ${f.guests}\nPackage: ${pkg || "Not decided yet"}\nHotel: ${f.hotel?.trim() || "-"}\nPhone: ${f.phone}\nEmail: ${f.email}\nPreferred language: ${f.language || "-"}\nNote: ${f.message.trim() || "-"}`;
+      ? `Merhaba, Pamukkale balon turu için rezervasyon talebimi iletiyorum:\nAd Soyad: ${f.name}\nTarih: ${date}\nKişi sayısı: ${f.guests}\nPaket: ${pkg || "Henüz karar vermedim"}\nOtel: ${f.hotel?.trim() || "-"}\nTelefon: ${f.phone}${f.email.trim() ? `\nE-posta: ${f.email.trim()}` : ""}\nTercih edilen dil: ${f.language || "-"}\nNot: ${f.message.trim() || "-"}`
+      : `Hello, here is my booking request for a Pamukkale hot air balloon ride:\nName: ${f.name}\nDate: ${date}\nGuests: ${f.guests}\nPackage: ${pkg || "Not decided yet"}\nHotel: ${f.hotel?.trim() || "-"}\nPhone: ${f.phone}${f.email.trim() ? `\nEmail: ${f.email.trim()}` : ""}\nPreferred language: ${f.language || "-"}\nNote: ${f.message.trim() || "-"}`;
     setReady(msg);
     requestAnimationFrame(() =>
       document
@@ -142,13 +143,18 @@ export function ReservationPage({ lang }: { lang: Lang }) {
     <>
       <PageHero
         image={heroBasket}
+        alt={
+          tr
+            ? "Pamukkale balon turu rezervasyonu: balon sepetinden Pamukkale manzarası"
+            : "Book a Pamukkale balloon ride: the view from a balloon basket"
+        }
         position="55% 60%"
         eyebrow={tr ? "Rezervasyon" : "Booking"}
-        title={tr ? "Balon Turu Rezervasyonu" : "Book Your Balloon Flight"}
+        title={tr ? "Pamukkale Balon Turu Rezervasyonu" : "Book Your Pamukkale Balloon Ride"}
         intro={
           tr
-            ? "Tarihinizi ve kişi sayınızı yazın; fiyatı, kapsamı ve koşulları size yazılı olarak iletelim."
-            : "Tell us your date and group size, and we'll send you the price, inclusions and terms in writing."
+            ? "Pamukkale balon turu rezervasyonu için tarihinizi ve kişi sayınızı yazın; fiyatı, kapsamı ve koşulları size yazılı olarak iletelim."
+            : "To book a Pamukkale balloon ride, tell us your date and group size, and we'll send you the price, inclusions and terms in writing."
         }
         crumbs={crumbs(lang, "reservation")}
       />
@@ -179,8 +185,8 @@ export function ReservationPage({ lang }: { lang: Lang }) {
                 </h2>
                 <p className="mt-3 text-muted-foreground">
                   {tr
-                    ? "Talebiniz henüz bize ulaşmadı. Göndermek için WhatsApp veya e-postayı seçin."
-                    : "Your request hasn't reached us yet. Choose WhatsApp or email to send it."}
+                    ? "Talebiniz henüz bize ulaşmadı. En hızlı yanıt için WhatsApp'tan gönderin; isterseniz e-postayı da kullanabilirsiniz."
+                    : "Your request hasn't reached us yet. Send it on WhatsApp for the fastest reply, or use email if you prefer."}
                 </p>
                 <pre className="mt-6 whitespace-pre-wrap rounded-xl border border-gold/25 bg-champagne/25 p-5 font-sans text-[0.95rem] leading-relaxed text-navy-deep">
                   {ready}
@@ -197,7 +203,7 @@ export function ReservationPage({ lang }: { lang: Lang }) {
                   </a>
                   <a
                     href={`${mailLink}?subject=${encodeURIComponent(tr ? "Balon turu rezervasyon talebi" : "Balloon flight booking request")}&body=${encodeURIComponent(ready)}`}
-                    className={btn.primary}
+                    className={btn.outline}
                   >
                     {tr ? "E-postayla Gönder" : "Send by Email"}
                   </a>
@@ -209,7 +215,11 @@ export function ReservationPage({ lang }: { lang: Lang }) {
             ) : (
               <form noValidate onSubmit={submit} className="grid gap-6 sm:grid-cols-2">
                 <div className="sm:col-span-2">
-                  <h2 className="text-4xl">{tr ? "Rezervasyon bilgileri" : "Booking details"}</h2>
+                  <h2 className="text-4xl">
+                    {tr
+                      ? "Pamukkale balon turu rezervasyon bilgileri"
+                      : "Booking details for your Pamukkale balloon ride"}
+                  </h2>
                   <p className="mt-2 text-muted-foreground">
                     {tr ? "* ile işaretli alanlar zorunludur." : "Fields marked * are required."}
                   </p>
@@ -276,7 +286,7 @@ export function ReservationPage({ lang }: { lang: Lang }) {
                 </div>
                 <div>
                   <label htmlFor="f-email" className={lab}>
-                    {tr ? "E-posta" : "Email"} *
+                    {tr ? "E-posta (isteğe bağlı)" : "Email (optional)"}
                   </label>
                   <input
                     {...aria("email")}
@@ -361,26 +371,27 @@ export function ReservationPage({ lang }: { lang: Lang }) {
                   </label>
                 </div>
                 <div className="sm:col-span-2">
-                  <label className="flex items-start gap-3 text-[0.95rem]">
+                  <label className="flex min-h-11 cursor-pointer items-start gap-3 py-1 text-base">
                     <input
                       {...aria("consent")}
                       type="checkbox"
                       checked={f.consent}
                       onChange={set("consent")}
-                      className="mt-1 h-5 w-5 shrink-0 accent-[var(--navy)]"
+                      className="mt-0.5 h-6 w-6 shrink-0 accent-[var(--navy)]"
                     />
                     <span>
                       {tr
-                        ? "Bilgilerimin yalnızca talebimi yanıtlamak için kullanılacağını anladım. "
-                        : "I understand my details will only be used to answer my request. "}
-                      <L
-                        href={PAGES.privacy[lang]}
-                        className="font-semibold text-navy underline decoration-gold decoration-2 underline-offset-4"
-                      >
-                        {tr ? "Gizlilik Politikası" : "Privacy Policy"}
-                      </L>
+                        ? "Bilgilerimin yalnızca talebimi yanıtlamak için kullanılacağını anladım."
+                        : "I understand my details will only be used to answer my request."}
                     </span>
                   </label>
+                  {/* Kept outside the label (a link inside a checkbox label is a tiny tap target). */}
+                  <L
+                    href={PAGES.privacy[lang]}
+                    className="ml-9 inline-flex min-h-11 items-center font-semibold text-navy underline decoration-gold decoration-2 underline-offset-4"
+                  >
+                    {tr ? "Gizlilik Politikası" : "Privacy Policy"}
+                  </L>
                   <Err k="consent" />
                 </div>
                 <div className="sm:col-span-2 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -418,7 +429,7 @@ export function ReservationPage({ lang }: { lang: Lang }) {
                 </a>
                 <a
                   href={mailLink}
-                  className="text-center text-sm text-on-dark/80 underline decoration-gold/60 underline-offset-4 [overflow-wrap:anywhere]"
+                  className="inline-flex min-h-11 items-center justify-center text-center text-sm text-on-dark/80 underline decoration-gold/60 underline-offset-4 [overflow-wrap:anywhere]"
                 >
                   {SITE.contact.email}
                 </a>
