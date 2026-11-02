@@ -1,5 +1,5 @@
 import type { Lang } from "@/config/site";
-import { whatsappLink, telLink, SITE, WA_CONTEXT, PACKAGES } from "@/config/site";
+import { whatsappLink, telLink, SITE, WA_CONTEXT, PACKAGES, formatPrice } from "@/config/site";
 import { PAGES, articlePath } from "@/lib/paths";
 import type { Article } from "@/content/articles";
 import { CATEGORY_LABELS } from "@/content/articles";
@@ -8,6 +8,13 @@ import { L, btn, Arrow, Rich, WhatsAppIcon } from "./ui-kit";
 import { Sunrise, Landmark, ShieldCheck, MessageCircle } from "lucide-react";
 import hero1 from "@/assets/hero-1.webp";
 import hero5 from "@/assets/hero-5.webp";
+/* AI-generated placeholder imagery (see docs/ai-images.md) — swap for the operator's own photos. */
+import gBalloons from "@/assets/gallery/balloons-sunrise-wide.webp";
+import gBasket from "@/assets/gallery/basket-view.webp";
+import gPools from "@/assets/gallery/travertine-pools.webp";
+import gHierapolis from "@/assets/gallery/hierapolis-balloons.webp";
+import gGlow from "@/assets/gallery/blue-hour-glow.webp";
+import gPlain from "@/assets/gallery/denizli-plain.webp";
 
 export function ArticleCard({ a }: { a: Article }) {
   const date = new Date(a.published).toLocaleDateString(a.lang === "tr" ? "tr-TR" : "en-GB", {
@@ -94,8 +101,8 @@ const TRUST = {
     ],
     [
       ShieldCheck,
-      "Yazılı rezervasyon teyidi",
-      "Saat, kapsam ve koşullar size yazılı olarak iletilir.",
+      "6.666 TL'den başlayan fiyatlar",
+      "Kesin fiyat ve koşullar WhatsApp'tan yazılı olarak iletilir.",
     ],
     [MessageCircle, "WhatsApp ile kolay iletişim", "Sorularınızı Türkçe veya İngilizce yazın."],
   ],
@@ -108,8 +115,8 @@ const TRUST = {
     ],
     [
       ShieldCheck,
-      "Written booking confirmation",
-      "Time, inclusions and terms are sent to you in writing.",
+      "Prices from 6,666 TL",
+      "Your exact price and terms are confirmed in writing on WhatsApp.",
     ],
     [MessageCircle, "Easy WhatsApp contact", "Ask us anything in English or Turkish."],
   ],
@@ -188,12 +195,13 @@ export function PackageCard({
   const tr = lang === "tr";
   const x = PKG_EXTRA[p.id];
   const H = headingLevel === 2 ? "h2" : "h3";
-  const price =
-    p.price && p.confirmed
-      ? `${p.price} ${p.currency}`
-      : tr
-        ? "Tarihinize özel teklif"
-        : "Quoted for your date";
+  const price = p.priceFrom
+    ? tr
+      ? `${formatPrice(lang, p.priceFrom)}'den başlayan`
+      : `From ${formatPrice(lang, p.priceFrom)}`
+    : tr
+      ? "Tarihinize özel teklif"
+      : "Quoted for your date";
   return (
     <article
       className="card-lux group reveal flex flex-col overflow-hidden"
@@ -287,8 +295,8 @@ export function CtaBand({ lang }: { lang: Lang }) {
           </h2>
           <p className="mt-5 max-w-xl text-lg text-on-dark/85">
             {tr
-              ? "Tarihinizi ve kişi sayınızı iletin; seçenekleri, fiyatı ve koşulları yazılı olarak sizinle paylaşalım."
-              : "Send us your date and group size, and we'll share the options, price and terms in writing."}
+              ? "Fiyatlarımız 6.666 TL'den başlar. Tarihinizi ve kişi sayınızı iletin; size özel fiyatı ve koşulları yazılı olarak paylaşalım."
+              : "Prices start from 6,666 TL. Send us your date and group size, and we'll confirm your exact price and terms in writing."}
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col lg:items-stretch">
@@ -320,6 +328,120 @@ export function CtaBand({ lang }: { lang: Lang }) {
           </a>
         </div>
       </div>
+    </section>
+  );
+}
+
+export const GALLERY: {
+  src: string;
+  w: number;
+  h: number;
+  cls: string;
+  alt: Record<Lang, string>;
+}[] = [
+  {
+    src: gBalloons,
+    w: 1280,
+    h: 720,
+    cls: "sm:col-span-2 lg:col-span-2 lg:row-span-2",
+    alt: {
+      tr: "Gün doğumunda Pamukkale travertenleri üzerinde yükselen sıcak hava balonları",
+      en: "Hot air balloons rising over Pamukkale's travertines at sunrise",
+    },
+  },
+  {
+    src: gGlow,
+    w: 864,
+    h: 1152,
+    cls: "lg:row-span-2",
+    alt: {
+      tr: "Şafak öncesi mavi saatte brülör alevi ile parlayan balon",
+      en: "A balloon glowing with burner flame in the blue hour before dawn",
+    },
+  },
+  {
+    src: gBasket,
+    w: 1152,
+    h: 864,
+    cls: "",
+    alt: {
+      tr: "Balon sepetinin kenarından gün doğumunda Pamukkale travertenleri",
+      en: "Pamukkale's travertines at sunrise seen from the edge of a balloon basket",
+    },
+  },
+  {
+    src: gPools,
+    w: 1152,
+    h: 864,
+    cls: "sm:col-span-2 lg:col-span-1",
+    alt: {
+      tr: "Turkuaz traverten havuzlarına yansıyan sıcak hava balonu",
+      en: "A hot air balloon reflected in Pamukkale's turquoise travertine pools",
+    },
+  },
+  {
+    src: gHierapolis,
+    w: 1152,
+    h: 864,
+    cls: "sm:col-span-2 lg:col-span-2",
+    alt: {
+      tr: "Gün doğumunda Hierapolis antik kentinin sütunlu caddesi üzerinde balonlar",
+      en: "Balloons above the colonnaded street of ancient Hierapolis at sunrise",
+    },
+  },
+  {
+    src: gPlain,
+    w: 1152,
+    h: 864,
+    cls: "sm:col-span-2 lg:col-span-2",
+    alt: {
+      tr: "Sabah sisi içinde Denizli ovası üzerinde süzülen lacivert-altın balon",
+      en: "A navy and gold balloon drifting over the misty Denizli plain in the morning",
+    },
+  },
+];
+
+export function Gallery({ lang }: { lang: Lang }) {
+  const tr = lang === "tr";
+  return (
+    <section className="container-page py-24 md:py-32" aria-labelledby="galeri-baslik">
+      <div className="max-w-2xl">
+        <p className="eyebrow">{tr ? "Galeri" : "Gallery"}</p>
+        <h2 id="galeri-baslik" className="mt-4 text-4xl md:text-6xl">
+          {tr ? "Gökyüzünden Pamukkale" : "Pamukkale from the sky"}
+        </h2>
+        <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+          {tr
+            ? "Travertenler, turkuaz havuzlar, Hierapolis ve gün doğumunun altın ışığı: uçuş sabahı sizi bekleyen manzaralar."
+            : "Travertines, turquoise pools, Hierapolis and golden sunrise light: the views waiting for you on the flight morning."}
+        </p>
+      </div>
+      <ul className="mt-12 grid auto-rows-[15rem] gap-4 sm:grid-cols-2 md:auto-rows-[17rem] lg:grid-cols-4">
+        {GALLERY.map((g, i) => (
+          <li
+            key={g.src}
+            className={`group reveal relative overflow-hidden rounded-[1.25rem] shadow-soft ${g.cls}`}
+            style={{ ["--reveal-delay" as string]: `${(i % 4) * 80}ms` }}
+          >
+            <img
+              src={g.src}
+              alt={g.alt[lang]}
+              width={g.w}
+              height={g.h}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06]"
+            />
+            <span
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(10,27,41,0.55))] opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+              aria-hidden="true"
+            />
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 text-xs text-muted-foreground">
+        {tr ? "Görseller temsilidir." : "Images are illustrative."}
+      </p>
     </section>
   );
 }

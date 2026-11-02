@@ -95,7 +95,7 @@ export const TR_4: Record<string, ArticleBody> = {
     excerpt:
       "Yaş ve boy kuralları operatöre göre değişebilir; rezervasyon öncesinde mutlaka teyit edin ve çocuğunuzu erken kalkışa hazırlayın.",
     intro: [
-      "Ailece balon turu yapmak unutulmaz bir anı olabilir. Ancak çocukların katılımına ilişkin yaş ve boy kuralları operatöre, sepet tipine ve o günkü koşullara göre değişebilir. **Çocuğunuzun katılıp katılamayacağını, yaşını ve boyunu bize ilettiğinizde rezervasyon öncesinde size özel olarak bildiririz.**",
+      "Ailece balon turu yapmak unutulmaz bir anı olabilir. Ancak çocukların katılımına ilişkin yaş ve boy kuralları operatöre, sepet tipine ve o günkü koşullara göre değişebilir. **Bizimle çocuklar genellikle 6 yaşından itibaren ve bir yetişkin eşliğinde uçabilir; yaşını ve boyunu ilettiğinizde uygunluğu rezervasyon öncesinde teyit ederiz.**",
       "Bu rehberde kuralların neden var olduğunu, çocuğunuzun bu deneyime hazır olup olmadığını nasıl değerlendirebileceğinizi, erken saatlere nasıl hazırlanacağınızı ve rezervasyon öncesinde sormanız gereken soruları anlatıyoruz.",
     ],
     sections: [

@@ -12,7 +12,7 @@ import { ArticleCard, CtaBand } from "../blocks";
 import { L, Rich, Breadcrumbs, btn, Arrow, WhatsAppIcon } from "../ui-kit";
 import { whatsappLink } from "@/config/site";
 import type { Section } from "@/content/types";
-import hero2 from "@/assets/hero-2.webp";
+import heroPlain from "@/assets/gallery/denizli-plain.webp";
 
 export function BlogListPage({ lang, page }: { lang: Lang; page: number }) {
   const tr = lang === "tr";
@@ -26,7 +26,7 @@ export function BlogListPage({ lang, page }: { lang: Lang; page: number }) {
   return (
     <>
       <PageHero
-        image={hero2}
+        image={heroPlain}
         eyebrow={PAGE_LABELS.blog[lang]}
         title={tr ? "Pamukkale Balon Turu Rehberleri" : "Pamukkale Balloon Ride Guides"}
         intro={

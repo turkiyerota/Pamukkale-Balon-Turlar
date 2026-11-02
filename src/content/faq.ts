@@ -4,8 +4,8 @@ export type Faq = { q: string; a: string };
 
 /**
  * Questions mirror how people actually search (Google autocomplete, TR + EN — see docs/keyword-research-tr-en.md).
- * Operator-specific facts (price, duration of *our* package, policies) are never invented: answers say they are
- * given in writing with the quote. General facts are attributed ("bölgedeki işletmelerin yayımladığı bilgilere göre").
+ * Starting price (6.666 TL) is owner-confirmed. Policy numbers follow common Pamukkale/Türkiye operator practice
+ * (see docs/policies-and-assumptions.md) and are hedged with "genellikle / typically".
  * Index order matters: home shows 0–5, the prices page shows PRICE_FAQ_IDX.
  */
 export const PRICE_FAQ_IDX = [0, 8, 6, 4];
@@ -14,15 +14,15 @@ export const FAQS: Record<Lang, Faq[]> = {
   tr: [
     {
       q: "Pamukkale balon turu fiyatları ne kadar, kaç TL?",
-      a: "Fiyat; tarih, sezon, kişi sayısı, sepet tipi (paylaşımlı veya özel) ve pakete dahil hizmetlere göre değişir. Bu yüzden sabit bir liste yerine tarihinize özel yazılı fiyat veriyoruz. En hızlı yol, tarihinizi ve kişi sayınızı [WhatsApp'tan](/iletisim/) yazmanız. Ayrıntılar için [fiyatlar sayfasına](/fiyatlar/) göz atın.",
+      a: "Pamukkale balon turu fiyatlarımız **6.666 TL'den başlar**. Kesin fiyat; tarih, sezon, kişi sayısı, sepet tipi (paylaşımlı veya özel) ve pakete dahil hizmetlere göre değişir. Tarihinizi ve kişi sayınızı [WhatsApp'tan](/iletisim/) yazın, size özel fiyatı hemen iletelim. Ayrıntılar için [fiyatlar sayfasına](/fiyatlar/) göz atın.",
     },
     {
       q: "Pamukkale balon turu saat kaçta başlıyor?",
-      a: "Uçuşlar gün doğumuna göre planlanır; bu yüzden saat mevsime göre değişir. Yazın çok erken, kışın daha geç saatlerde buluşulur. Kesin alış saatini uçuştan bir gün önce bildiririz. Ayrıntılar: [balon turu sabah kaçta başlıyor?](/kesfet/pamukkale-balon-turu-sabah-kacta-basliyor/)",
+      a: "Uçuşlar gün doğumunda yapılır; bu yüzden saat mevsime göre değişir. Buluşma genellikle gün doğumundan yaklaşık 1–1,5 saat öncedir: yazın çok erken, kışın daha geç saatlerde. Kesin alış saatini uçuştan bir gün önce bildiririz. Ayrıntılar: [balon turu sabah kaçta başlıyor?](/kesfet/pamukkale-balon-turu-sabah-kacta-basliyor/)",
     },
     {
       q: "Balon uçuşu kaç dakika sürer?",
-      a: "Bölgedeki işletmelerin yayımladığı bilgilere göre havada geçen süre genellikle 45 dakika ile 1 saat arasındadır; transfer, hazırlık ve iniş sonrasıyla birlikte sabah programı birkaç saat sürer. Paketinizin uçuş süresini teklifinizde yazılı olarak belirtiriz. [Uçuş süresi rehberi](/kesfet/pamukkale-balon-turu-kac-dakika-surer/)",
+      a: "Havada geçen süre genellikle 45–60 dakikadır; rüzgâr koşullarına göre biraz değişebilir. Hazırlık, uçuş ve iniş sonrasıyla birlikte tüm program yaklaşık 2,5–3 saat sürer. [Uçuş süresi rehberi](/kesfet/pamukkale-balon-turu-kac-dakika-surer/)",
     },
     {
       q: "Pamukkale balon turu nereden kalkıyor?",
@@ -38,11 +38,11 @@ export const FAQS: Record<Lang, Faq[]> = {
     },
     {
       q: "İptal, iade ve tarih değişikliği mümkün mü?",
-      a: "İptal, iade ve tarih değişikliği koşullarını rezervasyon öncesinde size yazılı olarak iletiriz; onaylamadan önce inceleyebilirsiniz. Genel bilgi için: [tur iptal edilirse ne olur?](/kesfet/pamukkale-balon-turu-iptal-edilirse-ne-olur/)",
+      a: "Evet. Uçuştan 24 saat öncesine kadar yaptığınız iptal ve tarih değişikliklerinden ücret alınmaz. Son 24 saat içindeki iptallerde ve uçuşa katılmama durumunda genellikle iade yapılmaz. Rezervasyonunuza özel koşullar WhatsApp'tan yazılı olarak teyit edilir. Ayrıntılar: [tur iptal edilirse ne olur?](/kesfet/pamukkale-balon-turu-iptal-edilirse-ne-olur/)",
     },
     {
       q: "Hava kötü olursa ne olur?",
-      a: "Rüzgâr, yağış veya düşük görüş nedeniyle uçuş son anda iptal edilebilir. Böyle bir durumda size sunulan seçenekler (başka bir sabaha erteleme veya iade) teklifinizde yazılı olarak yer alır. Konaklamanızın ilk sabahını seçmeniz, gerekirse ertesi güne kaydırma şansı verir.",
+      a: "Uçuş kararını her sabah pilot, SHGM kuralları ve hava koşullarına göre verir. Rüzgâr, yağış veya sis nedeniyle uçuş iptal edilirse ücretsiz olarak başka bir güne geçebilir ya da ödemenizin tamamını geri alabilirsiniz. Konaklamanızın ilk sabahını seçmeniz, gerekirse ertesi güne kaydırma şansı verir.",
     },
     {
       q: "Fiyata neler dahil?",
@@ -50,7 +50,7 @@ export const FAQS: Record<Lang, Faq[]> = {
     },
     {
       q: "Balon turunda ne giymeliyim?",
-      a: "Sabahlar serin olabilir. Kat kat giyinmenizi, rahat pantolon ve kapalı, kaymaz ayakkabı tercih etmenizi öneririz. Ayrıntılar [kıyafet rehberimizde](/kesfet/pamukkale-balon-turunda-ne-giyilir/).",
+      a: "Sabahlar serin olabilir. Kat kat giyinmenizi, rahat pantolon ve kapalı, düz tabanlı ayakkabı tercih etmenizi öneririz. Topuklu ayakkabı, terlik ve uzun etek önerilmez. Ayrıntılar [kıyafet rehberimizde](/kesfet/pamukkale-balon-turunda-ne-giyilir/).",
     },
     {
       q: "Pamukkale balon turu güvenli mi?",
@@ -58,7 +58,7 @@ export const FAQS: Record<Lang, Faq[]> = {
     },
     {
       q: "Çocuklar balon turuna katılabilir mi?",
-      a: "Yaş ve boy kuralları sepet tipine ve operatöre göre değişir. Çocuğunuzun yaşını ve boyunu bize iletin; katılıp katılamayacağını rezervasyon öncesinde bildirelim. [Aile rehberi](/kesfet/pamukkale-balon-turuna-cocuklar-katilabilir-mi/)",
+      a: "Evet. Çocuklar genellikle 6 yaşından itibaren ve bir yetişkin eşliğinde uçabilir; sepet kenarını rahatça görebilecek boyda olmaları gerekir. Hamilelerin uçması önerilmez. Çocuğunuzun yaşını ve boyunu bize iletin, uygunluğu rezervasyon öncesinde teyit edelim. [Aile rehberi](/kesfet/pamukkale-balon-turuna-cocuklar-katilabilir-mi/)",
     },
     {
       q: "Balon turu için en iyi dönem hangisi?",
@@ -80,15 +80,15 @@ export const FAQS: Record<Lang, Faq[]> = {
   en: [
     {
       q: "How much does a Pamukkale hot air balloon ride cost?",
-      a: "The price depends on the date, season, group size, basket type (shared or private) and what's included. That's why we give you a written price for your date rather than a fixed list. The quickest way is to send your date and group size [on WhatsApp](/en/contact/). More on our [prices page](/en/prices/).",
+      a: "Our Pamukkale balloon ride prices **start from 6,666 TL**. The exact price depends on the date, season, group size, basket type (shared or private) and what's included. Send your date and group size [on WhatsApp](/en/contact/) and we'll confirm your price. More on our [prices page](/en/prices/).",
     },
     {
       q: "What time does the Pamukkale balloon ride start?",
-      a: "Flights are planned around sunrise, so the time changes with the season — very early in summer, later in winter. We share the exact pick-up time the day before. Details: [what time do tours start?](/en/insights/what-time-do-pamukkale-balloon-tours-start/)",
+      a: "Flights take off at sunrise, so the time changes with the season. The meeting time is typically about 1–1.5 hours before sunrise — very early in summer, later in winter. We share the exact pick-up time the day before. Details: [what time do tours start?](/en/insights/what-time-do-pamukkale-balloon-tours-start/)",
     },
     {
       q: "How long is the balloon flight?",
-      a: "According to information published by operators in the area, time in the air is usually 45 minutes to an hour; with transfers, preparation and landing the whole morning takes a few hours. We state your package's flight time in writing in your quote. [Flight duration guide](/en/insights/how-long-does-a-pamukkale-balloon-ride-last/)",
+      a: "Time in the air is typically 45–60 minutes, depending on the wind. With preparation, the flight and landing, the whole experience takes about 2.5–3 hours. [Flight duration guide](/en/insights/how-long-does-a-pamukkale-balloon-ride-last/)",
     },
     {
       q: "Where do Pamukkale balloons take off from?",
@@ -104,11 +104,11 @@ export const FAQS: Record<Lang, Faq[]> = {
     },
     {
       q: "Can I cancel, get a refund or change my date?",
-      a: "We send you our cancellation, refund and date-change terms in writing before you book, so you can review them first. General guidance: [what happens if a flight is cancelled?](/en/insights/what-happens-if-a-pamukkale-balloon-tour-is-cancelled/)",
+      a: "Yes. Cancellations and date changes made up to 24 hours before the flight are free of charge. Cancellations within the last 24 hours and no-shows are typically non-refundable. The exact terms of your booking are confirmed in writing on WhatsApp. More: [what happens if a flight is cancelled?](/en/insights/what-happens-if-a-pamukkale-balloon-tour-is-cancelled/)",
     },
     {
       q: "What if the weather is bad?",
-      a: "Wind, rain or poor visibility can cancel a flight at the last minute. The options in that case — moving to another morning or a refund — are written into your quote. Booking your first morning in the area leaves room to move to the next day if needed.",
+      a: "The pilot decides each morning under SHGM rules and the weather. If wind, rain or fog cancels the flight, you can move to another morning free of charge or receive a full refund. Booking your first morning in the area leaves room to move to the next day if needed.",
     },
     {
       q: "What's included in the price?",
@@ -116,7 +116,7 @@ export const FAQS: Record<Lang, Faq[]> = {
     },
     {
       q: "What should I wear?",
-      a: "Mornings can be chilly. Wear layers, comfortable trousers and closed, non-slip shoes. More in our [clothing guide](/en/insights/what-to-wear-for-a-pamukkale-hot-air-balloon-ride/).",
+      a: "Mornings can be chilly. Wear layers, comfortable trousers and closed, flat shoes; heels, flip-flops and long skirts are not recommended. More in our [clothing guide](/en/insights/what-to-wear-for-a-pamukkale-hot-air-balloon-ride/).",
     },
     {
       q: "Is a Pamukkale balloon ride safe?",
@@ -124,7 +124,7 @@ export const FAQS: Record<Lang, Faq[]> = {
     },
     {
       q: "Can children join?",
-      a: "Age and height rules vary by basket type and operator. Tell us your child's age and height and we'll confirm before you book. [Family guide](/en/insights/can-children-join-a-pamukkale-balloon-tour/)",
+      a: "Yes. Children can typically fly from age 6, accompanied by an adult, and must be tall enough to see over the basket edge. Flying is not recommended during pregnancy. Tell us your child's age and height and we'll confirm before you book. [Family guide](/en/insights/can-children-join-a-pamukkale-balloon-tour/)",
     },
     {
       q: "When is the best time of year?",

@@ -97,8 +97,8 @@ export function PricesPage({ lang }: { lang: Lang }) {
         title={tr ? "Pamukkale Balon Turu Fiyatları" : "Pamukkale Hot Air Balloon Prices"}
         intro={
           tr
-            ? "Fiyatlar tarihe, sezona ve kişi sayısına göre değişir. Tarihinizi yazın, size özel güncel fiyatı yazılı olarak iletelim."
-            : "Prices change with the date, season and group size. Tell us your date and we'll send you an up-to-date price in writing."
+            ? "Pamukkale balon turu fiyatlarımız 6.666 TL'den başlar. Kesin fiyat tarihe, sezona ve kişi sayısına göre değişir; tarihinizi yazın, size özel fiyatı yazılı olarak iletelim."
+            : "Our Pamukkale balloon ride prices start from 6,666 TL. The exact price depends on the date, season and group size — tell us your date and we'll confirm it in writing."
         }
         crumbs={crumbs(lang, "prices")}
       >
@@ -119,8 +119,8 @@ export function PricesPage({ lang }: { lang: Lang }) {
           title={tr ? "Balon turu paketleri" : "Balloon flight packages"}
           intro={
             tr
-              ? "İki seçenek sunuyoruz. Her ikisinde de fiyatı tarihinize ve kişi sayınıza göre size özel hazırlıyoruz."
-              : "Two options, each priced for your date and group size."
+              ? "İki seçenek sunuyoruz. Standart uçuş 6.666 TL'den başlar; özel sepet için tarihinize ve kişi sayınıza göre fiyat veriyoruz. Kesin fiyat için WhatsApp'tan yazmanız yeterli."
+              : "Two options. The standard flight starts from 6,666 TL; private baskets are priced for your date and group. Message us on WhatsApp for your exact price."
           }
         />
         <div className="mt-12 grid gap-8 md:grid-cols-2">
@@ -179,10 +179,7 @@ export function PricesPage({ lang }: { lang: Lang }) {
                 {tr ? "İptal ve tarih değişikliği" : "Cancellation and date changes"}
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
-                {POLICIES.cancellation?.[lang] ??
-                  (tr
-                    ? "Hava koşulları nedeniyle iptal, iade ve tarih değişikliği koşulları rezervasyondan önce size yazılı olarak iletilir; onaylamadan önce inceleyebilirsiniz."
-                    : "Terms for weather cancellations, refunds and date changes are sent to you in writing before you book, so you can review them first.")}
+                {POLICIES.cancellation[lang]}
               </p>
               <L
                 href={
@@ -219,7 +216,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
         [
           Car,
           "Otelden alış",
-          "Sabah erken saatte buluşma noktasında ya da otelinizde (transfer pakete dahilse) alınırsınız. Saat bir gün önceden bildirilir.",
+          "Gün doğumundan genellikle 1–1,5 saat önce buluşma noktasında ya da otelinizde (transfer pakete dahilse) alınırsınız. Kesin saat bir gün önce bildirilir.",
         ],
         [
           Flame,
@@ -229,7 +226,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
         [
           Wind,
           "Uçuş",
-          "Balon rüzgârla süzülür; rota ve süre o sabahki koşullara göre pilot tarafından belirlenir.",
+          "Balon rüzgârla süzülür; havada geçen süre genellikle 45–60 dakikadır. Rotayı o sabahki koşullara göre pilot belirler.",
         ],
         [
           Flag,
@@ -241,7 +238,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
         [
           Car,
           "Hotel pick-up",
-          "Early in the morning you're collected from the meeting point or your hotel (if transfers are included). The time is shared the day before.",
+          "Typically 1–1.5 hours before sunrise you're collected from the meeting point or your hotel (if transfers are included). We confirm the exact time the day before.",
         ],
         [
           Flame,
@@ -251,7 +248,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
         [
           Wind,
           "The flight",
-          "The balloon drifts with the wind; the pilot sets the route and duration according to the morning's conditions.",
+          "The balloon drifts with the wind for typically 45–60 minutes; the pilot sets the route according to the morning's conditions.",
         ],
         [
           Flag,
@@ -272,7 +269,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
           img: imgWeather,
           alt: "Sisli bir sabahta rüzgâr tulumu",
           h: "Hava durumu ve iptaller",
-          p: "Rüzgâr, yağış veya sis nedeniyle uçuşlar son dakikada iptal edilebilir; bu kararlar tamamen güvenlik içindir. Mümkünse turu konaklamanızın ilk sabahına planlayın.",
+          p: "Rüzgâr, yağış veya sis nedeniyle uçuşlar son dakikada iptal edilebilir; bu kararlar tamamen güvenlik içindir. Hava nedeniyle iptalde ücretsiz tarih değişikliği veya tam iade yapılır. Mümkünse turu konaklamanızın ilk sabahına planlayın.",
           link: "[Tur iptal edilirse ne olur?](/kesfet/pamukkale-balon-turu-iptal-edilirse-ne-olur/)",
         },
       ]
@@ -288,26 +285,9 @@ export function FlightPage({ lang }: { lang: Lang }) {
           img: imgWeather,
           alt: "A windsock on a foggy morning",
           h: "Weather and cancellations",
-          p: "Wind, rain or fog can cancel flights at the last minute — always for safety. If you can, book your first morning in the area.",
+          p: "Wind, rain or fog can cancel flights at the last minute — always for safety. Weather cancellations get a free date change or a full refund. If you can, book your first morning in the area.",
           link: "[What happens if a flight is cancelled?](/en/insights/what-happens-if-a-pamukkale-balloon-tour-is-cancelled/)",
         },
-      ];
-  const confirm = tr
-    ? [
-        "Kesin alış saati ve buluşma noktası",
-        "Havada geçen tahmini süre",
-        "Çocuklar için yaş ve boy şartı",
-        "Sağlık ve hareket kısıtlılığıyla ilgili koşullar",
-        "Hava nedeniyle iptalde seçenekler",
-        "Sigorta kapsamı",
-      ]
-    : [
-        "Exact pick-up time and meeting point",
-        "Approximate time in the air",
-        "Age and height rules for children",
-        "Health and mobility conditions",
-        "Options if the weather cancels the flight",
-        "Insurance coverage",
       ];
   return (
     <>
@@ -385,44 +365,45 @@ export function FlightPage({ lang }: { lang: Lang }) {
           ))}
         </div>
       </section>
-      <section className="bg-secondary py-20 md:py-28">
-        <div className="container-page grid gap-10 lg:grid-cols-2">
-          <div>
-            <SectionHeading
-              eyebrow={tr ? "Katılım" : "Eligibility"}
-              title={
-                tr ? "Çocuklar, sağlık ve erişilebilirlik" : "Children, health and accessibility"
-              }
-            />
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              {tr
-                ? "Yaş, boy ve sağlık durumuyla ilgili kurallar sepet tipine göre değişebilir; size özel durumu rezervasyon öncesinde bildiririz. Sepete binip inmek belirli bir hareket kabiliyeti gerektirir. Hamilelik, yakın zamanda geçirilmiş ameliyat, sırt veya diz sorunları ya da hareket kısıtlılığı varsa lütfen önceden bize yazın."
-                : "Age, height and health rules can vary with the basket type; we'll tell you what applies to you before you book. Climbing in and out of the basket requires some mobility. If you're pregnant, have had recent surgery, back or knee problems, or limited mobility, please message us first."}
-            </p>
+      <section id={tr ? "kurallar" : "rules"} className="bg-secondary py-20 md:py-28">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow={tr ? "Kurallar ve koşullar" : "Rules and terms"}
+            title={
+              tr
+                ? "Uçuş saati, süre, iptal ve katılım kuralları"
+                : "Flight times, duration, cancellation and eligibility"
+            }
+            intro={
+              tr
+                ? "Pamukkale'deki balon işletmelerinin genel uygulamalarıyla uyumlu standart kurallarımız. Rezervasyonunuza özel koşullar WhatsApp'tan yazılı olarak teyit edilir."
+                : "Our standard terms, in line with common practice among Pamukkale balloon operators. The exact terms of your booking are confirmed in writing on WhatsApp."
+            }
+          />
+          <dl className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {POLICIES.rules[lang].map(([h, p], i) => (
+              <div
+                key={h}
+                className="card-lux reveal p-7"
+                style={{ ["--reveal-delay" as string]: `${(i % 4) * 80}ms` }}
+              >
+                <dt className="flex items-center gap-3 font-display text-2xl font-semibold">
+                  {check}
+                  {h}
+                </dt>
+                <dd className="mt-3 leading-relaxed text-muted-foreground">{p}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-10 flex flex-wrap gap-3">
             <WaButton
               lang={lang}
               ctx="flight"
               label={tr ? "Durumumu sormak istiyorum" : "Ask about my situation"}
-              className="mt-8"
             />
-          </div>
-          <div className="card-lux p-8 md:p-10">
-            <h2 className="text-3xl">
-              {tr ? "Rezervasyon öncesi size bildirdiklerimiz" : "What we tell you before you book"}
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              {tr
-                ? "Teklifinizde ve teyit mesajınızda şu bilgiler yer alır:"
-                : "Your quote and confirmation cover:"}
-            </p>
-            <ul className="mt-5 grid gap-3">
-              {confirm.map((c) => (
-                <li key={c} className="flex items-center gap-3 font-medium">
-                  {check}
-                  {c}
-                </li>
-              ))}
-            </ul>
+            <L href={PAGES.prices[lang]} className={btn.outline}>
+              {tr ? "Fiyatlar 6.666 TL'den başlar" : "Prices from 6,666 TL"} <Arrow />
+            </L>
           </div>
         </div>
       </section>

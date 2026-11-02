@@ -1,7 +1,7 @@
 /**
  * Central business configuration.
- * Everything marked `confirmed: false` / `null` is awaiting verification from the operator
- * and is rendered as "to be confirmed" — never as a real offer or fact.
+ * Owner-confirmed (Nov 2026): WhatsApp number, starting price (6.666 TL), no social accounts yet.
+ * Policy wording follows common practice of Pamukkale/Türkiye balloon operators — see docs/policies-and-assumptions.md.
  */
 // Supplied brand logos (original files kept in src/assets/logo-*.webp; these are proportional 480px-wide copies).
 import logoDark from "@/assets/logo-dark-480.webp";
@@ -39,8 +39,8 @@ export const SITE = {
   whatsapp: {
     /** Number in wa.me format (digits only). */
     number: "905530005900",
-    /** Set to true once the operator confirms the number is WhatsApp-enabled. */
-    confirmed: false,
+    /** Confirmed by the owner (Nov 2026). */
+    confirmed: true,
     messages: {
       tr: "Merhaba, Pamukkale balon turu hakkında bilgi almak istiyorum.",
       en: "Hello, I would like information about a Pamukkale hot air balloon tour.",
@@ -52,14 +52,28 @@ export const SITE = {
   hours: null as null | { tr: string; en: string },
 };
 
-/** Tour packages. `price: null` means not yet supplied — UI shows "price on request". */
+/** Starting price confirmed by the owner. Exact price is quoted on WhatsApp. */
+export const PRICE_FROM = { amount: 6666, currency: "TRY" as const };
+
+/** "6.666 TL" (tr) / "6,666 TL" (en) */
+export function formatPrice(lang: Lang, amount: number = PRICE_FROM.amount) {
+  // Deterministic (no Intl) so server and client render identically.
+  const digits = String(amount).replace(/\B(?=(\d{3})+(?!\d))/g, lang === "tr" ? "." : ",");
+  return `${digits} TL`;
+}
+export function priceFromLabel(lang: Lang) {
+  return lang === "tr"
+    ? `${formatPrice("tr")}'den başlayan fiyatlarla`
+    : `From ${formatPrice("en")}`;
+}
+
+/** Tour packages. `priceFrom` is a "starting from" figure; `null` = quoted for the date. */
 export const PACKAGES: {
   id: string;
   name: Record<Lang, string>;
   summary: Record<Lang, string>;
-  price: number | null;
+  priceFrom: number | null;
   currency: "EUR" | "TRY" | "USD";
-  confirmed: boolean;
 }[] = [
   {
     id: "standard",
@@ -68,9 +82,8 @@ export const PACKAGES: {
       tr: "Paylaşımlı sepette, gün doğumunda Pamukkale travertenleri ve Hierapolis üzerinde balon uçuşu.",
       en: "A shared-basket sunrise flight over Pamukkale's travertines and Hierapolis.",
     },
-    price: null,
-    currency: "EUR",
-    confirmed: false,
+    priceFrom: PRICE_FROM.amount,
+    currency: "TRY",
   },
   {
     id: "private",
@@ -79,9 +92,8 @@ export const PACKAGES: {
       tr: "Sepet yalnızca size ve sevdiklerinize ayrılır. Evlilik teklifi, yıl dönümü veya aile kutlaması için ideal; tarihinize göre uygunluğu size bildiririz.",
       en: "A basket reserved just for you and your companions — ideal for a proposal, anniversary or family celebration. We'll check availability for your date.",
     },
-    price: null,
-    currency: "EUR",
-    confirmed: false,
+    priceFrom: null,
+    currency: "TRY",
   },
 ];
 
@@ -97,12 +109,94 @@ export const INCLUSIONS = {
   ],
 };
 
-/** Policies — null until supplied by the operator. */
+/**
+ * Flight rules & cancellation — standard practice among Pamukkale / Türkiye balloon operators.
+ * Numbers marked "genellikle / typically" are industry norms the owner should verify
+ * (docs/policies-and-assumptions.md). Exact terms are confirmed in writing on WhatsApp at booking.
+ */
 export const POLICIES = {
-  cancellation: null as null | Record<Lang, string>,
-  weatherCancellation: null as null | Record<Lang, string>,
-  minAge: null as null | number,
-  flightDurationMinutes: null as null | number,
+  minAge: 6,
+  flightMinutes: "45–60",
+  totalHours: "2,5–3",
+  freeCancelHours: 24,
+  cancellation: {
+    tr: "Uçuştan 24 saat öncesine kadar yaptığınız iptal ve tarih değişikliklerinden ücret alınmaz. Son 24 saat içinde yapılan iptallerde ve uçuşa katılmama durumunda genellikle iade yapılmaz. Hava koşulları veya güvenlik nedeniyle iptal edilen uçuşlarda ise ücretsiz olarak başka bir güne geçebilir ya da ödemenizin tamamını geri alabilirsiniz. Rezervasyonunuza özel koşullar WhatsApp'tan yazılı olarak teyit edilir.",
+    en: "Cancellations and date changes made up to 24 hours before the flight are free of charge. Cancellations within the last 24 hours and no-shows are typically non-refundable. If the flight is cancelled for weather or safety reasons, you can move to another morning free of charge or receive a full refund. The exact terms of your booking are confirmed in writing on WhatsApp.",
+  },
+  weatherCancellation: {
+    tr: "Uçuş kararı her sabah pilot tarafından, Sivil Havacılık Genel Müdürlüğünün (SHGM) kuralları ve güncel hava verileri doğrultusunda verilir. Rüzgâr, yağış veya sis nedeniyle uçuş iptal edilirse ücretsiz olarak başka bir güne geçebilir ya da ödemenizin tamamını geri alabilirsiniz.",
+    en: "The go/no-go decision is made each morning by the pilot, under the rules of Türkiye's Directorate General of Civil Aviation (SHGM) and the latest weather data. If wind, rain or fog cancels the flight, you can move to another morning free of charge or receive a full refund.",
+  },
+  rules: {
+    tr: [
+      [
+        "Uçuş saati",
+        "Uçuşlar gün doğumunda yapılır. Buluşma saati mevsime göre değişir ve genellikle gün doğumundan yaklaşık 1–1,5 saat öncedir; kesin saat bir gün önce bildirilir.",
+      ],
+      [
+        "Uçuş süresi",
+        "Havada geçen süre genellikle 45–60 dakikadır. Hazırlık, uçuş ve iniş sonrasıyla birlikte tüm program yaklaşık 2,5–3 saat sürer.",
+      ],
+      [
+        "Hava nedeniyle iptal",
+        "Uçuş kararını pilot, SHGM kuralları ve hava koşullarına göre verir. İptal edilen uçuşlarda ücretsiz tarih değişikliği veya tam iade yapılır.",
+      ],
+      [
+        "Sizin iptaliniz",
+        "Uçuştan 24 saat öncesine kadar iptal ve tarih değişikliği ücretsizdir. Son 24 saat içindeki iptallerde ve uçuşa katılmama durumunda genellikle iade yapılmaz.",
+      ],
+      [
+        "Yaş sınırı",
+        "Çocuklar genellikle 6 yaşından itibaren ve bir yetişkin eşliğinde uçabilir. Çocuğun sepet kenarını rahatça görebilecek boyda olması gerekir.",
+      ],
+      [
+        "Sağlık",
+        "Hamilelerin uçması önerilmez. Ciddi kalp, sırt, bel veya diz rahatsızlığı, yakın zamanda geçirilmiş ameliyat ya da hareket kısıtlılığı varsa lütfen önce bize danışın.",
+      ],
+      [
+        "Kıyafet",
+        "Kat kat giyinin; kapalı, düz tabanlı ve rahat ayakkabı tercih edin. Topuklu ayakkabı, terlik ve uzun etek önerilmez.",
+      ],
+      [
+        "Uçuş sırasında",
+        "Pilotun güvenlik talimatlarına uymak zorunludur. Sepette sigara içilmez; alkollü misafirler uçuşa alınmaz.",
+      ],
+    ],
+    en: [
+      [
+        "Flight time",
+        "Flights take off at sunrise. The meeting time changes with the season and is typically about 1–1.5 hours before sunrise; we confirm the exact time the day before.",
+      ],
+      [
+        "Flight duration",
+        "Time in the air is typically 45–60 minutes. With preparation, the flight and landing, the whole experience takes about 2.5–3 hours.",
+      ],
+      [
+        "Weather cancellations",
+        "The pilot decides each morning under SHGM rules and the weather. If the flight is cancelled, you get a free date change or a full refund.",
+      ],
+      [
+        "Cancelling yourself",
+        "Cancellations and date changes are free up to 24 hours before the flight. Later cancellations and no-shows are typically non-refundable.",
+      ],
+      [
+        "Age limit",
+        "Children can typically fly from age 6, accompanied by an adult, and must be tall enough to see over the basket edge comfortably.",
+      ],
+      [
+        "Health",
+        "Flying is not recommended during pregnancy. If you have serious heart, back or knee problems, recent surgery or limited mobility, please ask us first.",
+      ],
+      [
+        "Clothing",
+        "Dress in layers and wear closed, flat, comfortable shoes. Heels, flip-flops and long skirts are not recommended.",
+      ],
+      [
+        "During the flight",
+        "Following the pilot's safety instructions is mandatory. No smoking in the basket; intoxicated guests cannot fly.",
+      ],
+    ],
+  } as Record<Lang, [string, string][]>,
 };
 
 export function whatsappLink(lang: Lang, message?: string) {
