@@ -14,7 +14,7 @@ import { FAQS, PRICE_FAQ_IDX } from "@/content/faq";
 import { PageHero } from "../page-hero";
 import { CtaBand, FaqList, PackageCard } from "../blocks";
 import { L, btn, Arrow, Rich, SectionHeading, WhatsAppIcon } from "../ui-kit";
-import { Car, Wind, Flame, Flag, Clock, MapPin, Mail, Phone, type LucideIcon } from "lucide-react";
+import { Wind, Flame, Flag, Clock, MapPin, Mail, Phone, type LucideIcon } from "lucide-react";
 import imgWeather from "@/assets/img-weather.webp";
 import imgClothing from "@/assets/img-clothing.webp";
 import hero1 from "@/assets/hero-1.webp";
@@ -23,6 +23,7 @@ import hero3 from "@/assets/hero-3.webp";
 import hero5 from "@/assets/hero-5.webp";
 import imgSeason from "@/assets/img-season.webp";
 import imgInflation from "@/assets/img-inflation.webp";
+import { rs } from "@/lib/img";
 
 export function crumbs(lang: Lang, key: PageKey) {
   return [
@@ -70,6 +71,22 @@ const check = (
     </svg>
   </span>
 );
+const cross = (
+  <span
+    className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-navy/25 bg-card text-navy"
+    aria-hidden="true"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      className="h-3.5 w-3.5"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2.6}
+    >
+      <path d="M6 6l12 12M18 6 6 18" />
+    </svg>
+  </span>
+);
 
 /* ---------------- Prices ---------------- */
 export function PricesPage({ lang }: { lang: Lang }) {
@@ -80,25 +97,36 @@ export function PricesPage({ lang }: { lang: Lang }) {
         ["Tarih ve sezon", "Yoğun aylar ve hafta sonları fiyatı etkileyebilir."],
         ["Kişi sayısı", "Grup büyüklüğü teklifinizi doğrudan belirler."],
         ["Sepet tipi", "Paylaşımlı sepet veya yalnızca size ayrılan özel sepet."],
-        ["Dahil hizmetler", "Transfer, ikram ve sertifika gibi kalemler."],
+        [
+          "Dahil hizmetler",
+          "İkram, sertifika ve sigorta gibi kalemler. Otel transferi fiyata dahil değildir.",
+        ],
       ]
     : [
         ["Date and season", "Busy months and weekends can affect the price."],
         ["Group size", "The number of guests shapes your quote."],
         ["Basket type", "A shared basket or one reserved just for you."],
-        ["Inclusions", "Items such as transfers, refreshments and a certificate."],
+        [
+          "Inclusions",
+          "Items such as refreshments, a certificate and insurance. Hotel transfer is not included.",
+        ],
       ];
   return (
     <>
       <PageHero
         image={hero1}
+        alt={
+          tr
+            ? "Pamukkale balon turu fiyatları: gün doğumunda travertenler üzerinde balonlar"
+            : "Pamukkale hot air balloon prices: balloons over the travertines at sunrise"
+        }
         position="60% 50%"
         eyebrow={tr ? "Fiyatlar 2026" : "Prices 2026"}
         title={tr ? "Pamukkale Balon Turu Fiyatları" : "Pamukkale Hot Air Balloon Prices"}
         intro={
           tr
             ? "Pamukkale balon turu fiyatlarımız 6.666 TL'den başlar. Kesin fiyat tarihe, sezona ve kişi sayısına göre değişir; tarihinizi yazın, size özel fiyatı yazılı olarak iletelim."
-            : "Our Pamukkale balloon ride prices start from 6,666 TL. The exact price depends on the date, season and group size — tell us your date and we'll confirm it in writing."
+            : "Our Pamukkale hot air balloon prices start from 6,666 TL. The exact price depends on the date, season and group size — tell us your date and we'll confirm it in writing."
         }
         crumbs={crumbs(lang, "prices")}
       >
@@ -116,7 +144,11 @@ export function PricesPage({ lang }: { lang: Lang }) {
       <section className="container-page py-20 md:py-28">
         <SectionHeading
           eyebrow={tr ? "Paketler" : "Packages"}
-          title={tr ? "Balon turu paketleri" : "Balloon flight packages"}
+          title={
+            tr
+              ? "Pamukkale balon turu fiyatları ve paketler"
+              : "Pamukkale hot air balloon prices and packages"
+          }
           intro={
             tr
               ? "İki seçenek sunuyoruz. Standart uçuş 6.666 TL'den başlar; özel sepet için tarihinize ve kişi sayınıza göre fiyat veriyoruz. Kesin fiyat için WhatsApp'tan yazmanız yeterli."
@@ -166,13 +198,20 @@ export function PricesPage({ lang }: { lang: Lang }) {
                   : "Your quote states clearly whether each item below is included:"}
               </p>
               <ul className="mt-5 grid gap-3">
-                {INCLUSIONS.toVerify.map((x, i) => (
+                {INCLUSIONS.quoteItems.map((x, i) => (
                   <li key={i} className="flex items-center gap-3 font-medium">
                     {check}
                     {x[lang]}
                   </li>
                 ))}
+                {INCLUSIONS.notIncluded.map((x, i) => (
+                  <li key={`n${i}`} className="flex items-center gap-3 font-semibold text-navy">
+                    {cross}
+                    {x[lang]}
+                  </li>
+                ))}
               </ul>
+              <p className="mt-4 text-sm text-muted-foreground">{INCLUSIONS.transferNote[lang]}</p>
             </div>
             <div className="card-lux p-8">
               <h2 className="text-3xl">
@@ -214,9 +253,9 @@ export function FlightPage({ lang }: { lang: Lang }) {
   const stages: [LucideIcon, string, string][] = tr
     ? [
         [
-          Car,
-          "Otelden alış",
-          "Gün doğumundan genellikle 1–1,5 saat önce buluşma noktasında ya da otelinizde (transfer pakete dahilse) alınırsınız. Kesin saat bir gün önce bildirilir.",
+          MapPin,
+          "Buluşma",
+          "Gün doğumundan yaklaşık 1–1,5 saat önce buluşma noktasında bir araya geliriz. Kesin saat ve yer bir gün önce bildirilir. Otel transferi fiyata dahil değildir.",
         ],
         [
           Flame,
@@ -226,19 +265,19 @@ export function FlightPage({ lang }: { lang: Lang }) {
         [
           Wind,
           "Uçuş",
-          "Balon rüzgârla süzülür; havada geçen süre genellikle 45–60 dakikadır. Rotayı o sabahki koşullara göre pilot belirler.",
+          "Balon rüzgârla süzülür; havada geçen süre 45–60 dakikadır. Rotayı o sabahki koşullara göre pilot belirler.",
         ],
         [
           Flag,
           "İniş ve dönüş",
-          "Pilot uygun bir alana iniş yapar; ardından dönüş için transfer noktasına geçilir.",
+          "Pilot uygun bir alana iniş yapar; ardından ekibimizle birlikte buluşma noktasına dönülür.",
         ],
       ]
     : [
         [
-          Car,
-          "Hotel pick-up",
-          "Typically 1–1.5 hours before sunrise you're collected from the meeting point or your hotel (if transfers are included). We confirm the exact time the day before.",
+          MapPin,
+          "Meeting",
+          "About 1–1.5 hours before sunrise we meet at the meeting point. We confirm the exact time and place the day before. Hotel transfer is not included in the price.",
         ],
         [
           Flame,
@@ -248,12 +287,12 @@ export function FlightPage({ lang }: { lang: Lang }) {
         [
           Wind,
           "The flight",
-          "The balloon drifts with the wind for typically 45–60 minutes; the pilot sets the route according to the morning's conditions.",
+          "The balloon drifts with the wind for 45–60 minutes; the pilot sets the route according to the morning's conditions.",
         ],
         [
           Flag,
           "Landing and return",
-          "The pilot lands in a suitable spot, then you head back for the return transfer.",
+          "The pilot lands in a suitable spot, then our team brings you back to the meeting point.",
         ],
       ];
   const blocks = tr
@@ -293,6 +332,11 @@ export function FlightPage({ lang }: { lang: Lang }) {
     <>
       <PageHero
         image={hero5}
+        alt={
+          tr
+            ? "Pamukkale balon uçuşu: balon sepetinden travertenler"
+            : "A Pamukkale balloon flight: the travertines seen from the basket"
+        }
         position="65% 55%"
         eyebrow={tr ? "Uçuş bilgileri" : "Flight information"}
         title={
@@ -300,8 +344,8 @@ export function FlightPage({ lang }: { lang: Lang }) {
         }
         intro={
           tr
-            ? "Uçuş sabahı neler olur, ne giymelisiniz, hava kötü olursa ne yapılır? Bilmeniz gereken her şey bu sayfada."
-            : "What happens on the morning, what to wear and what if the weather turns? Everything you need to know is here."
+            ? "Pamukkale balon uçuşu sabahı neler olur, ne giymelisiniz, hava kötü olursa ne yapılır? Bilmeniz gereken her şey bu sayfada."
+            : "What happens on the morning of a Pamukkale balloon flight, what to wear and what if the weather turns? Everything you need to know is here."
         }
         crumbs={crumbs(lang, "flight")}
       >
@@ -315,7 +359,11 @@ export function FlightPage({ lang }: { lang: Lang }) {
       <section className="container-page py-20 md:py-28">
         <SectionHeading
           eyebrow={tr ? "Uçuş sabahı" : "Flight morning"}
-          title={tr ? "Tipik bir uçuş sabahı" : "A typical flight morning"}
+          title={
+            tr
+              ? "Pamukkale balon uçuşu sabahı nasıl geçer?"
+              : "How a Pamukkale balloon flight morning unfolds"
+          }
           intro={
             tr
               ? "Uçuşlar gün doğumuna göre planlanır; bu yüzden program mevsime göre daha erken veya daha geç başlar."
@@ -346,6 +394,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
               <div className="overflow-hidden">
                 <img
                   src={b.img}
+                  {...rs(b.img, "(min-width: 768px) 50vw, 100vw")}
                   alt={b.alt}
                   width={1280}
                   height={864}
@@ -376,16 +425,16 @@ export function FlightPage({ lang }: { lang: Lang }) {
             }
             intro={
               tr
-                ? "Pamukkale'deki balon işletmelerinin genel uygulamalarıyla uyumlu standart kurallarımız. Rezervasyonunuza özel koşullar WhatsApp'tan yazılı olarak teyit edilir."
-                : "Our standard terms, in line with common practice among Pamukkale balloon operators. The exact terms of your booking are confirmed in writing on WhatsApp."
+                ? "Tüm rezervasyonlarda geçerli kurallarımız. Rezervasyonunuz WhatsApp'tan yazılı olarak teyit edilir."
+                : "The rules that apply to every booking. Your booking is confirmed in writing on WhatsApp."
             }
           />
-          <dl className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <dl className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {POLICIES.rules[lang].map(([h, p], i) => (
               <div
                 key={h}
                 className="card-lux reveal p-7"
-                style={{ ["--reveal-delay" as string]: `${(i % 4) * 80}ms` }}
+                style={{ ["--reveal-delay" as string]: `${(i % 3) * 80}ms` }}
               >
                 <dt className="flex items-center gap-3 font-display text-2xl font-semibold">
                   {check}
@@ -399,7 +448,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
             <WaButton
               lang={lang}
               ctx="flight"
-              label={tr ? "Durumumu sormak istiyorum" : "Ask about my situation"}
+              label={tr ? "Sağlık durumumu danışmak istiyorum" : "Ask about my health situation"}
             />
             <L href={PAGES.prices[lang]} className={btn.outline}>
               {tr ? "Fiyatlar 6.666 TL'den başlar" : "Prices from 6,666 TL"} <Arrow />
@@ -419,12 +468,17 @@ export function FaqPage({ lang }: { lang: Lang }) {
     <>
       <PageHero
         image={hero2}
+        alt={
+          tr
+            ? "Pamukkale balon turu sık sorulan sorular: Hierapolis üzerinde balon"
+            : "Pamukkale hot air balloon FAQ: a balloon above Hierapolis"
+        }
         eyebrow={tr ? "SSS" : "FAQ"}
-        title={tr ? "Sık Sorulan Sorular" : "Frequently Asked Questions"}
+        title={tr ? "Pamukkale Balon Turu: Sık Sorulan Sorular" : "Pamukkale Hot Air Balloon FAQ"}
         intro={
           tr
-            ? "Fiyat, saat, uçuş süresi, kıyafet, iptal ve güvenlikle ilgili en çok sorulan soruların yanıtları."
-            : "Answers to the most common questions about price, timing, flight length, clothing, cancellations and safety."
+            ? "Pamukkale balon turu hakkında sık sorulan soruların yanıtları: fiyat, saat, uçuş süresi, kıyafet, iptal ve güvenlik."
+            : "Our Pamukkale hot air balloon FAQ answers the most common questions about price, timing, flight length, clothing, cancellations and safety."
         }
         crumbs={crumbs(lang, "faq")}
       />
@@ -450,7 +504,14 @@ export function FaqPage({ lang }: { lang: Lang }) {
             </a>
           </div>
         </aside>
-        <FaqList items={FAQS[lang]} />
+        <div>
+          <h2 className="mb-6 text-3xl md:text-4xl">
+            {tr
+              ? "Pamukkale balon turu hakkında sık sorulan sorular"
+              : "Pamukkale hot air balloon FAQ: all questions"}
+          </h2>
+          <FaqList items={FAQS[lang]} />
+        </div>
       </section>
       <CtaBand lang={lang} />
     </>
@@ -490,12 +551,17 @@ export function AboutPage({ lang }: { lang: Lang }) {
     <>
       <PageHero
         image={imgSeason}
+        alt={
+          tr
+            ? "Pamukkale Balon Turları: travertenler üzerinde balonlar"
+            : "Pamukkale Balloon Tours: balloons over the travertines"
+        }
         eyebrow={tr ? "Hakkımızda" : "About us"}
-        title={tr ? SITE.name : SITE.nameEn}
+        title={tr ? `${SITE.name} Hakkında` : `About ${SITE.nameEn}`}
         intro={
           tr
-            ? "Pamukkale'nin gökyüzündeki büyüleyici deneyimi, açık ve doğru bilgilerle misafirlerimize sunuyoruz."
-            : "We bring visitors the magic of Pamukkale from the sky — with clear, accurate information."
+            ? "Pamukkale Balon Turları olarak Pamukkale'nin gökyüzündeki büyüleyici deneyimi, açık ve doğru bilgilerle misafirlerimize sunuyoruz."
+            : "At Pamukkale Balloon Tours we bring visitors the magic of Pamukkale from the sky — with clear, accurate information."
         }
         crumbs={crumbs(lang, "about")}
       />
@@ -503,7 +569,11 @@ export function AboutPage({ lang }: { lang: Lang }) {
         <div className="reveal space-y-5 text-lg leading-relaxed text-muted-foreground">
           <SectionHeading
             eyebrow={tr ? "Biz kimiz?" : "Who we are"}
-            title={tr ? "Pamukkale'de, Pamukkale için" : "Based in Pamukkale"}
+            title={
+              tr
+                ? "Pamukkale Balon Turları: Pamukkale'de, Pamukkale için"
+                : "Pamukkale Balloon Tours: based in Pamukkale"
+            }
           />
           <p>
             {tr
@@ -518,10 +588,11 @@ export function AboutPage({ lang }: { lang: Lang }) {
         </div>
         <img
           src={imgInflation}
+          {...rs(imgInflation, "(min-width: 768px) 50vw, 100vw")}
           alt={
             tr
-              ? "Şafak öncesi şişirilen sıcak hava balonu"
-              : "A hot air balloon being inflated before dawn"
+              ? "Pamukkale Balon Turları: şafak öncesi şişirilen sıcak hava balonu"
+              : "Pamukkale Balloon Tours: a hot air balloon being inflated before dawn"
           }
           width={1280}
           height={864}
@@ -589,12 +660,17 @@ export function ContactPage({ lang }: { lang: Lang }) {
     <>
       <PageHero
         image={hero3}
+        alt={
+          tr
+            ? "Pamukkale balon turu iletişim: havadan Pamukkale travertenleri"
+            : "Contact Pamukkale Balloon Tours: Pamukkale's travertines from above"
+        }
         eyebrow={tr ? "İletişim" : "Contact"}
-        title={tr ? "Bize Ulaşın" : "Get in Touch"}
+        title={tr ? "Pamukkale Balon Turu İletişim" : "Contact Pamukkale Balloon Tours"}
         intro={
           tr
-            ? "Fiyat, müsaitlik ve rezervasyon için en hızlı yol WhatsApp. Telefon ve e-postayla da bize ulaşabilirsiniz."
-            : "WhatsApp is the quickest way to ask about prices, availability and bookings. You can also call or email us."
+            ? "Pamukkale balon turu için fiyat, müsaitlik ve rezervasyonda en hızlı iletişim yolu WhatsApp. Telefon ve e-postayla da bize ulaşabilirsiniz."
+            : "WhatsApp is the quickest way to contact Pamukkale Balloon Tours about prices, availability and bookings. You can also call or email us."
         }
         crumbs={crumbs(lang, "contact")}
       />
@@ -627,13 +703,20 @@ export function ContactPage({ lang }: { lang: Lang }) {
             </div>
           </div>
         </div>
-        <ul className="mt-10 grid gap-6 md:grid-cols-3">
+        <h2 className="mt-16 text-3xl md:text-4xl">
+          {tr
+            ? "Pamukkale balon turu iletişim bilgileri"
+            : "Ways to contact Pamukkale Balloon Tours"}
+        </h2>
+        <ul className="mt-8 grid gap-6 md:grid-cols-3">
           {items.map(({ Icon, h, v, href, cta, ext }) => (
             <li key={h} className="card-lux flex flex-col p-8">
               <span className="grid h-12 w-12 place-items-center rounded-full bg-navy text-champagne">
                 <Icon className="h-5 w-5" aria-hidden="true" strokeWidth={1.7} />
               </span>
-              <h2 className="mt-6 text-sm font-bold uppercase tracking-[0.2em] text-bronze">{h}</h2>
+              <h3 className="mt-6 font-sans text-sm font-bold uppercase tracking-[0.2em] text-bronze">
+                {h}
+              </h3>
               {h === (tr ? "Adres" : "Address") ? (
                 <address className="mt-2 flex-1 font-display text-2xl font-semibold not-italic leading-snug">
                   {v}
@@ -662,6 +745,7 @@ export function ContactPage({ lang }: { lang: Lang }) {
         >
           <img
             src={hero3}
+            {...rs(hero3, "(min-width: 1280px) 1200px, 100vw")}
             alt=""
             width={1600}
             height={907}

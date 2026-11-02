@@ -17,3 +17,9 @@ export type ArticleBody = {
   sections: Section[];
   takeaways: string[];
 };
+
+/** Light per-article data shipped with every page (see scripts/gen-article-index.mjs). */
+export type ArticleSummary = Pick<
+  ArticleBody,
+  "slug" | "title" | "seoTitle" | "description" | "excerpt"
+> & { words: number };

@@ -1,10 +1,19 @@
 import type { Lang } from "@/config/site";
 import { PAGES, PAGE_LABELS, type PageKey, blogListPath, articlePath } from "./paths";
-import { seo, breadcrumbLd, organizationLd, websiteLd, faqLd, abs } from "./seo";
+import {
+  seo,
+  breadcrumbLd,
+  organizationLd,
+  websiteLd,
+  faqLd,
+  abs,
+  touristTripLd,
+  collectionLd,
+} from "./seo";
 import { FAQS } from "@/content/faq";
 import { SITE } from "@/config/site";
 import type { Article } from "@/content/articles";
-import { translatedSlug } from "@/content/articles";
+import { translatedSlug, getPage } from "@/content/articles";
 
 const META: Record<PageKey, Record<Lang, [string, string]>> = {
   home: {
@@ -14,7 +23,7 @@ const META: Record<PageKey, Record<Lang, [string, string]>> = {
     ],
     en: [
       "Pamukkale Hot Air Balloon Ride | From 6,666 TL",
-      "Sunrise hot air balloon rides over Pamukkale's travertines and Hierapolis, typically 45–60 minutes aloft. Prices from 6,666 TL, quick booking on WhatsApp.",
+      "Pamukkale hot air balloon rides at sunrise over the travertines and Hierapolis, 45–60 minutes aloft. Prices from 6,666 TL, quick booking on WhatsApp.",
     ],
   },
   prices: {
@@ -30,7 +39,7 @@ const META: Record<PageKey, Record<Lang, [string, string]>> = {
   reservation: {
     tr: [
       "Pamukkale Balon Turu Rezervasyonu | Online Talep",
-      "Pamukkale balon turu rezervasyonu: tarihinizi ve kişi sayınızı yazın, talebinizi WhatsApp'tan gönderin, yazılı teklifinizi alın.",
+      "Pamukkale balon turu rezervasyonu: tarihinizi ve kişi sayınızı yazın, talebinizi WhatsApp'tan gönderin, fiyatı ve koşulları yazılı alın.",
     ],
     en: [
       "Book a Pamukkale Hot Air Balloon Ride | Booking",
@@ -40,51 +49,51 @@ const META: Record<PageKey, Record<Lang, [string, string]>> = {
   flight: {
     tr: [
       "Pamukkale Balon Uçuşu | Saat, Süre ve Hazırlık",
-      "Pamukkale balon turu gün doğumunda başlar, havada genellikle 45–60 dakika sürer. Uçuş sabahı, iptal koşulları, yaş sınırı ve ne giyileceği.",
+      "Pamukkale balon uçuşu gün doğumunda başlar, havada 45–60 dakika sürer. Uçuş sabahı, iptal koşulları, yaş sınırı, sağlık kuralları ve ne giyileceği.",
     ],
     en: [
       "Pamukkale Balloon Flight | Times, Duration & What to Expect",
-      "Pamukkale balloon flights take off at sunrise and typically last 45–60 minutes. The flight morning, cancellation terms, age limit and what to wear.",
+      "Pamukkale balloon flights take off at sunrise and last 45–60 minutes aloft. The flight morning, cancellation terms, age limit, health rules and what to wear.",
     ],
   },
   faq: {
     tr: [
       "Pamukkale Balon Turu: Sık Sorulan Sorular",
-      "Pamukkale balon turu kaç TL (6.666 TL'den başlar), saat kaçta, kaç dakika sürer, iptal olursa ne olur, güvenli mi? Tüm yanıtlar.",
+      "Pamukkale balon turu sık sorulan sorular: kaç TL (6.666 TL'den başlar), saat kaçta, kaç dakika sürer, iptal olursa ne olur, güvenli mi?",
     ],
     en: [
       "Pamukkale Hot Air Balloon FAQ | Price, Time, Safety",
-      "Pamukkale hot air balloon questions answered: price, start time, duration, take-off point, safety, children and whether it's worth it.",
+      "Pamukkale hot air balloon FAQ: price, start time, duration, take-off point, safety, children and whether the ride is worth it.",
     ],
   },
   blog: {
     tr: [
-      "Keşfet: Pamukkale Balon Turu Rehberleri",
+      "Pamukkale Balon Turu Rehberleri | Keşfet",
       "Pamukkale balon turu rehberleri: fiyatlar, uçuş saatleri, kıyafet, iptaller, çocuklar ve Pamukkale mi Kapadokya mı karşılaştırması.",
     ],
     en: [
-      "Pamukkale Hot Air Balloon Travel Guide",
-      "Guides to Pamukkale hot air balloon rides: prices, start times, what to wear, cancellations, children and Pamukkale vs Cappadocia.",
+      "Pamukkale Balloon Ride Guides | Insights",
+      "Pamukkale balloon ride guides: hot air balloon prices, start times, what to wear, cancellations, children and Pamukkale vs Cappadocia.",
     ],
   },
   about: {
     tr: [
-      "Hakkımızda | Pamukkale Balon Turları",
+      "Pamukkale Balon Turları Hakkında | Biz Kimiz?",
       "Pamukkale Balon Turları hakkında: Pamukkale'deki ofisimiz, yaklaşımımız ve balon turu için bize nasıl ulaşabileceğiniz.",
     ],
     en: [
-      "About Us | Pamukkale Balloon Tours",
-      "About Pamukkale Balon Turları: our office in Pamukkale, our approach and how to reach us about a hot air balloon ride.",
+      "About Pamukkale Balloon Tours | Who We Are",
+      "About Pamukkale Balloon Tours (Pamukkale Balon Turları): our office in Pamukkale, our approach and how to reach us about a hot air balloon ride.",
     ],
   },
   contact: {
     tr: [
-      "İletişim ve WhatsApp | Pamukkale Balon Turları",
-      "Pamukkale balon turu için WhatsApp, telefon ve e-postayla bize ulaşın. Adresimiz: Menderes Caddesi, Pamukkale / Denizli.",
+      "Pamukkale Balon Turu İletişim | WhatsApp ve Telefon",
+      "Pamukkale balon turu iletişim: WhatsApp, telefon ve e-postayla bize ulaşın. Adresimiz: Menderes Caddesi, Pamukkale / Denizli.",
     ],
     en: [
-      "Contact & WhatsApp | Pamukkale Balloon Tours",
-      "Contact us about a Pamukkale hot air balloon ride by WhatsApp, phone or email. Our address: Menderes Caddesi, Pamukkale / Denizli.",
+      "Contact Pamukkale Balloon Tours | WhatsApp & Phone",
+      "Contact Pamukkale Balloon Tours about a hot air balloon ride by WhatsApp, phone or email. Our address: Menderes Caddesi, Pamukkale / Denizli.",
     ],
   },
   privacy: {
@@ -122,7 +131,7 @@ const META: Record<PageKey, Record<Lang, [string, string]>> = {
 export function staticHead(key: PageKey, lang: Lang) {
   const [title, description] = META[key][lang];
   const ld: object[] = [];
-  if (key === "home") ld.push(organizationLd, websiteLd);
+  if (key === "home") ld.push(organizationLd, websiteLd, touristTripLd(lang, PAGES.home[lang]));
   else if (key === "faq")
     ld.push(
       faqLd(FAQS[lang]),
@@ -138,7 +147,10 @@ export function staticHead(key: PageKey, lang: Lang) {
         { name: PAGE_LABELS[key][lang], path: PAGES[key][lang] },
       ]),
     );
-  return seo({ lang, title, description, path: PAGES[key][lang], alt: PAGES[key], jsonLd: ld });
+  if (key === "prices") ld.push(touristTripLd(lang, PAGES.prices[lang]));
+  if (key === "contact" || key === "about") ld.push(organizationLd);
+  const h = seo({ lang, title, description, path: PAGES[key][lang], alt: PAGES[key], jsonLd: ld });
+  return h;
 }
 
 export function blogHead(lang: Lang, page: number, total: number) {
@@ -148,9 +160,28 @@ export function blogHead(lang: Lang, page: number, total: number) {
   const h = seo({
     lang,
     title: t + suffix,
-    description: d + suffix,
+    description: page > 1 ? `${d} ${lang === "tr" ? "Sayfa" : "Page"} ${page}.` : d,
     path: blogListPath(lang, page),
     alt: { [lang]: blogListPath(lang, page), [other]: blogListPath(other, page) },
+    jsonLd: [
+      collectionLd({
+        lang,
+        name: t + suffix,
+        description: d,
+        path: blogListPath(lang, page),
+        items: getPage(lang, page).map((a) => ({
+          name: a.body.title,
+          path: articlePath(lang, a.body.slug),
+        })),
+      }),
+      breadcrumbLd([
+        { name: PAGE_LABELS.home[lang], path: PAGES.home[lang] },
+        { name: PAGE_LABELS.blog[lang], path: PAGES.blog[lang] },
+        ...(page > 1
+          ? [{ name: `${PAGE_LABELS.blog[lang]}${suffix}`, path: blogListPath(lang, page) }]
+          : []),
+      ]),
+    ],
   });
   if (page > 1) h.links.push({ rel: "prev", href: abs(blogListPath(lang, page - 1)) });
   if (page < total) h.links.push({ rel: "next", href: abs(blogListPath(lang, page + 1)) });

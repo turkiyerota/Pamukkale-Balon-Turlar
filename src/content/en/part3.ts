@@ -6,11 +6,11 @@ export const EN_3: Record<string, ArticleBody> = {
     title: "How to Book a Pamukkale Balloon Tour",
     seoTitle: "How to Book a Pamukkale Balloon Tour | Step by Step",
     description:
-      "A step-by-step guide to requesting a Pamukkale balloon tour: what details to prepare, how to send your request, what a written confirmation should include and how to prepare for flight day.",
+      "How to book a Pamukkale balloon tour step by step: what details to prepare, how to send your request and what a written confirmation should include.",
     excerpt:
       "Have your date, group size and contact details ready, send your request, and don't treat the booking as confirmed until you have it in writing.",
     intro: [
-      "Booking a balloon ride only takes a few steps, but the most important one is often skipped: written confirmation. Filling in a form or sending a message doesn't mean your place is confirmed. It's confirmed when the price, date, pick-up arrangements and cancellation terms have been sent to you in writing.",
+      "Booking a Pamukkale balloon tour only takes a few steps, but the most important one is often skipped: written confirmation. Filling in a form or sending a message doesn't mean your place is confirmed. It's confirmed when the price, date, meeting details and cancellation terms have been sent to you in writing.",
       "This guide walks through what to prepare, how to send your request, what the confirmation should contain and how to get ready for the morning itself.",
     ],
     sections: [
@@ -55,7 +55,7 @@ export const EN_3: Record<string, ArticleBody> = {
           "What's included and what isn't",
           "Payment method and when payment is due",
           "Terms for weather cancellations and for cancelling yourself",
-          "When you'll be told your pick-up time",
+          "When you'll be told your meeting time",
         ],
         sub: [
           {
@@ -84,7 +84,7 @@ export const EN_3: Record<string, ArticleBody> = {
         id: "day-before",
         h: "Step 4: The Day Before",
         list: [
-          "Confirm your pick-up time and meeting point",
+          "Confirm your meeting time and meeting point",
           "Lay out your clothes — see [what to wear](/en/insights/what-to-wear-for-a-pamukkale-hot-air-balloon-ride/)",
           "Charge your phone and make sure the number you gave will be on in the morning",
           "Tell hotel reception you'll be leaving early",
@@ -96,7 +96,7 @@ export const EN_3: Record<string, ArticleBody> = {
         id: "flight-morning",
         h: "Step 5: Flight Morning",
         p: [
-          "Be ready a few minutes before pick-up. At the launch site, listen carefully to the briefing and follow the pilot's instructions. You'll find how the morning works on our [flight information page](/en/flight-information/), and everything to prepare in one place in our [pre-flight checklist](/en/insights/what-to-know-before-your-pamukkale-balloon-ride/).",
+          "Be ready a few minutes before the meeting time. At the launch site, listen carefully to the briefing and follow the pilot's instructions. You'll find how the morning works on our [flight information page](/en/flight-information/), and everything to prepare in one place in our [pre-flight checklist](/en/insights/what-to-know-before-your-pamukkale-balloon-ride/).",
         ],
       },
     ],
@@ -104,7 +104,7 @@ export const EN_3: Record<string, ArticleBody> = {
       "At busy times, send your request as soon as your dates are fixed.",
       "A form or message isn't a booking — wait for written confirmation.",
       "Make sure the confirmation covers price, inclusions, payment and cancellation terms.",
-      "Check your pick-up time and meeting point the day before.",
+      "Check your meeting time and meeting point the day before.",
     ],
   },
 
@@ -113,11 +113,11 @@ export const EN_3: Record<string, ArticleBody> = {
     title: "What Is Included in a Pamukkale Balloon Tour?",
     seoTitle: "What's Included in a Pamukkale Balloon Tour? A Checklist",
     description:
-      "What may or may not be included in the price of a Pamukkale balloon tour, a practical checklist for comparing quotes, and where extra costs can appear.",
+      "What's included in a Pamukkale balloon tour price, what isn't, a practical checklist for comparing quotes, and where extra costs can appear.",
     excerpt:
       "Pin down transfers, refreshments, certificates, insurance and photos at the quote stage.",
     intro: [
-      "Most of the price difference between two balloon quotes usually comes down to what's included. One may cover only the flight; another may add hotel transfers, a breakfast snack and a post-flight celebration. That's why it pays to compare what you're getting before you compare the numbers.",
+      "When you ask what's included in a Pamukkale balloon tour, you're asking the right question: most of the price difference between two balloon quotes usually comes down to what's included. One may cover only the flight; another may add hotel transfers, a breakfast snack and a post-flight celebration. That's why it pays to compare what you're getting before you compare the numbers.",
       "The list below shows the items you'll commonly see and the questions to ask. **We confirm in writing what's included in your quote when you book.**",
     ],
     sections: [
@@ -128,7 +128,7 @@ export const EN_3: Record<string, ArticleBody> = {
           "For every quote, check whether these items are included. Putting them in a table makes comparison much easier:",
         ],
         list: [
-          "Hotel pick-up and drop-off",
+          "Hotel transfer (not included in our prices)",
           "Pre-flight refreshments (tea, coffee, a light snack)",
           "The flight itself and type of basket (standard or private)",
           "A post-flight celebration or flight certificate",
@@ -144,7 +144,7 @@ export const EN_3: Record<string, ArticleBody> = {
           {
             h: "Transfers",
             p: [
-              "If you're staying in Pamukkale village, the transfer may be short; if you're in Karahayıt or central Denizli, whether it's included can make a real difference to the price. Ask which areas pick-up covers.",
+              "If you're staying in Pamukkale village, the transfer may be short; if you're in Karahayıt or central Denizli, whether it's included can make a real difference to the price. **Hotel transfer is not included in our prices;** ask us on WhatsApp about getting to the meeting point.",
             ],
           },
           {
@@ -191,7 +191,7 @@ export const EN_3: Record<string, ArticleBody> = {
         id: "extras",
         h: "Where Extra Costs Can Appear",
         p: [
-          "Pick-ups from hotels outside the transfer area, private basket requests, decorations or surprise arrangements for special occasions, and photo packages can all cost extra. Ask about these at the quote stage and get the price in writing. An unexpected charge on flight day is a poor start to the morning.",
+          "Private basket requests, decorations or surprise arrangements for special occasions, and photo packages can all cost extra. Ask about these at the quote stage and get the price in writing. An unexpected charge on flight day is a poor start to the morning.",
         ],
       },
       {
@@ -216,11 +216,11 @@ export const EN_3: Record<string, ArticleBody> = {
     title: "What Is the Best Time for a Pamukkale Balloon Ride?",
     seoTitle: "Best Time for a Pamukkale Balloon Ride | A Seasonal Guide",
     description:
-      "How a Pamukkale balloon ride can differ in spring, summer, autumn and winter, and how to weigh weather, crowds, light and flexibility when choosing a date.",
+      "The best time for a Pamukkale balloon ride: how spring, summer, autumn and winter differ, and how to weigh weather, crowds and light when choosing a date.",
     excerpt:
       "Every season has its own character. Balance weather, crowds, light and flexibility when you pick your date.",
     intro: [
-      "The “best time” depends on you. Some travellers want mild mornings, some prefer quieter periods, and some are chasing a particular kind of light for photos. This guide summarises what each season is generally like and the questions to ask yourself when choosing a date.",
+      "The best time for a Pamukkale balloon ride depends on you. Some travellers want mild mornings, some prefer quieter periods, and some are chasing a particular kind of light for photos. This guide summarises what each season is generally like and the questions to ask yourself when choosing a date.",
       "One important point: no season guarantees a flight on a given date. Balloon flights are decided each morning based on that day's weather. **We confirm availability for your date in writing when you book.**",
     ],
     sections: [
@@ -229,14 +229,14 @@ export const EN_3: Record<string, ArticleBody> = {
         h: "Spring (March–May)",
         p: [
           "Fields and vineyards around Pamukkale turn green, mornings are cool and days are mild. From the air, the contrast between the white travertines and the green plain looks vivid in photos.",
-          "In March and early April mornings can still be quite cold and the weather more changeable. May strikes a good balance for many travellers. Sunrise gets steadily earlier through spring, so by late May pick-up times are close to summer ones.",
+          "In March and early April mornings can still be quite cold and the weather more changeable. May strikes a good balance for many travellers. Sunrise gets steadily earlier through spring, so by late May meeting times are close to summer ones.",
         ],
       },
       {
         id: "summer",
         h: "Summer (June–August)",
         p: [
-          "Mornings are usually calm and clear, with little rain. On the other hand, the sun rises very early and pick-up can be in the dark. Daytime temperatures are high, so it makes sense to visit the travertines and Hierapolis straight after the flight, before the heat builds.",
+          "Mornings are usually calm and clear, with little rain. On the other hand, the sun rises very early and the meeting time can be in the dark. Daytime temperatures are high, so it makes sense to visit the travertines and Hierapolis straight after the flight, before the heat builds.",
           "Summer is one of Pamukkale's busiest periods. If you're travelling then, booking early helps, and bear in mind that prices can respond to demand.",
         ],
       },
@@ -286,7 +286,7 @@ export const EN_3: Record<string, ArticleBody> = {
     ],
     takeaways: [
       "Each season has different strengths; none guarantees a flight.",
-      "Summer pick-ups are very early; winter can bring more cancellations.",
+      "Summer meeting times are very early; winter can bring more cancellations.",
       "Late spring and early autumn are a good balance for many travellers.",
       "Whatever the season, keep a spare morning in your plans.",
     ],

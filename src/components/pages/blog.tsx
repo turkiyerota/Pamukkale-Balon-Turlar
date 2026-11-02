@@ -11,8 +11,9 @@ import { PageHero } from "../page-hero";
 import { ArticleCard, CtaBand } from "../blocks";
 import { L, Rich, Breadcrumbs, btn, Arrow, WhatsAppIcon } from "../ui-kit";
 import { whatsappLink } from "@/config/site";
-import type { Section } from "@/content/types";
+import type { ArticleBody, Section } from "@/content/types";
 import heroPlain from "@/assets/gallery/denizli-plain.webp";
+import { rs } from "@/lib/img";
 
 export function BlogListPage({ lang, page }: { lang: Lang; page: number }) {
   const tr = lang === "tr";
@@ -27,17 +28,31 @@ export function BlogListPage({ lang, page }: { lang: Lang; page: number }) {
     <>
       <PageHero
         image={heroPlain}
+        alt={
+          tr
+            ? "Pamukkale balon turu rehberleri: Denizli ovası üzerinde balonlar"
+            : "Pamukkale balloon ride guides: balloons over the Denizli plain"
+        }
         eyebrow={PAGE_LABELS.blog[lang]}
         title={tr ? "Pamukkale Balon Turu Rehberleri" : "Pamukkale Balloon Ride Guides"}
         intro={
           tr
-            ? "Fiyatlar, uçuş saatleri, kıyafet, iptaller ve planlama: Pamukkale balon turundan önce bilmeniz gereken her şey."
-            : "Prices, flight times, clothing, cancellations and planning: everything to know before your Pamukkale balloon ride."
+            ? "Pamukkale balon turu rehberleri: fiyatlar, uçuş saatleri, kıyafet, iptaller ve planlama. Uçuştan önce bilmeniz gereken her şey."
+            : "Pamukkale balloon ride guides: prices, flight times, clothing, cancellations and planning — everything to know before you fly."
         }
         crumbs={crumbs}
       />
       <section className="container-page py-20 md:py-28">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <h2 className="text-3xl md:text-4xl">
+          {tr
+            ? page > 1
+              ? `Pamukkale balon turu rehberleri – sayfa ${page}`
+              : "Tüm Pamukkale balon turu rehberleri"
+            : page > 1
+              ? `Pamukkale balloon ride guides – page ${page}`
+              : "All Pamukkale balloon ride guides"}
+        </h2>
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((a) => (
             <ArticleCard key={a.id} a={a} />
           ))}
@@ -74,10 +89,9 @@ export function BlogListPage({ lang, page }: { lang: Lang; page: number }) {
   );
 }
 
-export function ArticlePage({ a }: { a: Article }) {
+export function ArticlePage({ a, body: b }: { a: Article; body: ArticleBody }) {
   const lang = a.lang,
-    tr = lang === "tr",
-    b = a.body;
+    tr = lang === "tr";
   const related = relatedArticles(a);
   const date = (d: string) =>
     new Date(d).toLocaleDateString(tr ? "tr-TR" : "en-GB", {
@@ -90,6 +104,7 @@ export function ArticlePage({ a }: { a: Article }) {
       <header className="grain relative isolate overflow-hidden bg-navy-deep text-on-dark">
         <img
           src={a.cover}
+          {...rs(a.cover, "100vw")}
           alt={a.coverAlt[lang]}
           width={1024}
           height={768}
@@ -167,7 +182,9 @@ export function ArticlePage({ a }: { a: Article }) {
             </section>
           ))}
           <aside className="mt-12 rounded-[1.25rem] border border-gold/30 bg-champagne/25 p-7 not-prose">
-            <h2 className="!mt-0 text-2xl">{tr ? "Özetle" : "Key takeaways"}</h2>
+            <h2 className="!mt-0 text-2xl">
+              {tr ? "Özetle" : "Key takeaways"}: {a.kw[lang]}
+            </h2>
             <ul>
               {b.takeaways.map((x, i) => (
                 <li key={i}>{x}</li>
@@ -211,7 +228,7 @@ export function ArticlePage({ a }: { a: Article }) {
                 <li key={s.id}>
                   <a
                     href={`#${s.id}`}
-                    className="flex gap-3 rounded-lg px-2 py-1.5 transition-colors hover:bg-champagne/40 hover:text-navy-deep"
+                    className="flex min-h-11 items-center gap-3 rounded-lg px-2 py-1.5 transition-colors hover:bg-champagne/40 hover:text-navy-deep"
                   >
                     <span className="font-display text-lg italic text-bronze">{i + 1}</span>
                     <span>{s.h}</span>

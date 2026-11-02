@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
 import { Breadcrumbs } from "./ui-kit";
+import { rs } from "@/lib/img";
 
 export function PageHero({
   image,
+  alt = "",
   eyebrow,
   title,
   intro,
@@ -11,6 +13,8 @@ export function PageHero({
   children,
 }: {
   image: string;
+  /** Describe the photo (and the page topic) when it is meaningful; empty = decorative. */
+  alt?: string;
   eyebrow?: string;
   title: string;
   intro?: string;
@@ -22,7 +26,8 @@ export function PageHero({
     <section className="grain relative isolate overflow-hidden bg-navy-deep text-white">
       <img
         src={image}
-        alt=""
+        {...rs(image, "100vw")}
+        alt={alt}
         width={1600}
         height={900}
         loading="eager"

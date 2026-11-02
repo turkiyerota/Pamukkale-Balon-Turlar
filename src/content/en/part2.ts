@@ -4,13 +4,13 @@ export const EN_2: Record<string, ArticleBody> = {
   clothing: {
     slug: "what-to-wear-for-a-pamukkale-hot-air-balloon-ride",
     title: "What to Wear for a Pamukkale Hot Air Balloon Ride",
-    seoTitle: "What to Wear for a Pamukkale Hot Air Balloon Ride | By Season",
+    seoTitle: "What to Wear for a Pamukkale Balloon Ride | By Season",
     description:
-      "Layers, shoes and seasonal tips for a Pamukkale balloon ride: how to stay comfortable in the cold dawn air, in the basket and at the landing site.",
+      "What to wear for a Pamukkale balloon ride: layers, shoes and seasonal tips to stay comfortable in the cold dawn air, in the basket and at landing.",
     excerpt:
       "Dawn can be chilly in any season. Wear layers you can peel off and closed shoes with a good grip.",
     intro: [
-      "Balloon rides start at the coolest time of day. Even on a summer day that will top 30°C, you can feel cold waiting at the launch site before sunrise. Then, once you're in the basket, the burner can send a short blast of warmth over your head. Dressing well keeps you comfortable at both extremes.",
+      "What to wear for a Pamukkale balloon ride starts with the clock: flights begin at the coolest time of day. Even on a summer day that will top 30°C, you can feel cold waiting at the launch site before sunrise. Then, once you're in the basket, the burner can send a short blast of warmth over your head. Dressing well keeps you comfortable at both extremes.",
       "This guide covers layering, footwear, what to wear in each season and what to bring along. If you're unsure whether there's a specific dress requirement, just ask when you book.",
     ],
     sections: [
@@ -116,12 +116,12 @@ export const EN_2: Record<string, ArticleBody> = {
     title: "What Happens If a Pamukkale Balloon Tour Is Cancelled?",
     seoTitle: "Pamukkale Balloon Tour Cancelled? Refunds and Rebooking",
     description:
-      "How weather cancellations work for Pamukkale balloon flights, the usual refund and rebooking options, cancelling yourself, and what to ask before you book.",
+      "If a Pamukkale balloon tour is cancelled for weather you get a free new date or a full refund. The 24-hour rule for your own cancellations, and what to ask.",
     excerpt:
       "Balloon flights depend on the weather. Find out — in writing — what happens if yours is cancelled.",
     intro: [
-      "Balloon flights depend directly on wind, visibility and precipitation. If the flight is judged unsafe, it can be cancelled at the last minute — sometimes even after you've arrived at the launch site. That's an unavoidable part of planning a balloon ride.",
-      "**Our terms in short: if the weather or safety cancels your flight, you can move to another morning free of charge or get a full refund. If you cancel yourself, it's free up to 24 hours before the flight.** This guide explains how cancellation decisions are made, the options you're likely to come across and how to plan your trip with some flexibility.",
+      "Pamukkale balloon flights depend directly on wind, visibility and precipitation. If the flight is judged unsafe, it can be cancelled at the last minute — sometimes even after you've arrived at the launch site. That's an unavoidable part of planning a balloon ride.",
+      "**Our cancellation terms are clear: if the pilot or SHGM cancels your flight for weather or safety reasons, you can choose a free new date or receive a full refund. Cancellations and date changes made up to 24 hours before the flight are free of charge; cancellations made less than 24 hours before the flight and no-shows are non-refundable.** This guide explains how cancellation decisions are made, what happens after a cancellation and how to plan your trip with some flexibility.",
     ],
     sections: [
       {
@@ -147,15 +147,13 @@ export const EN_2: Record<string, ArticleBody> = {
       },
       {
         id: "options",
-        h: "The Usual Options After a Cancellation",
+        h: "Your Options After a Weather Cancellation",
         p: [
-          "Terms vary between operators, but after a weather cancellation you'll typically see one or more of these:",
+          "If the pilot or SHGM cancels your flight for weather or safety reasons, the choice is yours:",
         ],
         list: [
-          "Moving to the next suitable morning",
-          "A refund of what you paid",
-          "A partial refund (for example, minus services already provided, such as transfers)",
-          "An open booking for a later date",
+          "A free new date (often the next suitable morning)",
+          "A full refund of what you paid",
         ],
         sub: [
           {
@@ -170,7 +168,7 @@ export const EN_2: Record<string, ArticleBody> = {
         id: "you-cancel",
         h: "If You Need to Cancel",
         p: [
-          "Plans change, people get ill and connections run late. If you cancel yourself, different terms may apply than for a weather cancellation. Ask how much notice you need to give and what happens if you give less.",
+          "Plans change, people get ill and connections run late. **Cancellations and date changes made up to 24 hours before the flight are free of charge. Cancellations made less than 24 hours before the flight and no-shows are non-refundable.** So if your plans change, message us on WhatsApp as early as you can.",
           "If you have travel insurance, you may also want to check whether your policy covers activities like this and their cancellation.",
         ],
       },
@@ -186,17 +184,16 @@ export const EN_2: Record<string, ArticleBody> = {
         id: "notification",
         h: "How You'll Hear About a Cancellation",
         p: [
-          "If the decision is made before pick-up, you'll usually be told by phone or message. That's why it's important to give a number you can be reached on early in the morning — ideally one that uses WhatsApp. If your phone is on silent overnight, consider making that number an exception.",
+          "If the decision is made before the meeting time, we'll tell you by phone or on WhatsApp. That's why it's important to give a number you can be reached on early in the morning — ideally one that uses WhatsApp. If your phone is on silent overnight, consider making that number an exception.",
         ],
       },
       {
         id: "questions",
         h: "Questions to Ask Before Booking",
         list: [
-          "After a weather cancellation, is it a refund or a rebooking — and do I get to choose?",
           "How is a refund paid, and how long does it take?",
-          "If I cancel, how much notice do I need to give and what are the terms?",
           "How and when will I be told about a cancellation?",
+          "Which mornings are available for a new date?",
         ],
         p: [
           "Get the answers in writing. For pricing in general, see our [price guide](/en/insights/pamukkale-hot-air-balloon-prices-2026/); for the booking steps, see [how to book](/en/insights/how-to-book-a-pamukkale-balloon-tour/).",
@@ -205,8 +202,8 @@ export const EN_2: Record<string, ArticleBody> = {
     ],
     takeaways: [
       "Cancellations are made for safety and can happen at the last minute.",
-      "Weather cancellations and your own cancellations may have different terms.",
-      "Confirm refund and rebooking terms in writing before you book.",
+      "A weather or safety cancellation means a free new date or a full refund.",
+      "Cancelling yourself is free up to 24 hours before the flight; later cancellations and no-shows are non-refundable.",
       "Book your first morning in Pamukkale if you can.",
     ],
   },
@@ -216,11 +213,11 @@ export const EN_2: Record<string, ArticleBody> = {
     title: "Are Pamukkale Hot Air Balloon Rides Safe?",
     seoTitle: "Are Pamukkale Hot Air Balloon Rides Safe? Questions to Ask",
     description:
-      "How balloon flights are regulated in Türkiye, what to ask an operator, why the briefing and landing position matter, and health considerations before you fly.",
+      "Are Pamukkale balloon rides safe? How flights are regulated in Türkiye, what to ask an operator, the briefing, the landing position and health rules.",
     excerpt:
       "Rather than promise a guarantee, we've gathered the questions that help you make an informed choice — and what's expected of you on board.",
     intro: [
-      "It would be wrong to call any air activity “zero risk”, so we won't offer a safety guarantee here. Instead, this guide explains how hot air balloon flights are regulated, what you can ask an operator, and what's expected of you during the flight.",
+      "Are Pamukkale balloon rides safe? Let's start honestly: it would be wrong to say any air activity is risk-free, so we won't offer a safety guarantee here. Instead, this guide explains how hot air balloon flights are regulated, what you can ask an operator, and what's expected of you during the flight.",
       "The short version: balloon flights are a regulated, inspected activity, and whether they go ahead is decided by the weather. The things that reduce risk most are an experienced team, respect for weather decisions and passengers who follow instructions.",
     ],
     sections: [
@@ -284,7 +281,7 @@ export const EN_2: Record<string, ArticleBody> = {
         id: "health",
         h: "Health and Fitness to Fly",
         p: [
-          "Climbing into the basket and holding the landing position requires some movement. If you're pregnant, have had recent surgery, have back, neck or knee problems, a heart condition or a fear of heights, ask in advance whether flying is suitable and consult your doctor if needed.",
+          "Climbing into the basket and holding the landing position requires some movement. **Pregnant guests cannot fly. Guests with serious heart, back or neck conditions can fly only if they share a doctor's approval with us before the flight.** If you've had recent surgery, have knee problems or a fear of heights, talk to us before booking.",
           "If you have limited mobility, mention it when you book so the team can consider the best arrangement for you. For questions about children, see our [family guide](/en/insights/can-children-join-a-pamukkale-balloon-tour/).",
         ],
       },

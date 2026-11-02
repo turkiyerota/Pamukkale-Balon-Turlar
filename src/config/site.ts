@@ -1,11 +1,14 @@
 /**
  * Central business configuration.
  * Owner-confirmed (Nov 2026): WhatsApp number, starting price (6.666 TL), no social accounts yet.
- * Policy wording follows common practice of Pamukkale/Türkiye balloon operators — see docs/policies-and-assumptions.md.
+ * Owner-confirmed (Nov 2026): address, firm cancellation/age/health rules, hotel transfer NOT included.
  */
 // Supplied brand logos (original files kept in src/assets/logo-*.webp; these are proportional 480px-wide copies).
 import logoDark from "@/assets/logo-dark-480.webp";
 import logoLight from "@/assets/logo-light-480.webp";
+// Small copies (260px wide, ~9 KB) for the header/footer, where the logo is shown ≤ 130px wide.
+import logoDarkSm from "@/assets/logo-dark-260.webp";
+import logoLightSm from "@/assets/logo-light-260.webp";
 
 export type Lang = "tr" | "en";
 
@@ -21,6 +24,8 @@ export const SITE = {
     onLight: logoDark,
     /** White logo — for dark backgrounds */
     onDark: logoLight,
+    onLightSm: logoDarkSm,
+    onDarkSm: logoLightSm,
   },
   colors: {
     navy: "#18354A",
@@ -97,66 +102,90 @@ export const PACKAGES: {
   },
 ];
 
-/** Inclusions: only `confirmed` items are presented as facts. */
+/**
+ * Inclusions shown on the home and prices pages.
+ * Owner-confirmed (Nov 2026): hotel transfer is NOT included in the price.
+ * `quoteItems` are listed in every written quote (included or not, stated per booking).
+ */
 export const INCLUSIONS = {
-  confirmed: [] as Record<Lang, string>[],
-  toVerify: [
-    { tr: "Otelden alış ve otele dönüş transferi", en: "Hotel pick-up and drop-off" },
+  quoteItems: [
     { tr: "Uçuş öncesi hafif ikram", en: "Light refreshments before the flight" },
     { tr: "Uçuş sonrası kutlama ve sertifika", en: "Post-flight celebration and certificate" },
     { tr: "Uçuş sigortası kapsamı", en: "Flight insurance coverage" },
     { tr: "Uçuş süresi ve kalkış saati", en: "Flight duration and take-off time" },
-  ],
+  ] as Record<Lang, string>[],
+  notIncluded: [
+    {
+      tr: "Otel transferi (otelden alış ve otele dönüş) fiyata dahil değildir",
+      en: "Hotel transfer (pick-up and drop-off) is not included in the price",
+    },
+  ] as Record<Lang, string>[],
+  transferNote: {
+    tr: "Otel transferi fiyata dahil değildir. Buluşma noktasına ulaşım hakkında WhatsApp'tan bilgi alabilirsiniz.",
+    en: "Hotel transfer is not included in the price. Ask us on WhatsApp about getting to the meeting point.",
+  } as Record<Lang, string>,
 };
 
 /**
- * Flight rules & cancellation — standard practice among Pamukkale / Türkiye balloon operators.
- * Numbers marked "genellikle / typically" are industry norms the owner should verify
- * (docs/policies-and-assumptions.md). Exact terms are confirmed in writing on WhatsApp at booking.
+ * Flight rules & cancellation — firm policy, owner-confirmed (Nov 2026).
+ * The same wording is reused by the FAQ, flight page, prices page and FAQPage JSON-LD,
+ * so every page states exactly the same rules.
  */
+export const POLICY_TEXT = {
+  cancel: {
+    tr: "Uçuştan 24 saat öncesine kadar yapılan iptal ve tarih değişiklikleri ücretsizdir. Uçuşa 24 saatten az kala yapılan iptallerde ve uçuşa katılmama durumunda ücret iadesi yapılmaz.",
+    en: "Cancellations and date changes made up to 24 hours before the flight are free of charge. Cancellations made less than 24 hours before the flight and no-shows are non-refundable.",
+  },
+  weather: {
+    tr: "Uçuş, hava koşulları veya güvenlik nedeniyle pilot ya da SHGM kararıyla iptal edilirse ücretsiz olarak yeni bir tarih seçebilir veya ödemenizin tamamını geri alabilirsiniz.",
+    en: "If the pilot or SHGM cancels the flight for weather or safety reasons, you can choose a free new date or receive a full refund.",
+  },
+  age: {
+    tr: "Minimum yaş 6'dır; 6 yaşından küçük çocuklar uçuşa alınmaz. Çocuklar bir yetişkin eşliğinde uçar ve sepet kenarını rahatça görebilecek boyda olmalıdır.",
+    en: "The minimum age is 6; children under 6 cannot fly. Children fly with an accompanying adult and must be tall enough to see over the basket edge comfortably.",
+  },
+  pregnancy: {
+    tr: "Hamile misafirler uçuşa alınmaz.",
+    en: "Pregnant guests cannot fly.",
+  },
+  health: {
+    tr: "Ciddi kalp, sırt veya boyun rahatsızlığı olan misafirler, ancak doktor onayını uçuştan önce bize iletmeleri hâlinde uçabilir. Yakın zamanda ameliyat geçirdiyseniz veya hareket kısıtlılığınız varsa rezervasyondan önce bize danışın.",
+    en: "Guests with serious heart, back or neck conditions can fly only if they share a doctor's approval with us before the flight. If you have had recent surgery or have limited mobility, please talk to us before booking.",
+  },
+} satisfies Record<string, Record<Lang, string>>;
+
 export const POLICIES = {
   minAge: 6,
   flightMinutes: "45–60",
   totalHours: "2,5–3",
   freeCancelHours: 24,
   cancellation: {
-    tr: "Uçuştan 24 saat öncesine kadar yaptığınız iptal ve tarih değişikliklerinden ücret alınmaz. Son 24 saat içinde yapılan iptallerde ve uçuşa katılmama durumunda genellikle iade yapılmaz. Hava koşulları veya güvenlik nedeniyle iptal edilen uçuşlarda ise ücretsiz olarak başka bir güne geçebilir ya da ödemenizin tamamını geri alabilirsiniz. Rezervasyonunuza özel koşullar WhatsApp'tan yazılı olarak teyit edilir.",
-    en: "Cancellations and date changes made up to 24 hours before the flight are free of charge. Cancellations within the last 24 hours and no-shows are typically non-refundable. If the flight is cancelled for weather or safety reasons, you can move to another morning free of charge or receive a full refund. The exact terms of your booking are confirmed in writing on WhatsApp.",
+    tr: `${POLICY_TEXT.cancel.tr} ${POLICY_TEXT.weather.tr} Rezervasyonunuz WhatsApp'tan yazılı olarak teyit edilir.`,
+    en: `${POLICY_TEXT.cancel.en} ${POLICY_TEXT.weather.en} Your booking is confirmed in writing on WhatsApp.`,
   },
   weatherCancellation: {
-    tr: "Uçuş kararı her sabah pilot tarafından, Sivil Havacılık Genel Müdürlüğünün (SHGM) kuralları ve güncel hava verileri doğrultusunda verilir. Rüzgâr, yağış veya sis nedeniyle uçuş iptal edilirse ücretsiz olarak başka bir güne geçebilir ya da ödemenizin tamamını geri alabilirsiniz.",
-    en: "The go/no-go decision is made each morning by the pilot, under the rules of Türkiye's Directorate General of Civil Aviation (SHGM) and the latest weather data. If wind, rain or fog cancels the flight, you can move to another morning free of charge or receive a full refund.",
+    tr: `Uçuş kararı her sabah pilot tarafından, Sivil Havacılık Genel Müdürlüğünün (SHGM) kuralları ve güncel hava verileri doğrultusunda verilir. ${POLICY_TEXT.weather.tr}`,
+    en: `The go/no-go decision is made each morning by the pilot, under the rules of Türkiye's Directorate General of Civil Aviation (SHGM) and the latest weather data. ${POLICY_TEXT.weather.en}`,
   },
   rules: {
     tr: [
       [
         "Uçuş saati",
-        "Uçuşlar gün doğumunda yapılır. Buluşma saati mevsime göre değişir ve genellikle gün doğumundan yaklaşık 1–1,5 saat öncedir; kesin saat bir gün önce bildirilir.",
+        "Uçuşlar gün doğumunda yapılır. Buluşma saati mevsime göre değişir ve gün doğumundan yaklaşık 1–1,5 saat öncedir; kesin saat bir gün önce bildirilir.",
       ],
       [
         "Uçuş süresi",
-        "Havada geçen süre genellikle 45–60 dakikadır. Hazırlık, uçuş ve iniş sonrasıyla birlikte tüm program yaklaşık 2,5–3 saat sürer.",
+        "Havada geçen süre 45–60 dakikadır. Hazırlık, uçuş ve iniş sonrasıyla birlikte tüm program yaklaşık 2,5–3 saat sürer.",
       ],
-      [
-        "Hava nedeniyle iptal",
-        "Uçuş kararını pilot, SHGM kuralları ve hava koşullarına göre verir. İptal edilen uçuşlarda ücretsiz tarih değişikliği veya tam iade yapılır.",
-      ],
-      [
-        "Sizin iptaliniz",
-        "Uçuştan 24 saat öncesine kadar iptal ve tarih değişikliği ücretsizdir. Son 24 saat içindeki iptallerde ve uçuşa katılmama durumunda genellikle iade yapılmaz.",
-      ],
-      [
-        "Yaş sınırı",
-        "Çocuklar genellikle 6 yaşından itibaren ve bir yetişkin eşliğinde uçabilir. Çocuğun sepet kenarını rahatça görebilecek boyda olması gerekir.",
-      ],
-      [
-        "Sağlık",
-        "Hamilelerin uçması önerilmez. Ciddi kalp, sırt, bel veya diz rahatsızlığı, yakın zamanda geçirilmiş ameliyat ya da hareket kısıtlılığı varsa lütfen önce bize danışın.",
-      ],
+      ["Hava nedeniyle iptal", POLICY_TEXT.weather.tr],
+      ["Sizin iptaliniz", POLICY_TEXT.cancel.tr],
+      ["Yaş sınırı", POLICY_TEXT.age.tr],
+      ["Sağlık", `${POLICY_TEXT.pregnancy.tr} ${POLICY_TEXT.health.tr}`],
       [
         "Kıyafet",
         "Kat kat giyinin; kapalı, düz tabanlı ve rahat ayakkabı tercih edin. Topuklu ayakkabı, terlik ve uzun etek önerilmez.",
       ],
+      ["Transfer", INCLUSIONS.transferNote.tr],
       [
         "Uçuş sırasında",
         "Pilotun güvenlik talimatlarına uymak zorunludur. Sepette sigara içilmez; alkollü misafirler uçuşa alınmaz.",
@@ -165,32 +194,21 @@ export const POLICIES = {
     en: [
       [
         "Flight time",
-        "Flights take off at sunrise. The meeting time changes with the season and is typically about 1–1.5 hours before sunrise; we confirm the exact time the day before.",
+        "Flights take off at sunrise. The meeting time changes with the season and is about 1–1.5 hours before sunrise; we confirm the exact time the day before.",
       ],
       [
         "Flight duration",
-        "Time in the air is typically 45–60 minutes. With preparation, the flight and landing, the whole experience takes about 2.5–3 hours.",
+        "Time in the air is 45–60 minutes. With preparation, the flight and landing, the whole experience takes about 2.5–3 hours.",
       ],
-      [
-        "Weather cancellations",
-        "The pilot decides each morning under SHGM rules and the weather. If the flight is cancelled, you get a free date change or a full refund.",
-      ],
-      [
-        "Cancelling yourself",
-        "Cancellations and date changes are free up to 24 hours before the flight. Later cancellations and no-shows are typically non-refundable.",
-      ],
-      [
-        "Age limit",
-        "Children can typically fly from age 6, accompanied by an adult, and must be tall enough to see over the basket edge comfortably.",
-      ],
-      [
-        "Health",
-        "Flying is not recommended during pregnancy. If you have serious heart, back or knee problems, recent surgery or limited mobility, please ask us first.",
-      ],
+      ["Weather cancellations", POLICY_TEXT.weather.en],
+      ["Cancelling yourself", POLICY_TEXT.cancel.en],
+      ["Age limit", POLICY_TEXT.age.en],
+      ["Health", `${POLICY_TEXT.pregnancy.en} ${POLICY_TEXT.health.en}`],
       [
         "Clothing",
         "Dress in layers and wear closed, flat, comfortable shoes. Heels, flip-flops and long skirts are not recommended.",
       ],
+      ["Transfer", INCLUSIONS.transferNote.en],
       [
         "During the flight",
         "Following the pilot's safety instructions is mandatory. No smoking in the basket; intoxicated guests cannot fly.",

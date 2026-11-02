@@ -6,11 +6,11 @@ export const TR_3: Record<string, ArticleBody> = {
     title: "Pamukkale Balon Turu Rezervasyonu Nasıl Yapılır?",
     seoTitle: "Pamukkale Balon Turu Rezervasyonu Nasıl Yapılır? Adım Adım",
     description:
-      "Pamukkale balon turu için rezervasyon talebi oluşturma adımları, hazırlamanız gereken bilgiler, teyit süreci ve uçuş gününe hazırlık.",
+      "Pamukkale balon turu rezervasyonu nasıl yapılır? Talep adımları, hazırlamanız gereken bilgiler, yazılı teyit ve uçuş gününe hazırlık, adım adım.",
     excerpt:
       "Tarih, kişi sayısı ve iletişim bilgilerinizi hazırlayın; talebinizi iletin ve yazılı teyit almadan rezervasyonun kesinleştiğini varsaymayın.",
     intro: [
-      "Balon turu rezervasyonu birkaç basit adımdan oluşur; ancak en önemli adım çoğu zaman atlanır: yazılı teyit. Bir form doldurmak veya mesaj göndermek, rezervasyonunuzun kesinleştiği anlamına gelmez. Fiyat, tarih, alış bilgisi ve iptal koşulları size yazılı olarak iletildiğinde yeriniz netleşmiş olur.",
+      "Pamukkale balon turu rezervasyonu nasıl yapılır? Birkaç basit adımda; ancak en önemli adım çoğu zaman atlanır: yazılı teyit. Bir form doldurmak veya mesaj göndermek, rezervasyonunuzun kesinleştiği anlamına gelmez. Fiyat, tarih, buluşma bilgisi ve iptal koşulları size yazılı olarak iletildiğinde yeriniz netleşmiş olur.",
       "Bu rehberde rezervasyon öncesinde hazırlamanız gereken bilgileri, talebinizi iletebileceğiniz kanalları, teyit mesajında nelerin yer alması gerektiğini ve uçuş gününe nasıl hazırlanacağınızı adım adım anlatıyoruz.",
     ],
     sections: [
@@ -55,7 +55,7 @@ export const TR_3: Record<string, ArticleBody> = {
           "Fiyata dahil olan ve olmayan hizmetler",
           "Ödeme yöntemi ve zamanı",
           "Hava nedeniyle ve sizin tarafınızdan yapılan iptallerde geçerli koşullar",
-          "Alış saatinin ne zaman bildirileceği",
+          "Buluşma saatinin ne zaman bildirileceği",
         ],
         sub: [
           {
@@ -84,7 +84,7 @@ export const TR_3: Record<string, ArticleBody> = {
         id: "ucus-oncesi-gun",
         h: "4. Adım: Uçuştan Bir Gün Önce",
         list: [
-          "Alış saatini ve buluşma noktasını teyit edin",
+          "Buluşma saatini ve buluşma noktasını teyit edin",
           "Kıyafetinizi hazırlayın — [ne giyileceğine dair rehberimize](/kesfet/pamukkale-balon-turunda-ne-giyilir/) bakın",
           "Telefonunuzu şarj edin ve verdiğiniz numaranın sabah açık olmasını sağlayın",
           "Otel resepsiyonuna erken çıkacağınızı bildirin",
@@ -96,7 +96,7 @@ export const TR_3: Record<string, ArticleBody> = {
         id: "ucus-gunu",
         h: "5. Adım: Uçuş Sabahı",
         p: [
-          "Alış saatinden birkaç dakika önce hazır olun. Kalkış alanında bilgilendirmeyi dikkatle dinleyin ve pilotun talimatlarına uyun. Uçuş sabahının nasıl geçtiğini [uçuş bilgileri sayfamızda](/ucus-bilgileri/), tüm hazırlıkları tek listede görmek için [uçuş öncesi kontrol listemizde](/kesfet/pamukkale-balon-turu-oncesi-bilmeniz-gerekenler/) bulabilirsiniz.",
+          "Buluşma saatinden birkaç dakika önce hazır olun. Kalkış alanında bilgilendirmeyi dikkatle dinleyin ve pilotun talimatlarına uyun. Uçuş sabahının nasıl geçtiğini [uçuş bilgileri sayfamızda](/ucus-bilgileri/), tüm hazırlıkları tek listede görmek için [uçuş öncesi kontrol listemizde](/kesfet/pamukkale-balon-turu-oncesi-bilmeniz-gerekenler/) bulabilirsiniz.",
         ],
       },
     ],
@@ -104,7 +104,7 @@ export const TR_3: Record<string, ArticleBody> = {
       "Yoğun dönemlerde tarihiniz kesinleşir kesinleşmez talebinizi iletin.",
       "Formu doldurmak tek başına rezervasyon değildir; yazılı teyit bekleyin.",
       "Teyit mesajında fiyat, kapsam, ödeme ve iptal koşullarının yer aldığından emin olun.",
-      "Uçuştan bir gün önce alış saatini ve buluşma noktasını kontrol edin.",
+      "Uçuştan bir gün önce buluşma saatini ve buluşma noktasını kontrol edin.",
     ],
   },
 
@@ -113,7 +113,7 @@ export const TR_3: Record<string, ArticleBody> = {
     title: "Pamukkale Balon Turunda Fiyata Neler Dahil?",
     seoTitle: "Pamukkale Balon Turu Fiyata Neler Dahil? Kontrol Listesi",
     description:
-      "Balon turu fiyatına dahil olabilecek ve olmayabilecek hizmetler; teklif alırken kullanabileceğiniz pratik kontrol listesi ve ek ücret çıkabilecek durumlar.",
+      "Pamukkale balon turunda fiyata neler dahil? Teklif alırken kullanabileceğiniz kontrol listesi, dahil olmayan hizmetler ve ek ücret çıkabilecek durumlar.",
     excerpt:
       "Transfer, ikram, sertifika, sigorta ve fotoğraf gibi kalemlerin dahil olup olmadığını teklif aşamasında netleştirin.",
     intro: [
@@ -128,7 +128,7 @@ export const TR_3: Record<string, ArticleBody> = {
           "Her teklif için aşağıdaki kalemlerin dahil olup olmadığını sorun. Bir tabloya yazmak karşılaştırmayı çok kolaylaştırır:",
         ],
         list: [
-          "Otelden alış ve dönüş transferi",
+          "Otel transferi (bizde fiyata dahil değildir)",
           "Uçuş öncesi ikram (çay, kahve, hafif atıştırmalık)",
           "Uçuşun kendisi ve sepet tipi (standart veya özel)",
           "Uçuş sonrası kutlama veya uçuş sertifikası",
@@ -144,7 +144,7 @@ export const TR_3: Record<string, ArticleBody> = {
           {
             h: "Transfer",
             p: [
-              "Pamukkale köyünde konaklıyorsanız transfer mesafesi kısa olabilir; Karahayıt veya Denizli merkezde konaklıyorsanız transferin dahil olup olmadığı fiyatı belirgin biçimde etkileyebilir. Hangi bölgelerden alış yapıldığını sorun.",
+              "Pamukkale köyünde konaklıyorsanız transfer mesafesi kısa olabilir; Karahayıt veya Denizli merkezde konaklıyorsanız transferin dahil olup olmadığı fiyatı belirgin biçimde etkileyebilir. **Bizim fiyatlarımıza otel transferi dahil değildir;** buluşma noktasına ulaşım hakkında WhatsApp'tan bilgi alabilirsiniz.",
             ],
           },
           {
@@ -184,14 +184,14 @@ export const TR_3: Record<string, ArticleBody> = {
           "Uçuş günü dışındaki transferler (havalimanı, otogar vb.)",
         ],
         p: [
-          "Ören yeri giriş ücretleri ve çalışma saatleri resmi kaynaklarda yayınlanır; ziyaretinizden önce güncel bilgiyi kontrol edin.",
+          "Ören yeri giriş ücretleri ve çalışma saatleri resmi kaynaklarda yayımlanır; ziyaretinizden önce güncel bilgiyi kontrol edin.",
         ],
       },
       {
         id: "ek-ucret",
         h: "Ek Ücret Çıkabilecek Durumlar",
         p: [
-          "Transfer bölgesi dışındaki otellerden alış, özel sepet talebi, özel günler için süsleme veya sürpriz organizasyonu ve fotoğraf paketleri ek ücrete konu olabilir. Bu kalemleri teklif aşamasında sorun ve fiyatı yazılı olarak alın. Uçuş günü ortaya çıkan bir ek ücret, deneyimin tadını kaçırabilir.",
+          "Özel sepet talebi, özel günler için süsleme veya sürpriz organizasyonu ve fotoğraf paketleri ek ücrete konu olabilir. Bu kalemleri teklif aşamasında sorun ve fiyatı yazılı olarak alın. Uçuş günü ortaya çıkan bir ek ücret, deneyimin tadını kaçırabilir.",
         ],
       },
       {
@@ -216,11 +216,11 @@ export const TR_3: Record<string, ArticleBody> = {
     title: "Pamukkale Balon Turu İçin En İyi Zaman Hangisi?",
     seoTitle: "Pamukkale Balon Turu İçin En İyi Zaman | Mevsim Rehberi",
     description:
-      "İlkbahar, yaz, sonbahar ve kış aylarında Pamukkale balon turu deneyiminin nasıl değişebileceği, kalabalık, hava ve esneklik açısından tarih seçme rehberi.",
+      "Pamukkale balon turu için en iyi zaman hangisi? İlkbahar, yaz, sonbahar ve kışta hava, kalabalık ve ışığa göre tarih seçme rehberi.",
     excerpt:
       "Her mevsimin kendine özgü atmosferi var. Tarih seçerken hava, kalabalık, ışık ve esneklik dengesini düşünün.",
     intro: [
-      "“En iyi zaman” kişiden kişiye değişir. Bazı gezginler ılık sabahları, bazıları daha sakin ve uygun fiyatlı dönemleri, bazıları ise fotoğraf için belirli bir ışığı önceler. Bu rehber, mevsimlerin genel özelliklerini özetler ve tarih seçerken hangi soruları kendinize sormanız gerektiğini anlatır.",
+      "Pamukkale balon turu için en iyi zaman kişiden kişiye değişir. Bazı gezginler ılık sabahları, bazıları daha sakin ve uygun fiyatlı dönemleri, bazıları ise fotoğraf için belirli bir ışığı önceler. Bu rehber, mevsimlerin genel özelliklerini özetler ve tarih seçerken hangi soruları kendinize sormanız gerektiğini anlatır.",
       "Önemli bir not: Hiçbir mevsim belirli bir tarihte uçuş yapılabileceğini garanti etmez. Balon uçuşları her sabah o günkü hava koşullarına göre kararlaştırılır. **Tarihiniz için uygunluğu rezervasyon sırasında size yazılı olarak bildiririz.**",
     ],
     sections: [
@@ -229,14 +229,14 @@ export const TR_3: Record<string, ArticleBody> = {
         h: "İlkbahar (Mart–Mayıs)",
         p: [
           "Çevredeki tarlaların ve bağların yeşerdiği, sabahların serin ama günlerin ılık olduğu dönemdir. Havadan bakıldığında beyaz travertenlerle yeşil ovanın kontrastı fotoğraflarda canlı görünür.",
-          "Mart ve nisan başında sabahlar hâlâ oldukça soğuk olabilir ve hava daha değişkendir. Mayıs ise birçok gezgin için ideal bir denge sunar. Gün doğumu ilkbahar boyunca giderek erkene kayar; mayıs sonunda alış saatleri yaz saatlerine yaklaşır.",
+          "Mart ve nisan başında sabahlar hâlâ oldukça soğuk olabilir ve hava daha değişkendir. Mayıs ise birçok gezgin için ideal bir denge sunar. Gün doğumu ilkbahar boyunca giderek erkene kayar; mayıs sonunda buluşma saatleri yaz saatlerine yaklaşır.",
         ],
       },
       {
         id: "yaz",
         h: "Yaz (Haziran–Ağustos)",
         p: [
-          "Sabahlar genellikle sakin ve açıktır; yağış ihtimali düşüktür. Buna karşılık gün çok erken doğar ve alış saatleri gecenin karanlığına denk gelebilir. Gün içinde sıcaklıklar yüksektir; travertenleri ve Hierapolis'i turdan hemen sonra, hava ısınmadan gezmek mantıklıdır.",
+          "Sabahlar genellikle sakin ve açıktır; yağış ihtimali düşüktür. Buna karşılık gün çok erken doğar ve buluşma saatleri gecenin karanlığına denk gelebilir. Gün içinde sıcaklıklar yüksektir; travertenleri ve Hierapolis'i turdan hemen sonra, hava ısınmadan gezmek mantıklıdır.",
           "Yaz ayları Pamukkale'nin en kalabalık dönemlerinden biridir. Bu dönemde seyahat ediyorsanız erken rezervasyon yapmanız ve fiyatların talebe göre değişebileceğini hesaba katmanız faydalı olur.",
         ],
       },
@@ -286,7 +286,7 @@ export const TR_3: Record<string, ArticleBody> = {
     ],
     takeaways: [
       "Her mevsimin farklı avantajları vardır; hiçbiri uçuş garantisi vermez.",
-      "Yazın alış saatleri çok erken, kışın iptal ihtimali daha yüksek olabilir.",
+      "Yazın buluşma saatleri çok erken, kışın iptal ihtimali daha yüksek olabilir.",
       "İlkbahar sonu ve sonbahar başı birçok gezgin için dengeli bir seçimdir.",
       "Hangi mevsim olursa olsun programınızda bir yedek sabah bırakın.",
     ],

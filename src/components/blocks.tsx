@@ -15,6 +15,7 @@ import gPools from "@/assets/gallery/travertine-pools.webp";
 import gHierapolis from "@/assets/gallery/hierapolis-balloons.webp";
 import gGlow from "@/assets/gallery/blue-hour-glow.webp";
 import gPlain from "@/assets/gallery/denizli-plain.webp";
+import { rs } from "@/lib/img";
 
 export function ArticleCard({ a }: { a: Article }) {
   const date = new Date(a.published).toLocaleDateString(a.lang === "tr" ? "tr-TR" : "en-GB", {
@@ -32,6 +33,7 @@ export function ArticleCard({ a }: { a: Article }) {
       >
         <img
           src={a.cover}
+          {...rs(a.cover, "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw")}
           alt=""
           width={1024}
           height={768}
@@ -211,6 +213,7 @@ export function PackageCard({
         <div className="relative overflow-hidden">
           <img
             src={x.img}
+            {...rs(x.img, "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw")}
             alt={x.alt[lang]}
             width={1600}
             height={907}
@@ -268,6 +271,7 @@ export function CtaBand({ lang }: { lang: Lang }) {
     <section className="grain relative isolate overflow-hidden bg-navy text-on-dark">
       <img
         src={hero1}
+        {...rs(hero1, "100vw")}
         alt=""
         width={1600}
         height={907}
@@ -425,6 +429,7 @@ export function Gallery({ lang }: { lang: Lang }) {
           >
             <img
               src={g.src}
+              {...rs(g.src, "(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw")}
               alt={g.alt[lang]}
               width={g.w}
               height={g.h}

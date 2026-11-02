@@ -9,6 +9,7 @@ import { L, btn, Arrow, SectionHeading, WhatsAppIcon } from "../ui-kit";
 import imgInflation from "@/assets/img-inflation.webp";
 import imgHierapolis from "@/assets/img-hierapolis.webp";
 import hero3 from "@/assets/hero-3.webp";
+import { rs } from "@/lib/img";
 
 const C = {
   tr: {
@@ -21,7 +22,7 @@ const C = {
     essH: "Bir bakışta",
     ess: [
       ["Konum", "Pamukkale / Denizli"],
-      ["Uçuş zamanı", "Gün doğumu; havada genellikle 45–60 dakika"],
+      ["Uçuş zamanı", "Gün doğumu; havada 45–60 dakika"],
       ["Manzara", "Travertenler, termal havuzlar ve Hierapolis"],
       ["Fiyat", "6.666 TL'den başlayan fiyatlarla"],
       ["İletişim", "WhatsApp, telefon, e-posta veya form"],
@@ -50,7 +51,7 @@ const C = {
       ],
       [
         "Uçuş sabahı",
-        "Alış saati bir gün önce bildirilir; hava uygunsa gün doğumunda havalanırsınız.",
+        "Buluşma saati bir gün önce bildirilir; hava uygunsa gün doğumunda havalanırsınız.",
       ],
     ],
     stepsCta: "Hemen Rezervasyon Yap",
@@ -99,7 +100,7 @@ const C = {
     essH: "At a glance",
     ess: [
       ["Location", "Pamukkale / Denizli, Türkiye"],
-      ["Flight time", "Sunrise; typically 45–60 minutes aloft"],
+      ["Flight time", "Sunrise; 45–60 minutes aloft"],
       ["Views", "Travertines, thermal pools and Hierapolis"],
       ["Price", "From 6,666 TL"],
       ["Contact", "WhatsApp, phone, email or form"],
@@ -122,7 +123,7 @@ const C = {
       ["Confirm your booking", "Once you accept, your booking is confirmed in writing."],
       [
         "Flight morning",
-        "Pick-up time is shared the day before; if the weather allows, you lift off at sunrise.",
+        "The meeting time is shared the day before; if the weather allows, you lift off at sunrise.",
       ],
     ],
     stepsCta: "Book Your Flight",
@@ -243,6 +244,7 @@ export function HomePage({ lang }: { lang: Lang }) {
         <div className="relative reveal">
           <img
             src={imgInflation}
+            {...rs(imgInflation, "(min-width: 768px) 50vw, 100vw")}
             alt={
               lang === "tr"
                 ? "Şafak öncesi brülör alevi ile şişirilen sıcak hava balonu"
@@ -267,7 +269,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           <SectionHeading eyebrow={t.incEy} title={t.incH} />
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{t.incP}</p>
           <ul className="mt-7 grid gap-3">
-            {INCLUSIONS.toVerify.map((x, i) => (
+            {INCLUSIONS.quoteItems.map((x, i) => (
               <li
                 key={i}
                 className="flex items-center gap-4 rounded-xl border border-navy/10 bg-card px-5 py-4 font-medium"
@@ -289,7 +291,30 @@ export function HomePage({ lang }: { lang: Lang }) {
                 {x[lang]}
               </li>
             ))}
+            {INCLUSIONS.notIncluded.map((x, i) => (
+              <li
+                key={`n${i}`}
+                className="flex items-center gap-4 rounded-xl border border-navy/20 bg-secondary px-5 py-4 font-semibold text-navy"
+              >
+                <span
+                  className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-navy/25 bg-card text-navy"
+                  aria-hidden="true"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                  >
+                    <path d="M6 6l12 12M18 6 6 18" />
+                  </svg>
+                </span>
+                {x[lang]}
+              </li>
+            ))}
           </ul>
+          <p className="mt-4 text-sm text-muted-foreground">{INCLUSIONS.transferNote[lang]}</p>
           <L href={PAGES.reservation[lang]} className={`${btn.primary} mt-8`}>
             {t.incCta} <Arrow />
           </L>
@@ -381,6 +406,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       <section className="grain relative isolate overflow-hidden bg-navy-deep text-on-dark">
         <img
           src={imgHierapolis}
+          {...rs(imgHierapolis, "100vw")}
           alt={
             lang === "tr"
               ? "Gün doğumunda Hierapolis antik tiyatrosu"
@@ -418,6 +444,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           <SectionHeading eyebrow={t.whyEy} title={t.whyH} />
           <img
             src={hero3}
+            {...rs(hero3, "(min-width: 768px) 50vw, 100vw")}
             alt={
               lang === "tr"
                 ? "Havadan Pamukkale traverten havuzları"

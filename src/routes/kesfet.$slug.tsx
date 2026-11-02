@@ -1,13 +1,13 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ArticlePage } from "@/components/pages/blog";
 import { articleHead } from "@/lib/page-meta";
-import { getArticle } from "@/content/articles";
+import { getArticle, loadArticleBody } from "@/content/articles";
 
 export const Route = createFileRoute("/kesfet/$slug")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const a = getArticle("tr", params.slug);
     if (!a) throw notFound();
-    return { slug: a.body.slug };
+    return { slug: a.body.slug, body: await loadArticleBody("tr", a.id) };
   },
   head: ({ loaderData }) => {
     const a = loaderData && getArticle("tr", loaderData.slug);
@@ -19,6 +19,6 @@ export const Route = createFileRoute("/kesfet/$slug")({
 });
 
 function Page() {
-  const { slug } = Route.useLoaderData();
-  return <ArticlePage a={getArticle("tr", slug)!} />;
+  const { slug, body } = Route.useLoaderData();
+  return <ArticlePage a={getArticle("tr", slug)!} body={body} />;
 }

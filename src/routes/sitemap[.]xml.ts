@@ -3,6 +3,9 @@ import { SITE } from "@/config/site";
 import { PAGES, blogListPath, articlePath } from "@/lib/paths";
 import { getArticles, totalPages, translatedSlug } from "@/content/articles";
 
+/** Date of the last content change to the static pages (update when pages change). */
+const PAGES_UPDATED = "2026-11-02";
+
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
@@ -27,7 +30,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           const alts = e.en
             ? `<xhtml:link rel="alternate" hreflang="tr" href="${u(e.tr)}"/><xhtml:link rel="alternate" hreflang="en" href="${u(e.en)}"/><xhtml:link rel="alternate" hreflang="x-default" href="${u(e.tr)}"/>`
             : "";
-          const lm = e.lastmod ? `<lastmod>${e.lastmod}</lastmod>` : "";
+          const lm = `<lastmod>${e.lastmod ?? PAGES_UPDATED}</lastmod>`;
           return [e.tr, e.en]
             .filter(Boolean)
             .map((loc) => `<url><loc>${u(loc!)}</loc>${lm}${alts}</url>`);
