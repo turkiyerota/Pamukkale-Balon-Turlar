@@ -10,8 +10,8 @@ export const EN_1: Record<string, ArticleBody> = {
     excerpt:
       "Pamukkale balloon prices change with the date, season and group size. This guide explains what moves the price and how to get an accurate quote.",
     intro: [
-      "Price is usually the first question anyone asks about a Pamukkale balloon ride. So here's a straight answer: **instead of a fixed list, we give you a written price for your date.** That's because prices can vary with the date, the season, the size of your group, the type of flight and what's bundled into the package. A neat number in a blog post is reassuring, but if it doesn't apply to your date it just gives you a false baseline.",
-      "Instead of inventing a price range, this guide shows you how to read the figures you'll find online, how to compare two quotes like-for-like, and which questions to ask before you pay. For a current quote, see our [prices page](/en/prices/) or send your dates through the [reservation request form](/en/reservation/).",
+      "Price is usually the first question anyone asks about a Pamukkale balloon ride. So here's a straight answer: **our prices start from 6,666 TL, and we confirm the exact price for your date in writing.** That's because prices can vary with the date, the season, the size of your group, the type of flight and what's bundled into the package. A neat number in a blog post is reassuring, but if it doesn't apply to your date it just gives you a false baseline.",
+      "This guide shows you how to read the figures you'll find online, how to compare two quotes like-for-like, and which questions to ask before you pay. For a current quote, see our [prices page](/en/prices/) or send your dates through the [reservation request form](/en/reservation/).",
     ],
     sections: [
       {
@@ -94,7 +94,7 @@ export const EN_1: Record<string, ArticleBody> = {
       },
     ],
     takeaways: [
-      "Get a written quote for your date and group size — WhatsApp is the quickest way.",
+      "Our prices start from 6,666 TL; WhatsApp is the quickest way to get the exact price for your date.",
       "Season, flight type, transfers, currency and extras all move the price.",
       "Compare inclusions and cancellation terms, not just the headline number.",
       "Get the price, what's included and the cancellation terms in writing.",
@@ -207,7 +207,7 @@ export const EN_1: Record<string, ArticleBody> = {
       "Time in the air and the time from hotel pick-up to drop-off are two very different numbers. Ask about both.",
     intro: [
       "“How long is the balloon ride?” really has two answers: the time you spend in the air, and the length of the whole morning. Keeping them apart makes it much easier to compare offers and plan the rest of your day.",
-      "Flight time can vary by operator, by package and with the wind on the day. According to information published by operators in the area, time in the air is usually 45 minutes to an hour. **We state your package's flight time in writing in your quote.** This guide explains what affects the timing and what to ask.",
+      "Flight time can vary by operator, by package and with the wind on the day. According to information published by operators in the area, time in the air is usually 45 minutes to an hour. **With us, time in the air is typically 45–60 minutes, and the whole experience about 2.5–3 hours.** This guide explains what affects the timing and what to ask.",
     ],
     sections: [
       {
@@ -282,7 +282,7 @@ export const EN_1: Record<string, ArticleBody> = {
     takeaways: [
       "Flight time and total time are different — ask about both.",
       "Flight time depends on the wind and on reaching a safe landing site.",
-      "Your package's flight time is stated in writing in your quote.",
+      "With us, time in the air is typically 45–60 minutes; the whole experience takes about 2.5–3 hours.",
       "If you're travelling on the same day, leave a buffer in your plans.",
     ],
   },

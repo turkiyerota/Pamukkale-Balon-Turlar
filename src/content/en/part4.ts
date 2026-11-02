@@ -95,7 +95,7 @@ export const EN_4: Record<string, ArticleBody> = {
     excerpt:
       "Age and height rules vary by operator — confirm them before you book, and prepare your child for the early start.",
     intro: [
-      "A balloon ride can be an unforgettable family memory. But the rules on children vary with the operator, the type of basket and conditions on the day. **Tell us your child's age and height and we'll confirm whether they can fly before you book.**",
+      "A balloon ride can be an unforgettable family memory. But the rules on children vary with the operator, the type of basket and conditions on the day. **With us, children can typically fly from age 6 with an adult; tell us their age and height and we'll confirm before you book.**",
       "This guide explains why the rules exist, how to judge whether your child is ready, how to prepare for the early start and what to ask before booking.",
     ],
     sections: [

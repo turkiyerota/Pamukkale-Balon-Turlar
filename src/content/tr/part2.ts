@@ -121,7 +121,7 @@ export const TR_2: Record<string, ArticleBody> = {
       "Balon uçuşları hava koşullarına bağlıdır. İptal durumunda ne olacağını önceden ve yazılı olarak öğrenin.",
     intro: [
       "Balon uçuşları rüzgâr, görüş mesafesi ve yağış gibi hava koşullarına doğrudan bağlıdır. Uçuşun güvenli olmayacağı değerlendirilirse tur son dakikada, hatta siz kalkış alanına ulaştıktan sonra bile iptal edilebilir. Bu, balon turu planlamanın kaçınılmaz bir parçasıdır.",
-      "**İptal ve iade koşullarımızı rezervasyon sırasında yazılı olarak paylaşırız.** Bu yazı, iptal kararlarının nasıl verildiğini, genel olarak hangi seçeneklerle karşılaşabileceğinizi ve seyahatinizi nasıl esnek planlayacağınızı anlatıyor.",
+      "**Koşullarımız kısaca şöyle: Hava veya güvenlik nedeniyle iptal edilen uçuşlarda ücretsiz olarak başka bir güne geçebilir ya da ödemenizin tamamını geri alabilirsiniz. Kendi iptallerinizde uçuştan 24 saat öncesine kadar ücret alınmaz.** Bu yazı, iptal kararlarının nasıl verildiğini, genel olarak hangi seçeneklerle karşılaşabileceğinizi ve seyahatinizi nasıl esnek planlayacağınızı anlatıyor.",
     ],
     sections: [
       {

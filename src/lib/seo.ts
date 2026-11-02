@@ -1,4 +1,4 @@
-import { SITE, type Lang } from "@/config/site";
+import { SITE, PRICE_FROM, type Lang } from "@/config/site";
 const defaultOg = "/og-image.jpg";
 
 type Alt = { tr?: string | undefined; en?: string | undefined };
@@ -100,7 +100,21 @@ export const organizationLd = {
   alternateName: SITE.nameEn,
   image: abs(DEFAULT_OG_IMAGE),
   areaServed: { "@type": "Place", name: "Pamukkale, Denizli" },
-  sameAs: SITE.social.map((s) => s.url),
+  ...(SITE.social.length ? { sameAs: SITE.social.map((s) => s.url) } : {}),
+  priceRange: `${PRICE_FROM.amount} TRY+`,
+  makesOffer: {
+    "@type": "Offer",
+    name: "Pamukkale Balon Turu",
+    url: `${SITE.url}/fiyatlar/`,
+    priceCurrency: PRICE_FROM.currency,
+    price: PRICE_FROM.amount,
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      minPrice: PRICE_FROM.amount,
+      priceCurrency: PRICE_FROM.currency,
+    },
+    availability: "https://schema.org/InStock",
+  },
   url: SITE.url,
   logo: abs(SITE.logo.onLight),
   email: SITE.contact.email,

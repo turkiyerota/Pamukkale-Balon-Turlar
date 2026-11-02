@@ -4,7 +4,7 @@ import { PAGES, articlePath } from "@/lib/paths";
 import { getArticles } from "@/content/articles";
 import { FAQS } from "@/content/faq";
 import { HeroSlider } from "../hero-slider";
-import { ArticleCard, CtaBand, FaqList, TrustStrip, PackageCard } from "../blocks";
+import { ArticleCard, CtaBand, FaqList, TrustStrip, PackageCard, Gallery } from "../blocks";
 import { L, btn, Arrow, SectionHeading, WhatsAppIcon } from "../ui-kit";
 import imgInflation from "@/assets/img-inflation.webp";
 import imgHierapolis from "@/assets/img-hierapolis.webp";
@@ -21,16 +21,16 @@ const C = {
     essH: "Bir bakışta",
     ess: [
       ["Konum", "Pamukkale / Denizli"],
-      ["Uçuş zamanı", "Gün doğumu, sabahın erken saatleri"],
+      ["Uçuş zamanı", "Gün doğumu; havada genellikle 45–60 dakika"],
       ["Manzara", "Travertenler, termal havuzlar ve Hierapolis"],
-      ["Fiyat", "Tarih ve kişi sayısına göre yazılı teklif"],
+      ["Fiyat", "6.666 TL'den başlayan fiyatlarla"],
       ["İletişim", "WhatsApp, telefon, e-posta veya form"],
     ],
     essCta: "Fiyatı WhatsApp'tan sorun",
     priceEy: "Paketler",
     priceH: "Size uygun uçuşu seçin",
     priceNote:
-      "Fiyatlar tarihe, sezona ve kişi sayısına göre değiştiği için güncel fiyatı size özel olarak yazılı veriyoruz. Tarihinizi WhatsApp'tan yazın, hızlıca dönüş yapalım.",
+      "Fiyatlarımız 6.666 TL'den başlar. Kesin fiyat tarihe, sezona ve kişi sayısına göre değiştiği için size özel fiyatı yazılı olarak iletiyoruz. Tarihinizi WhatsApp'tan yazın, hızlıca dönüş yapalım.",
     allPrices: "Fiyatlar ve paket ayrıntıları",
     incEy: "Şeffaf teklif",
     incH: "Teklifinizde her şey açıkça yazılı",
@@ -99,16 +99,16 @@ const C = {
     essH: "At a glance",
     ess: [
       ["Location", "Pamukkale / Denizli, Türkiye"],
-      ["Flight time", "Sunrise, early morning"],
+      ["Flight time", "Sunrise; typically 45–60 minutes aloft"],
       ["Views", "Travertines, thermal pools and Hierapolis"],
-      ["Price", "Written quote for your date and group"],
+      ["Price", "From 6,666 TL"],
       ["Contact", "WhatsApp, phone, email or form"],
     ],
     essCta: "Ask for a price on WhatsApp",
     priceEy: "Packages",
     priceH: "Choose your flight",
     priceNote:
-      "Prices change with the date, season and group size, so we give you an up-to-date written price. Message us your date on WhatsApp and we'll get back to you.",
+      "Prices start from 6,666 TL. The exact price depends on the date, season and group size, so we confirm it in writing. Message us your date on WhatsApp and we'll get back to you.",
     allPrices: "Prices and package details",
     incEy: "A clear quote",
     incH: "Everything spelled out in writing",
@@ -409,6 +409,8 @@ export function HomePage({ lang }: { lang: Lang }) {
           </dl>
         </div>
       </section>
+
+      <Gallery lang={lang} />
 
       {/* Why */}
       <section className="container-page grid items-center gap-14 py-24 md:grid-cols-[1fr_1.1fr] md:py-32">

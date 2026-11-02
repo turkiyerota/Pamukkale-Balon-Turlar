@@ -121,7 +121,7 @@ export const EN_2: Record<string, ArticleBody> = {
       "Balloon flights depend on the weather. Find out — in writing — what happens if yours is cancelled.",
     intro: [
       "Balloon flights depend directly on wind, visibility and precipitation. If the flight is judged unsafe, it can be cancelled at the last minute — sometimes even after you've arrived at the launch site. That's an unavoidable part of planning a balloon ride.",
-      "**We share our cancellation and refund terms in writing when you book.** This guide explains how cancellation decisions are made, the options you're likely to come across and how to plan your trip with some flexibility.",
+      "**Our terms in short: if the weather or safety cancels your flight, you can move to another morning free of charge or get a full refund. If you cancel yourself, it's free up to 24 hours before the flight.** This guide explains how cancellation decisions are made, the options you're likely to come across and how to plan your trip with some flexibility.",
     ],
     sections: [
       {

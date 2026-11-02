@@ -9,22 +9,22 @@ import { translatedSlug } from "@/content/articles";
 const META: Record<PageKey, Record<Lang, [string, string]>> = {
   home: {
     tr: [
-      "Pamukkale Balon Turu | Fiyatlar, Saatler ve Rezervasyon",
-      "Pamukkale'de gün doğumu balon turu: travertenler ve Hierapolis üzerinde uçuş. Fiyatlar, uçuş saatleri ve WhatsApp'tan hızlı rezervasyon.",
+      "Pamukkale Balon Turu | Fiyatlar 6.666 TL'den Başlar",
+      "Pamukkale'de gün doğumu balon turu: travertenler ve Hierapolis üzerinde 45–60 dakikalık uçuş. Fiyatlar 6.666 TL'den başlar, WhatsApp'tan hızlı rezervasyon.",
     ],
     en: [
-      "Pamukkale Hot Air Balloon Ride | Sunrise Flights & Booking",
-      "Sunrise hot air balloon rides over Pamukkale's travertines and Hierapolis. Prices for your date, flight times and quick booking on WhatsApp.",
+      "Pamukkale Hot Air Balloon Ride | From 6,666 TL",
+      "Sunrise hot air balloon rides over Pamukkale's travertines and Hierapolis, typically 45–60 minutes aloft. Prices from 6,666 TL, quick booking on WhatsApp.",
     ],
   },
   prices: {
     tr: [
-      "Pamukkale Balon Turu Fiyatları 2026 | Paketler",
-      "Pamukkale balon turu fiyatları 2026: standart ve özel sepet paketleri, fiyatı belirleyen etkenler ve tarihinize özel yazılı teklif.",
+      "Pamukkale Balon Turu Fiyatları 2026 | 6.666 TL'den Başlar",
+      "Pamukkale balon turu fiyatları 2026: fiyatlar 6.666 TL'den başlar. Standart ve özel sepet paketleri, iptal koşulları ve WhatsApp'tan size özel fiyat.",
     ],
     en: [
-      "Pamukkale Hot Air Balloon Prices 2026 | Packages",
-      "Pamukkale hot air balloon prices for 2026: shared and private basket packages, what affects the price and a written quote for your date.",
+      "Pamukkale Hot Air Balloon Prices 2026 | From 6,666 TL",
+      "Pamukkale hot air balloon prices for 2026 start from 6,666 TL. Shared and private basket packages, cancellation terms and your exact price on WhatsApp.",
     ],
   },
   reservation: {
@@ -40,17 +40,17 @@ const META: Record<PageKey, Record<Lang, [string, string]>> = {
   flight: {
     tr: [
       "Pamukkale Balon Uçuşu | Saat, Süre ve Hazırlık",
-      "Pamukkale balon turu kaçta başlar, kaç dakika sürer, ne giyilir? Uçuş sabahının adımları, hava koşulları ve çocuklarla katılım.",
+      "Pamukkale balon turu gün doğumunda başlar, havada genellikle 45–60 dakika sürer. Uçuş sabahı, iptal koşulları, yaş sınırı ve ne giyileceği.",
     ],
     en: [
       "Pamukkale Balloon Flight | Times, Duration & What to Expect",
-      "What time Pamukkale balloon flights start, how long they last and what to wear, plus the flight morning step by step and weather.",
+      "Pamukkale balloon flights take off at sunrise and typically last 45–60 minutes. The flight morning, cancellation terms, age limit and what to wear.",
     ],
   },
   faq: {
     tr: [
       "Pamukkale Balon Turu: Sık Sorulan Sorular",
-      "Pamukkale balon turu kaç TL, saat kaçta, kaç dakika sürer, nereden kalkar, güvenli mi? En çok sorulan soruların yanıtları.",
+      "Pamukkale balon turu kaç TL (6.666 TL'den başlar), saat kaçta, kaç dakika sürer, iptal olursa ne olur, güvenli mi? Tüm yanıtlar.",
     ],
     en: [
       "Pamukkale Hot Air Balloon FAQ | Price, Time, Safety",

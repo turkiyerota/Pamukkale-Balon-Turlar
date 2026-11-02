@@ -6,7 +6,7 @@ import { PageHero } from "../page-hero";
 import { crumbs } from "./content-pages";
 import { L, btn, Arrow, WhatsAppIcon } from "../ui-kit";
 import { Clock, FileText, MessageCircle, type LucideIcon } from "lucide-react";
-import hero1 from "@/assets/hero-1.webp";
+import heroBasket from "@/assets/gallery/basket-view.webp";
 
 type Fields = {
   name: string;
@@ -141,8 +141,8 @@ export function ReservationPage({ lang }: { lang: Lang }) {
   return (
     <>
       <PageHero
-        image={hero1}
-        position="60% 50%"
+        image={heroBasket}
+        position="55% 60%"
         eyebrow={tr ? "Rezervasyon" : "Booking"}
         title={tr ? "Balon Turu Rezervasyonu" : "Book Your Balloon Flight"}
         intro={

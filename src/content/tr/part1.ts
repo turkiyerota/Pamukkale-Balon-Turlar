@@ -10,8 +10,8 @@ export const TR_1: Record<string, ArticleBody> = {
     excerpt:
       "Pamukkale balon turu fiyatları tarihe, sezona ve kişi sayısına göre değişir. Bu rehberde fiyatı belirleyen etkenleri ve doğru teklifi nasıl alacağınızı anlatıyoruz.",
     intro: [
-      "Pamukkale'de balon turu planlayan herkesin ilk sorusu genellikle aynıdır: “Ne kadar tutar?” Bu soruya dürüst bir cevap vermek istiyoruz: **sabit bir liste yerine tarihinize özel, yazılı fiyat veriyoruz.** Çünkü fiyatlar tarihe, sezona, kişi sayısına, seçtiğiniz uçuş tipine ve pakete dahil hizmetlere göre değişebiliyor. Bir rehberde sabit bir rakam görmek rahatlatıcı olabilir; ancak o rakam sizin tarihiniz için geçerli değilse, planınızı yanlış bir varsayıma dayandırmış olursunuz.",
-      "Bu yazıda size uydurma bir fiyat aralığı sunmak yerine, internette gördüğünüz rakamları nasıl okuyacağınızı, iki teklifi nasıl adil biçimde karşılaştıracağınızı ve rezervasyon öncesinde hangi soruları sormanız gerektiğini anlatıyoruz. Güncel fiyat için [fiyatlar sayfamızı](/fiyatlar/) inceleyebilir veya [rezervasyon talep formu](/rezervasyon/) üzerinden tarihinizi ve kişi sayınızı iletebilirsiniz.",
+      "Pamukkale'de balon turu planlayan herkesin ilk sorusu genellikle aynıdır: “Ne kadar tutar?” Bu soruya dürüst bir cevap vermek istiyoruz: **fiyatlarımız 6.666 TL'den başlıyor; kesin fiyatı ise tarihinize özel olarak yazılı veriyoruz.** Çünkü fiyatlar tarihe, sezona, kişi sayısına, seçtiğiniz uçuş tipine ve pakete dahil hizmetlere göre değişebiliyor. Bir rehberde sabit bir rakam görmek rahatlatıcı olabilir; ancak o rakam sizin tarihiniz için geçerli değilse, planınızı yanlış bir varsayıma dayandırmış olursunuz.",
+      "Bu yazıda internette gördüğünüz rakamları nasıl okuyacağınızı, iki teklifi nasıl adil biçimde karşılaştıracağınızı ve rezervasyon öncesinde hangi soruları sormanız gerektiğini anlatıyoruz. Güncel fiyat için [fiyatlar sayfamızı](/fiyatlar/) inceleyebilir veya [rezervasyon talep formu](/rezervasyon/) üzerinden tarihinizi ve kişi sayınızı iletebilirsiniz.",
     ],
     sections: [
       {
@@ -96,7 +96,7 @@ export const TR_1: Record<string, ArticleBody> = {
       },
     ],
     takeaways: [
-      "Güncel fiyatı tarihinize ve kişi sayınıza göre yazılı teklif olarak alın; en hızlı yol WhatsApp'tır.",
+      "Fiyatlarımız 6.666 TL'den başlar; tarihinize özel kesin fiyatı en hızlı WhatsApp'tan alırsınız.",
       "Fiyatı sezon, uçuş tipi, transfer, para birimi ve ek hizmetler etkiler.",
       "Teklifleri rakama göre değil, dahil olan hizmetlere ve iptal koşullarına göre karşılaştırın.",
       "Fiyatı, kapsamı ve iptal koşullarını mutlaka yazılı teyit ettirin.",
@@ -209,7 +209,7 @@ export const TR_1: Record<string, ArticleBody> = {
       "Havada geçen süre ile otelden alıştan dönüşe kadar geçen toplam süre aynı şey değildir. İkisini ayrı ayrı sorun.",
     intro: [
       "“Balon turu kaç dakika sürer?” sorusunun aslında iki cevabı vardır: havada geçen süre ve tüm sabahın süresi. Teklifleri karşılaştırırken ve gününüzü planlarken bu ikisini birbirinden ayırmak işinizi çok kolaylaştırır.",
-      "Havada geçen süre operatöre, seçtiğiniz pakete ve o sabahki rüzgâr koşullarına göre değişebilir. Bölgedeki işletmelerin yayımladığı bilgilere göre havada geçen süre genellikle 45 dakika ile 1 saat arasındadır. **Paketinizin uçuş süresini teklifinizde yazılı olarak belirtiriz.** Bu yazıda sürenin nelere bağlı olduğunu ve neyi sormanız gerektiğini anlatıyoruz.",
+      "Havada geçen süre operatöre, seçtiğiniz pakete ve o sabahki rüzgâr koşullarına göre değişebilir. Bölgedeki işletmelerin yayımladığı bilgilere göre havada geçen süre genellikle 45 dakika ile 1 saat arasındadır. **Bizimle havada geçen süre genellikle 45–60 dakikadır; tüm program yaklaşık 2,5–3 saat sürer.** Bu yazıda sürenin nelere bağlı olduğunu ve neyi sormanız gerektiğini anlatıyoruz.",
     ],
     sections: [
       {
@@ -284,7 +284,7 @@ export const TR_1: Record<string, ArticleBody> = {
     takeaways: [
       "Uçuş süresi ile toplam deneyim süresi farklıdır; ikisini ayrı ayrı sorun.",
       "Uçuş süresi rüzgâr koşullarına ve güvenli iniş alanına göre değişebilir.",
-      "Paketinizin uçuş süresi teklifinizde yazılı olarak belirtilir.",
+      "Bizimle havada geçen süre genellikle 45–60 dakika, tüm program yaklaşık 2,5–3 saattir.",
       "Aynı gün yolculuk yapacaksanız programınızda pay bırakın.",
     ],
   },
