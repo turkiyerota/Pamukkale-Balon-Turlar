@@ -5,8 +5,10 @@ export const EN_4: Record<string, ArticleBody> = {
     slug: "pamukkale-vs-cappadocia-balloon-experience",
     title: "Pamukkale vs Cappadocia: Which Balloon Experience Is Right for You?",
     seoTitle: "Pamukkale vs Cappadocia Hot Air Balloon: Which to Choose?",
-    description: "An honest comparison of hot air balloon rides in Pamukkale and Cappadocia: scenery, atmosphere, getting there, your itinerary and what to do after the flight.",
-    excerpt: "Both are special. The differences are in the scenery, the atmosphere and how each fits your route.",
+    description:
+      "An honest comparison of hot air balloon rides in Pamukkale and Cappadocia: scenery, atmosphere, getting there, your itinerary and what to do after the flight.",
+    excerpt:
+      "Both are special. The differences are in the scenery, the atmosphere and how each fits your route.",
     intro: [
       "Mention hot air balloons in Türkiye and most people think of Cappadocia — for good reason. Dozens of balloons drifting over fairy chimneys at dawn is one of the most photographed sights in the world. Pamukkale offers a completely different stage: brilliant white travertine terraces, turquoise pools and the ancient city of Hierapolis right next door.",
       "This guide doesn't declare a winner, because the right answer depends on your route, your expectations and your time. We run balloon tours in Pamukkale, so we won't pretend to be neutral — but we've kept the comparison measured and based on facts you can check.",
@@ -71,7 +73,9 @@ export const EN_4: Record<string, ArticleBody> = {
           "Which is easier to reach on your route?",
           "How many spare mornings do you have if the weather cancels a flight?",
         ],
-        p: ["If you choose Pamukkale, our [prices](/en/prices/) and [flight information](/en/flight-information/) pages will guide you, and you can send your date through the [reservation form](/en/reservation/)."],
+        p: [
+          "If you choose Pamukkale, our [prices](/en/prices/) and [flight information](/en/flight-information/) pages will guide you, and you can send your date through the [reservation form](/en/reservation/).",
+        ],
       },
     ],
     takeaways: [
@@ -86,10 +90,12 @@ export const EN_4: Record<string, ArticleBody> = {
     slug: "can-children-join-a-pamukkale-balloon-tour",
     title: "Can Children Join a Pamukkale Balloon Tour?",
     seoTitle: "Can Children Join a Pamukkale Balloon Tour? A Family Guide",
-    description: "A family guide to balloon rides with children: age and height rules, preparing for the early start, what to watch during the flight and what to ask before booking.",
-    excerpt: "Age and height rules vary by operator — confirm them before you book, and prepare your child for the early start.",
+    description:
+      "A family guide to balloon rides with children: age and height rules, preparing for the early start, what to watch during the flight and what to ask before booking.",
+    excerpt:
+      "Age and height rules vary by operator — confirm them before you book, and prepare your child for the early start.",
     intro: [
-      "A balloon ride can be an unforgettable family memory. But the rules on children vary with the operator, the type of basket and conditions on the day. **We don't yet publish a verified minimum age or height on this site;** we confirm whether your child can fly when you book.",
+      "A balloon ride can be an unforgettable family memory. But the rules on children vary with the operator, the type of basket and conditions on the day. **Tell us your child's age and height and we'll confirm whether they can fly before you book.**",
       "This guide explains why the rules exist, how to judge whether your child is ready, how to prepare for the early start and what to ask before booking.",
     ],
     sections: [
@@ -112,7 +118,12 @@ export const EN_4: Record<string, ArticleBody> = {
           "How will a pre-dawn start affect them?",
         ],
         sub: [
-          { h: "About the burner noise", p: ["When the burner fires, it makes a short, loud roar. Some children find it thrilling; others find it scary. Telling them about it in advance, or showing them a video, takes away the surprise."] },
+          {
+            h: "About the burner noise",
+            p: [
+              "When the burner fires, it makes a short, loud roar. Some children find it thrilling; others find it scary. Telling them about it in advance, or showing them a video, takes away the surprise.",
+            ],
+          },
         ],
       },
       {
@@ -151,11 +162,13 @@ export const EN_4: Record<string, ArticleBody> = {
           "Is a private basket available for families?",
           "Is there a separate briefing for children?",
         ],
-        p: ["Send your questions and your children's ages through the [reservation form](/en/reservation/). For general safety questions, see our [safety guide](/en/insights/are-pamukkale-hot-air-balloon-rides-safe/)."],
+        p: [
+          "Send your questions and your children's ages through the [reservation form](/en/reservation/). For general safety questions, see our [safety guide](/en/insights/are-pamukkale-hot-air-balloon-rides-safe/).",
+        ],
       },
     ],
     takeaways: [
-      "Age and height rules vary by operator; we don't publish a verified limit yet.",
+      "Age and height rules vary by operator; ask about your child before booking.",
       "The rules exist for safety reasons such as basket height and the landing position.",
       "Prepare your child for the early start, the cold and the burner noise.",
       "Ask about children's prices and conditions in writing before booking.",
@@ -166,11 +179,13 @@ export const EN_4: Record<string, ArticleBody> = {
     slug: "what-to-know-before-your-pamukkale-balloon-ride",
     title: "What to Know Before Your Pamukkale Balloon Ride",
     seoTitle: "What to Know Before Your Pamukkale Balloon Ride | Checklist",
-    description: "A complete checklist for your Pamukkale balloon ride: planning, booking, the day before, flight morning and what to do afterwards.",
-    excerpt: "A practical checklist from booking to the end of your flight morning, with links to our detailed guides.",
+    description:
+      "A complete checklist for your Pamukkale balloon ride: planning, booking, the day before, flight morning and what to do afterwards.",
+    excerpt:
+      "A practical checklist from booking to the end of your flight morning, with links to our detailed guides.",
     intro: [
       "This article pulls our other guides together into one checklist. Look through it before you book, the day before you fly and on the morning itself to make sure nothing slips through the cracks.",
-      "Each section links to the guide that covers the topic in more depth. As a reminder, we don't yet publish verified prices, flight durations or age limits on this site; we confirm those for you when you book.",
+      "Each section links to the guide that covers the topic in more depth. Prices, flight times and age limits depend on your date and package, so we confirm them for you in writing when you book.",
     ],
     sections: [
       {
@@ -194,7 +209,9 @@ export const EN_4: Record<string, ArticleBody> = {
           "Mention health conditions and mobility needs — [safety guide](/en/insights/are-pamukkale-hot-air-balloon-rides-safe/)",
           "Give a phone number you can be reached on early in the morning",
         ],
-        p: ["For the step-by-step process, see [how to book](/en/insights/how-to-book-a-pamukkale-balloon-tour/)."],
+        p: [
+          "For the step-by-step process, see [how to book](/en/insights/how-to-book-a-pamukkale-balloon-tour/).",
+        ],
       },
       {
         id: "day-before",
@@ -238,7 +255,9 @@ export const EN_4: Record<string, ArticleBody> = {
       {
         id: "contact",
         h: "Still Have Questions?",
-        p: ["If something isn't covered here, see our [FAQs](/en/faqs/) or reach us through the [contact page](/en/contact/). When you're ready, send your date through the [reservation form](/en/reservation/)."],
+        p: [
+          "If something isn't covered here, see our [FAQs](/en/faqs/) or reach us through the [contact page](/en/contact/). When you're ready, send your date through the [reservation form](/en/reservation/).",
+        ],
       },
     ],
     takeaways: [

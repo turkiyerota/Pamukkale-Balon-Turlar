@@ -11,7 +11,9 @@ export const Route = createFileRoute("/en/insights/$slug")({
   },
   head: ({ loaderData }) => {
     const a = loaderData && getArticle("en", loaderData.slug);
-    return a ? articleHead(a) : { meta: [{ title: "Not found" }, { name: "robots", content: "noindex" }] };
+    return a
+      ? articleHead(a)
+      : { meta: [{ title: "Not found" }, { name: "robots", content: "noindex" }] };
   },
   component: Page,
 });

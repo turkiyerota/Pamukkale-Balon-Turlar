@@ -1,5 +1,5 @@
 import { SITE, type Lang } from "@/config/site";
-import defaultOg from "@/assets/hero-1.webp";
+const defaultOg = "/og-image.jpg";
 
 type Alt = { tr?: string | undefined; en?: string | undefined };
 
@@ -22,7 +22,18 @@ export function seo(opts: {
   image?: string;
   imageAlt?: string;
 }) {
-  const { lang, title, description, path, alt, type = "website", jsonLd = [], noindex, image = DEFAULT_OG_IMAGE, imageAlt } = opts;
+  const {
+    lang,
+    title,
+    description,
+    path,
+    alt,
+    type = "website",
+    jsonLd = [],
+    noindex,
+    image = DEFAULT_OG_IMAGE,
+    imageAlt,
+  } = opts;
   const meta: Record<string, string>[] = [
     { title },
     { name: "description", content: description },
@@ -36,10 +47,22 @@ export function seo(opts: {
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
     { property: "og:image", content: abs(image) },
+    ...(image === DEFAULT_OG_IMAGE
+      ? [
+          { property: "og:image:width", content: "1200" },
+          { property: "og:image:height", content: "630" },
+          { property: "og:image:type", content: "image/jpeg" },
+        ]
+      : []),
     { name: "twitter:image", content: abs(image) },
   ];
-  if (imageAlt) meta.push({ property: "og:image:alt", content: imageAlt }, { name: "twitter:image:alt", content: imageAlt });
-  if (alt?.tr && alt?.en) meta.push({ property: "og:locale:alternate", content: lang === "tr" ? "en_GB" : "tr_TR" });
+  if (imageAlt)
+    meta.push(
+      { property: "og:image:alt", content: imageAlt },
+      { name: "twitter:image:alt", content: imageAlt },
+    );
+  if (alt?.tr && alt?.en)
+    meta.push({ property: "og:locale:alternate", content: lang === "tr" ? "en_GB" : "tr_TR" });
   if (noindex) meta.push({ name: "robots", content: "noindex" });
   const links: Record<string, string>[] = [{ rel: "canonical", href: abs(path) }];
   if (alt?.tr && alt?.en) {
@@ -71,8 +94,13 @@ export function breadcrumbLd(items: { name: string; path: string }[]) {
 
 export const organizationLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "TravelAgency",
+  "@id": `${SITE.url}/#organization`,
   name: SITE.name,
+  alternateName: SITE.nameEn,
+  image: abs(DEFAULT_OG_IMAGE),
+  areaServed: { "@type": "Place", name: "Pamukkale, Denizli" },
+  sameAs: SITE.social.map((s) => s.url),
   url: SITE.url,
   logo: abs(SITE.logo.onLight),
   email: SITE.contact.email,
@@ -86,3 +114,28 @@ export const organizationLd = {
     addressCountry: "TR",
   },
 };
+
+export const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE.url}/#website`,
+  name: SITE.name,
+  url: SITE.url,
+  inLanguage: ["tr", "en"],
+  publisher: { "@id": `${SITE.url}/#organization` },
+};
+
+/** Strips the `[text](href)` and `**bold**` markup used in FAQ answers. */
+const plain = (t: string) => t.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*/g, "");
+
+export function faqLd(items: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((it) => ({
+      "@type": "Question",
+      name: it.q,
+      acceptedAnswer: { "@type": "Answer", text: plain(it.a) },
+    })),
+  };
+}

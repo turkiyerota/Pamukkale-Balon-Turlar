@@ -5,8 +5,10 @@ export const EN_2: Record<string, ArticleBody> = {
     slug: "what-to-wear-for-a-pamukkale-hot-air-balloon-ride",
     title: "What to Wear for a Pamukkale Hot Air Balloon Ride",
     seoTitle: "What to Wear for a Pamukkale Hot Air Balloon Ride | By Season",
-    description: "Layers, shoes and seasonal tips for a Pamukkale balloon ride: how to stay comfortable in the cold dawn air, in the basket and at the landing site.",
-    excerpt: "Dawn can be chilly in any season. Wear layers you can peel off and closed shoes with a good grip.",
+    description:
+      "Layers, shoes and seasonal tips for a Pamukkale balloon ride: how to stay comfortable in the cold dawn air, in the basket and at the landing site.",
+    excerpt:
+      "Dawn can be chilly in any season. Wear layers you can peel off and closed shoes with a good grip.",
     intro: [
       "Balloon rides start at the coolest time of day. Even on a summer day that will top 30°C, you can feel cold waiting at the launch site before sunrise. Then, once you're in the basket, the burner can send a short blast of warmth over your head. Dressing well keeps you comfortable at both extremes.",
       "This guide covers layering, footwear, what to wear in each season and what to bring along. If you're unsure whether there's a specific dress requirement, just ask when you book.",
@@ -43,12 +45,34 @@ export const EN_2: Record<string, ArticleBody> = {
       {
         id: "seasons",
         h: "What to Wear in Each Season",
-        p: ["Pamukkale's climate is roughly hot, dry summers and cool, wetter winters. In every season, though, early mornings are noticeably colder than the middle of the day."],
+        p: [
+          "Pamukkale's climate is roughly hot, dry summers and cool, wetter winters. In every season, though, early mornings are noticeably colder than the middle of the day.",
+        ],
         sub: [
-          { h: "Spring (March–May)", p: ["Cool mornings and mild days. A long-sleeve top, fleece and windbreaker work well. Thin gloves can be useful on March and April mornings."] },
-          { h: "Summer (June–August)", p: ["Hot later on, but bring a light layer for before sunrise. It heats up fast after the flight, so pack sunscreen, sunglasses and a hat."] },
-          { h: "Autumn (September–November)", p: ["September mornings can feel close to summer; November mornings are properly cold. Adjust your layers to whether you're at the start or the end of the season."] },
-          { h: "Winter (December–February)", p: ["Think beanie, gloves, scarf and a warm coat. Waiting at the launch site can be cold, so thermal base layers are a good idea."] },
+          {
+            h: "Spring (March–May)",
+            p: [
+              "Cool mornings and mild days. A long-sleeve top, fleece and windbreaker work well. Thin gloves can be useful on March and April mornings.",
+            ],
+          },
+          {
+            h: "Summer (June–August)",
+            p: [
+              "Hot later on, but bring a light layer for before sunrise. It heats up fast after the flight, so pack sunscreen, sunglasses and a hat.",
+            ],
+          },
+          {
+            h: "Autumn (September–November)",
+            p: [
+              "September mornings can feel close to summer; November mornings are properly cold. Adjust your layers to whether you're at the start or the end of the season.",
+            ],
+          },
+          {
+            h: "Winter (December–February)",
+            p: [
+              "Think beanie, gloves, scarf and a warm coat. Waiting at the launch site can be cold, so thermal base layers are a good idea.",
+            ],
+          },
         ],
       },
       {
@@ -91,17 +115,21 @@ export const EN_2: Record<string, ArticleBody> = {
     slug: "what-happens-if-a-pamukkale-balloon-tour-is-cancelled",
     title: "What Happens If a Pamukkale Balloon Tour Is Cancelled?",
     seoTitle: "Pamukkale Balloon Tour Cancelled? Refunds and Rebooking",
-    description: "How weather cancellations work for Pamukkale balloon flights, the usual refund and rebooking options, cancelling yourself, and what to ask before you book.",
-    excerpt: "Balloon flights depend on the weather. Find out — in writing — what happens if yours is cancelled.",
+    description:
+      "How weather cancellations work for Pamukkale balloon flights, the usual refund and rebooking options, cancelling yourself, and what to ask before you book.",
+    excerpt:
+      "Balloon flights depend on the weather. Find out — in writing — what happens if yours is cancelled.",
     intro: [
       "Balloon flights depend directly on wind, visibility and precipitation. If the flight is judged unsafe, it can be cancelled at the last minute — sometimes even after you've arrived at the launch site. That's an unavoidable part of planning a balloon ride.",
-      "**Our cancellation and refund terms are not yet published on this site.** We share them in writing when you book. This guide explains how cancellation decisions are made, the options you're likely to come across and how to plan your trip with some flexibility.",
+      "**We share our cancellation and refund terms in writing when you book.** This guide explains how cancellation decisions are made, the options you're likely to come across and how to plan your trip with some flexibility.",
     ],
     sections: [
       {
         id: "why-cancelled",
         h: "Why Flights Get Cancelled",
-        p: ["A balloon travels with the wind, and ground speed at landing matters. Pilots and the authorities may judge a flight unsafe in conditions such as:"],
+        p: [
+          "A balloon travels with the wind, and ground speed at landing matters. Pilots and the authorities may judge a flight unsafe in conditions such as:",
+        ],
         list: [
           "Strong or rapidly changing wind, at ground level or higher up",
           "Rain, snow or the risk of storms",
@@ -120,7 +148,9 @@ export const EN_2: Record<string, ArticleBody> = {
       {
         id: "options",
         h: "The Usual Options After a Cancellation",
-        p: ["Terms vary between operators, but after a weather cancellation you'll typically see one or more of these:"],
+        p: [
+          "Terms vary between operators, but after a weather cancellation you'll typically see one or more of these:",
+        ],
         list: [
           "Moving to the next suitable morning",
           "A refund of what you paid",
@@ -128,7 +158,12 @@ export const EN_2: Record<string, ArticleBody> = {
           "An open booking for a later date",
         ],
         sub: [
-          { h: "Which suits you?", p: ["If you're in Pamukkale for several days, rebooking may make sense. If you only have one morning, how and how quickly a refund is paid matters more. Knowing this before you book takes the stress out of a cancelled morning."] },
+          {
+            h: "Which suits you?",
+            p: [
+              "If you're in Pamukkale for several days, rebooking may make sense. If you only have one morning, how and how quickly a refund is paid matters more. Knowing this before you book takes the stress out of a cancelled morning.",
+            ],
+          },
         ],
       },
       {
@@ -163,7 +198,9 @@ export const EN_2: Record<string, ArticleBody> = {
           "If I cancel, how much notice do I need to give and what are the terms?",
           "How and when will I be told about a cancellation?",
         ],
-        p: ["Get the answers in writing. For pricing in general, see our [price guide](/en/insights/pamukkale-hot-air-balloon-prices-2026/); for the booking steps, see [how to book](/en/insights/how-to-book-a-pamukkale-balloon-tour/)."],
+        p: [
+          "Get the answers in writing. For pricing in general, see our [price guide](/en/insights/pamukkale-hot-air-balloon-prices-2026/); for the booking steps, see [how to book](/en/insights/how-to-book-a-pamukkale-balloon-tour/).",
+        ],
       },
     ],
     takeaways: [
@@ -178,8 +215,10 @@ export const EN_2: Record<string, ArticleBody> = {
     slug: "are-pamukkale-hot-air-balloon-rides-safe",
     title: "Are Pamukkale Hot Air Balloon Rides Safe?",
     seoTitle: "Are Pamukkale Hot Air Balloon Rides Safe? Questions to Ask",
-    description: "How balloon flights are regulated in Türkiye, what to ask an operator, why the briefing and landing position matter, and health considerations before you fly.",
-    excerpt: "Rather than promise a guarantee, we've gathered the questions that help you make an informed choice — and what's expected of you on board.",
+    description:
+      "How balloon flights are regulated in Türkiye, what to ask an operator, why the briefing and landing position matter, and health considerations before you fly.",
+    excerpt:
+      "Rather than promise a guarantee, we've gathered the questions that help you make an informed choice — and what's expected of you on board.",
     intro: [
       "It would be wrong to call any air activity “zero risk”, so we won't offer a safety guarantee here. Instead, this guide explains how hot air balloon flights are regulated, what you can ask an operator, and what's expected of you during the flight.",
       "The short version: balloon flights are a regulated, inspected activity, and whether they go ahead is decided by the weather. The things that reduce risk most are an experienced team, respect for weather decisions and passengers who follow instructions.",
@@ -190,7 +229,7 @@ export const EN_2: Record<string, ArticleBody> = {
         h: "How Balloon Flights Are Regulated",
         p: [
           "In Türkiye, hot air balloon operations come under the regulations of the Directorate General of Civil Aviation (SHGM). Balloons, pilots and operators are expected to meet the licensing, certification and inspection requirements those regulations set out.",
-          "Asking an operator which permits they fly under is completely normal. **Our own operating permit and certification details are not yet published on this site;** we'll publish them once verified and share them whenever you ask.",
+          "Asking an operator which permits they fly under is completely normal. **Ask us and we'll send you the permit and certification details in writing.**",
         ],
       },
       {
@@ -204,7 +243,9 @@ export const EN_2: Record<string, ArticleBody> = {
           "How is the weather assessed, and who makes the cancellation call?",
           "What's the maximum number of passengers in a basket?",
         ],
-        p: ["A transparent operator won't mind these questions. If the answers are vague or the questions are brushed aside, factor that into your decision."],
+        p: [
+          "A transparent operator won't mind these questions. If the answers are vague or the questions are brushed aside, factor that into your decision.",
+        ],
       },
       {
         id: "red-flags",
@@ -215,7 +256,9 @@ export const EN_2: Record<string, ArticleBody> = {
           "Reluctance to share permit, insurance or contact details",
           "Prices far below the market with no explanation",
         ],
-        p: ["An operator that respects the weather will choose not to fly on some mornings. That's not a weakness — it's a sign of a good safety culture."],
+        p: [
+          "An operator that respects the weather will choose not to fly on some mornings. That's not a weakness — it's a sign of a good safety culture.",
+        ],
       },
       {
         id: "briefing",

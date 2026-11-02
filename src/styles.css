@@ -6,6 +6,8 @@
 @import "@fontsource/cormorant-garamond/latin-ext-500.css";
 @import "@fontsource/cormorant-garamond/latin-600.css";
 @import "@fontsource/cormorant-garamond/latin-ext-600.css";
+@import "@fontsource/cormorant-garamond/latin-500-italic.css";
+@import "@fontsource/cormorant-garamond/latin-ext-500-italic.css";
 @import "@fontsource/cormorant-garamond/latin-700.css";
 @import "@fontsource/cormorant-garamond/latin-ext-700.css";
 @import "@fontsource/manrope/latin-400.css";
@@ -52,13 +54,17 @@
   --color-terracotta: var(--terracotta);
   --color-sage: var(--sage);
   --color-whatsapp: var(--whatsapp);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-bronze: var(--bronze);
+  --color-champagne: var(--champagne);
   --color-whatsapp-foreground: var(--whatsapp-foreground);
   --color-on-dark: var(--on-dark);
   --color-on-dark-muted: var(--on-dark-muted);
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 0.75rem;
   /* Brand palette */
   --navy: oklch(0.32 0.055 237); /* #18354A */
   --navy-deep: oklch(0.25 0.045 237);
@@ -66,8 +72,14 @@
   --amber: oklch(0.73 0.11 62); /* #D99A58 */
   --terracotta: oklch(0.67 0.12 35); /* #D77C65 */
   --sage: oklch(0.54 0.045 190); /* #537C79 */
-  --whatsapp: oklch(0.72 0.17 150);
-  --whatsapp-foreground: oklch(0.2 0.03 150);
+  --whatsapp: #128c55; /* deep WhatsApp green: AA contrast with white text */
+  --whatsapp-foreground: #ffffff;
+  --gold: #d9ac68; /* champagne gold */
+  --gold-deep: #b9853f;
+  --bronze: #8a5a22; /* gold tone that passes AA on ivory */
+  --champagne: #f1dcb2;
+  --gold-gradient: linear-gradient(120deg, #f3ddae 0%, #e1b673 38%, #c98f45 72%, #e7c27f 100%);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --on-dark: oklch(0.98 0.008 85);
   --on-dark-muted: oklch(0.85 0.015 85);
 
@@ -82,7 +94,7 @@
   --secondary: oklch(0.93 0.018 80);
   --secondary-foreground: var(--navy);
   --muted: oklch(0.93 0.015 80);
-  --muted-foreground: oklch(0.45 0.035 237);
+  --muted-foreground: oklch(0.4 0.035 237);
   --accent: var(--amber);
   --accent-foreground: var(--navy-deep);
   --destructive: oklch(0.55 0.2 27);
@@ -92,7 +104,9 @@
   --ring: var(--amber);
 
   --shadow-soft: 0 1px 2px color-mix(in oklab, var(--navy) 6%, transparent),
-    0 12px 32px -16px color-mix(in oklab, var(--navy) 22%, transparent);
+    0 18px 40px -22px color-mix(in oklab, var(--navy) 30%, transparent);
+  --shadow-lift: 0 2px 4px color-mix(in oklab, var(--navy) 6%, transparent),
+    0 30px 60px -28px color-mix(in oklab, var(--navy) 45%, transparent);
   --overlay-hero: linear-gradient(
     180deg,
     color-mix(in oklab, var(--navy-deep) 55%, transparent) 0%,
@@ -115,6 +129,9 @@
     scroll-padding-top: 6rem;
   }
   body {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
@@ -129,18 +146,74 @@
     line-height: 1.1;
   }
   :focus-visible {
-    outline: 2px solid var(--amber);
+    outline: 2px solid var(--gold-deep);
     outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--champagne);
+    color: var(--navy-deep);
   }
 }
 
+/* Section label with a thin gold rule. Bronze on light backgrounds (AA), champagne on dark. */
 @utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--bronze);
+  &::before {
+    content: "";
+    width: 2.25rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.7;
+  }
+  .on-dark & ,
+  .bg-navy & ,
+  .bg-navy-deep & {
+    color: var(--champagne);
+  }
+}
+
+@utility text-gold-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gold-gradient {
+  background: var(--gold-gradient);
+}
+
+@utility shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+
+@utility card-lux {
+  position: relative;
+  border-radius: 1.25rem;
+  background: var(--card);
+  border: 1px solid color-mix(in oklab, var(--gold) 22%, transparent);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.5s var(--ease-out),
+    box-shadow 0.5s var(--ease-out),
+    border-color 0.5s;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+    border-color: color-mix(in oklab, var(--gold) 45%, transparent);
+  }
+}
+
+@utility text-shadow-hero {
+  text-shadow: 0 2px 30px rgb(10 25 40 / 0.45);
 }
 
 @utility shadow-soft {
@@ -167,7 +240,8 @@
 
 /* Article prose */
 @utility prose-article {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
+  color: oklch(0.3 0.04 237);
   line-height: 1.8;
   & p {
     margin-block: 1em;
@@ -190,12 +264,15 @@
     margin-block: 0.35em;
   }
   & a {
-    color: var(--sage);
+    color: var(--navy);
+    font-weight: 600;
     text-decoration: underline;
+    text-decoration-color: var(--gold);
+    text-decoration-thickness: 2px;
     text-underline-offset: 3px;
   }
   & a:hover {
-    color: var(--navy);
+    color: var(--bronze);
   }
 }
 
@@ -225,12 +302,290 @@
   animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
-/* Scroll reveal (progressive enhancement, no JS) */
-@supports (animation-timeline: view()) {
-  .reveal {
-    animation: rise linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 35%;
+/* Scroll reveal — progressive enhancement.
+   Content is fully visible in the HTML. Only after JS has run (html.reveal-ready, set by useReveal)
+   are *below-the-fold* elements hidden and faded in as they enter the viewport. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-ready .reveal:not(.is-in) {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  .reveal-ready .reveal {
+    transition:
+      opacity 0.9s var(--ease-out),
+      transform 0.9s var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+}
+
+/* ---------- Buttons ---------- */
+@layer components {
+  .btn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 3.25rem;
+    padding: 0.85rem 1.65rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      transform 0.4s var(--ease-out),
+      box-shadow 0.4s var(--ease-out),
+      background-color 0.3s,
+      color 0.3s,
+      border-color 0.3s;
+  }
+  /* shine sweep */
+  .btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(110deg, transparent 25%, rgb(255 255 255 / 0.5) 50%, transparent 75%);
+    transform: translateX(-130%);
+    transition: transform 0.9s var(--ease-out);
+    pointer-events: none;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn:hover::after {
+    transform: translateX(130%);
+  }
+  .btn:active {
+    transform: translateY(0) scale(0.97);
+    transition-duration: 0.12s;
+  }
+  .btn:focus-visible {
+    outline: 2px solid var(--gold-deep);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px color-mix(in oklab, var(--gold) 30%, transparent);
+  }
+  .btn:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .btn .btn-arrow {
+    transition: transform 0.4s var(--ease-out);
+  }
+  .btn:hover .btn-arrow {
+    transform: translateX(5px);
+  }
+  .btn-sm {
+    min-height: 2.75rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.875rem;
+  }
+  .btn-lg {
+    min-height: 3.75rem;
+    padding: 1rem 2.1rem;
+    font-size: 1rem;
+  }
+  .btn-gold {
+    background: var(--gold-gradient);
+    background-size: 160% 100%;
+    background-position: 0% 50%;
+    color: var(--navy-deep);
+    box-shadow: 0 12px 30px -14px rgb(185 133 63 / 0.85);
+    transition:
+      transform 0.4s var(--ease-out),
+      box-shadow 0.4s var(--ease-out),
+      background-position 0.6s var(--ease-out);
+  }
+  .btn-gold:hover {
+    background-position: 100% 50%;
+    box-shadow: 0 18px 40px -14px rgb(185 133 63 / 0.95);
+  }
+  .btn-navy {
+    background: var(--navy);
+    color: var(--on-dark);
+    box-shadow: 0 12px 30px -16px color-mix(in oklab, var(--navy) 80%, transparent);
+  }
+  .btn-navy:hover {
+    background: var(--navy-deep);
+    box-shadow: 0 18px 38px -16px color-mix(in oklab, var(--navy) 90%, transparent);
+  }
+  .btn-wa {
+    background: var(--whatsapp);
+    color: #fff;
+    box-shadow: 0 12px 30px -16px rgb(18 140 85 / 0.9);
+  }
+  .btn-wa:hover {
+    background: #0f7a4a;
+  }
+  .btn-glass {
+    background: rgb(255 255 255 / 0.12);
+    border-color: rgb(255 255 255 / 0.38);
+    color: #fff;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+  .btn-glass:hover {
+    background: rgb(255 255 255 / 0.22);
+    border-color: rgb(255 255 255 / 0.6);
+  }
+  .btn-outline {
+    background: transparent;
+    border-color: color-mix(in oklab, var(--navy) 30%, transparent);
+    color: var(--navy);
+  }
+  .btn-outline:hover {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--on-dark);
+  }
+  .btn-outline-light {
+    background: transparent;
+    border-color: rgb(255 255 255 / 0.55);
+    color: #fff;
+  }
+  .btn-outline-light:hover {
+    background: #fff;
+    color: var(--navy);
+  }
+
+  /* Text link with animated underline */
+  .link-u {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size 0.4s var(--ease-out), color 0.3s;
+  }
+  .link-u:hover,
+  .link-u[data-status="active"] {
+    background-size: 100% 1px;
+  }
+
+  /* ---------- Floating WhatsApp ---------- */
+  .wa-float {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 45;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 999px;
+    background: #25d366;
+    color: #fff;
+    box-shadow: 0 14px 34px -10px rgb(18 140 85 / 0.75);
+    transition: transform 0.4s var(--ease-out), box-shadow 0.4s;
+  }
+  .wa-float::before,
+  .wa-float::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid #25d366;
+    animation: wa-pulse 2.6s var(--ease-out) infinite;
+    pointer-events: none;
+  }
+  .wa-float::after {
+    animation-delay: 1.3s;
+  }
+  .wa-float:hover {
+    transform: translateY(-3px) scale(1.05);
+  }
+  .wa-float:active {
+    transform: scale(0.95);
+  }
+  .wa-float:focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: 4px;
+  }
+  .wa-float .wa-label {
+    position: absolute;
+    right: calc(100% + 0.85rem);
+    white-space: nowrap;
+    border-radius: 999px;
+    background: var(--navy-deep);
+    color: var(--on-dark);
+    padding: 0.5rem 0.95rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(8px);
+    transition: opacity 0.3s, transform 0.4s var(--ease-out);
+    pointer-events: none;
+    box-shadow: var(--shadow-soft);
+  }
+  .wa-float:hover .wa-label,
+  .wa-float:focus-visible .wa-label {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes wa-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@utility animate-progress {
+  transform-origin: left;
+  animation: progress linear forwards;
+}
+@utility animate-scroll-cue {
+  animation: scroll-cue 2.2s var(--ease-out) infinite;
+}
+@utility animate-float {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+/* Grain overlay for photographic sections */
+@utility grain {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.07;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 }
 

@@ -11,7 +11,10 @@ export const Route = createFileRoute("/en/insights/page/$page")({
     if (!Number.isInteger(n) || n < 1 || n > totalPages("en")) throw notFound();
     return { page: n };
   },
-  head: ({ loaderData }) => loaderData ? blogHead("en", loaderData.page, totalPages("en")) : { meta: [{ title: "Not found" }, { name: "robots", content: "noindex" }] },
+  head: ({ loaderData }) =>
+    loaderData
+      ? blogHead("en", loaderData.page, totalPages("en"))
+      : { meta: [{ title: "Not found" }, { name: "robots", content: "noindex" }] },
   component: Page,
 });
 
