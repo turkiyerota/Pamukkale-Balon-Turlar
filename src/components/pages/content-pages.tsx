@@ -141,7 +141,7 @@ export function PricesPage({ lang }: { lang: Lang }) {
         </L>
       </PageHero>
 
-      <section className="container-page py-20 md:py-28">
+      <section className="container-page py-7 md:py-11">
         <SectionHeading
           eyebrow={tr ? "Paketler" : "Packages"}
           title={
@@ -155,15 +155,15 @@ export function PricesPage({ lang }: { lang: Lang }) {
               : "Two options. The standard flight starts from 6,666 TL; private baskets are priced for your date and group. Message us on WhatsApp for your exact price."
           }
         />
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
+        <div className="mt-7 grid gap-8 md:grid-cols-2">
           {PACKAGES.map((p, i) => (
             <PackageCard key={p.id} p={p} lang={lang} index={i} headingLevel={2} />
           ))}
         </div>
       </section>
 
-      <section className="bg-secondary py-20 md:py-28">
-        <div className="container-page grid gap-14 lg:grid-cols-2">
+      <section className="bg-secondary py-7 md:py-11">
+        <div className="container-page grid gap-10 lg:grid-cols-2">
           <div>
             <SectionHeading
               eyebrow={tr ? "Fiyatı belirleyenler" : "What shapes the price"}
@@ -188,7 +188,7 @@ export function PricesPage({ lang }: { lang: Lang }) {
             </p>
           </div>
           <div className="space-y-8">
-            <div className="card-lux p-8">
+            <div className="card-lux p-6 md:p-8">
               <h2 className="text-3xl">
                 {tr ? "Teklifinizde yazan başlıklar" : "What your quote covers"}
               </h2>
@@ -213,7 +213,7 @@ export function PricesPage({ lang }: { lang: Lang }) {
               </ul>
               <p className="mt-4 text-sm text-muted-foreground">{INCLUSIONS.transferNote[lang]}</p>
             </div>
-            <div className="card-lux p-8">
+            <div className="card-lux p-6 md:p-8">
               <h2 className="text-3xl">
                 {tr ? "İptal ve tarih değişikliği" : "Cancellation and date changes"}
               </h2>
@@ -235,7 +235,7 @@ export function PricesPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="container-page grid gap-12 py-20 md:py-28 lg:grid-cols-[1fr_1.6fr]">
+      <section className="container-page grid gap-8 py-7 md:py-11 lg:grid-cols-[1fr_1.6fr]">
         <SectionHeading
           eyebrow={tr ? "Sorular" : "Questions"}
           title={tr ? "Fiyatlarla ilgili sorular" : "Pricing questions"}
@@ -356,7 +356,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
           className="btn-lg"
         />
       </PageHero>
-      <section className="container-page py-20 md:py-28">
+      <section className="container-page py-7 md:py-11">
         <SectionHeading
           eyebrow={tr ? "Uçuş sabahı" : "Flight morning"}
           title={
@@ -370,7 +370,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
               : "Flights are timed to sunrise, so the morning starts earlier or later depending on the season."
           }
         />
-        <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-7 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {stages.map(([Icon, h, p], i) => (
             <li
               key={h as string}
@@ -381,14 +381,14 @@ export function FlightPage({ lang }: { lang: Lang }) {
                 <span className="grid h-12 w-12 place-items-center rounded-full bg-navy text-champagne">
                   <Icon className="h-5 w-5" aria-hidden="true" strokeWidth={1.7} />
                 </span>
-                <span className="font-display text-5xl italic text-gold-gradient">0{i + 1}</span>
+                <span className="font-display text-5xl text-gold-gradient">0{i + 1}</span>
               </div>
               <h3 className="mt-6 text-[1.65rem] leading-tight">{h as string}</h3>
               <p className="mt-3 leading-relaxed text-muted-foreground">{p as string}</p>
             </li>
           ))}
         </ol>
-        <div className="mt-24 grid gap-8 md:grid-cols-2">
+        <div className="mt-9 grid gap-8 md:grid-cols-2">
           {blocks.map((b) => (
             <article key={b.h} className="card-lux group reveal overflow-hidden">
               <div className="overflow-hidden">
@@ -414,7 +414,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
           ))}
         </div>
       </section>
-      <section id={tr ? "kurallar" : "rules"} className="bg-secondary py-20 md:py-28">
+      <section id={tr ? "kurallar" : "rules"} className="bg-secondary py-7 md:py-11">
         <div className="container-page">
           <SectionHeading
             eyebrow={tr ? "Kurallar ve koşullar" : "Rules and terms"}
@@ -429,7 +429,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
                 : "The rules that apply to every booking. Your booking is confirmed in writing on WhatsApp."
             }
           />
-          <dl className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <dl className="mt-7 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {POLICIES.rules[lang].map(([h, p], i) => (
               <div
                 key={h}
@@ -444,7 +444,7 @@ export function FlightPage({ lang }: { lang: Lang }) {
               </div>
             ))}
           </dl>
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-wrap gap-3">
             <WaButton
               lang={lang}
               ctx="flight"
@@ -482,9 +482,9 @@ export function FaqPage({ lang }: { lang: Lang }) {
         }
         crumbs={crumbs(lang, "faq")}
       />
-      <section className="container-page grid gap-12 py-20 md:py-28 lg:grid-cols-[1fr_2.2fr]">
+      <section className="container-page grid gap-8 py-7 md:py-11 lg:grid-cols-[1fr_2.2fr]">
         <aside className="lg:sticky lg:top-28 lg:self-start">
-          <div className="card-lux p-8">
+          <div className="card-lux p-6 md:p-8">
             <h2 className="text-3xl">
               {tr ? "Sorunuz burada yok mu?" : "Can't find your question?"}
             </h2>
@@ -565,7 +565,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
         }
         crumbs={crumbs(lang, "about")}
       />
-      <section className="container-page grid items-center gap-14 py-20 md:grid-cols-2 md:py-28">
+      <section className="container-page grid items-center gap-10 py-7 md:grid-cols-2 md:py-11">
         <div className="reveal space-y-5 text-lg leading-relaxed text-muted-foreground">
           <SectionHeading
             eyebrow={tr ? "Biz kimiz?" : "Who we are"}
@@ -601,20 +601,20 @@ export function AboutPage({ lang }: { lang: Lang }) {
           className="reveal aspect-[4/3] w-full rounded-[1.5rem] object-cover shadow-lift"
         />
       </section>
-      <section className="bg-secondary py-20 md:py-28">
+      <section className="bg-secondary py-7 md:py-11">
         <div className="container-page">
           <SectionHeading
             eyebrow={tr ? "Değerlerimiz" : "Our values"}
             title={tr ? "Neye önem veriyoruz?" : "What matters to us"}
           />
-          <ul className="mt-12 grid gap-6 md:grid-cols-3">
+          <ul className="mt-7 grid gap-6 md:grid-cols-3">
             {values.map(([h, p], i) => (
               <li
                 key={h}
-                className="card-lux reveal p-8"
+                className="card-lux reveal p-6 md:p-8"
                 style={{ ["--reveal-delay" as string]: `${i * 90}ms` }}
               >
-                <span className="font-display text-5xl italic text-gold-gradient">0{i + 1}</span>
+                <span className="font-display text-5xl text-gold-gradient">0{i + 1}</span>
                 <h3 className="mt-4 text-3xl">{h}</h3>
                 <p className="mt-3 leading-relaxed text-muted-foreground">{p}</p>
               </li>
@@ -674,7 +674,7 @@ export function ContactPage({ lang }: { lang: Lang }) {
         }
         crumbs={crumbs(lang, "contact")}
       />
-      <section className="container-page py-20 md:py-28">
+      <section className="container-page py-7 md:py-11">
         <div className="grain relative isolate overflow-hidden rounded-[1.75rem] bg-navy-deep p-8 text-on-dark shadow-lift md:p-12">
           <div
             className="absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(37,211,102,0.25),transparent)]"
@@ -683,7 +683,7 @@ export function ContactPage({ lang }: { lang: Lang }) {
           <div className="grid items-center gap-8 md:grid-cols-[1.5fr_1fr]">
             <div>
               <p className="eyebrow !text-champagne">WhatsApp</p>
-              <h2 className="mt-4 text-4xl md:text-5xl">
+              <h2 className="mt-4 text-[2rem] md:text-[2.75rem]">
                 {tr
                   ? "Tarihinizi yazın, size özel teklif hazırlayalım"
                   : "Send your date and we'll prepare your quote"}
@@ -703,14 +703,14 @@ export function ContactPage({ lang }: { lang: Lang }) {
             </div>
           </div>
         </div>
-        <h2 className="mt-16 text-3xl md:text-4xl">
+        <h2 className="mt-9 text-3xl md:text-4xl">
           {tr
             ? "Pamukkale balon turu iletişim bilgileri"
             : "Ways to contact Pamukkale Balloon Tours"}
         </h2>
         <ul className="mt-8 grid gap-6 md:grid-cols-3">
           {items.map(({ Icon, h, v, href, cta, ext }) => (
-            <li key={h} className="card-lux flex flex-col p-8">
+            <li key={h} className="card-lux flex flex-col p-6 md:p-8">
               <span className="grid h-12 w-12 place-items-center rounded-full bg-navy text-champagne">
                 <Icon className="h-5 w-5" aria-hidden="true" strokeWidth={1.7} />
               </span>
@@ -741,7 +741,7 @@ export function ContactPage({ lang }: { lang: Lang }) {
           href={mapsHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative mt-10 block overflow-hidden rounded-[1.5rem] shadow-soft"
+          className="group relative mt-7 block overflow-hidden rounded-[1.5rem] shadow-soft"
         >
           <img
             src={hero3}

@@ -3,16 +3,24 @@ import type { Lang } from "@/config/site";
 import { whatsappLink, WA_CONTEXT } from "@/config/site";
 import { PAGES } from "@/lib/paths";
 import { L, btn, Arrow, WhatsAppIcon } from "./ui-kit";
+import hero0 from "@/assets/hero-0.webp";
 import hero1 from "@/assets/hero-1.webp";
 import hero2 from "@/assets/hero-2.webp";
 import hero3 from "@/assets/hero-3.webp";
-import hero4 from "@/assets/hero-4.webp";
 import hero5 from "@/assets/hero-5.webp";
 import { rs } from "@/lib/img";
 
 const DURATION = 7000;
 
 const SLIDES = [
+  {
+    src: hero0,
+    pos: "62% 50%",
+    alt: {
+      tr: "Gün doğumunda Pamukkale travertenleri ve turkuaz havuzlar üzerinde süzülen rengârenk balonlar",
+      en: "Colourful hot air balloons drifting over Pamukkale's travertines and turquoise pools at sunrise",
+    },
+  },
   {
     src: hero1,
     pos: "60% 50%",
@@ -35,14 +43,6 @@ const SLIDES = [
     alt: {
       tr: "Şafakta havadan Pamukkale traverten havuzları",
       en: "Aerial view of Pamukkale's travertine pools at dawn",
-    },
-  },
-  {
-    src: hero4,
-    pos: "60% 50%",
-    alt: {
-      tr: "Pamukkale'de turuncu gökyüzünde balon siluetleri",
-      en: "Balloon silhouettes in an orange sky over Pamukkale",
     },
   },
   {
@@ -118,7 +118,7 @@ export function HeroSlider({ lang }: { lang: Lang }) {
 
   return (
     <section
-      className="grain relative isolate -mt-[4.5rem] flex min-h-[100svh] flex-col overflow-hidden bg-navy-deep text-white"
+      className="grain relative isolate -mt-[4.5rem] flex min-h-[88svh] md:min-h-[92svh] flex-col overflow-hidden bg-navy-deep text-white"
       aria-roledescription={lang === "tr" ? "slayt gösterisi" : "carousel"}
       aria-label={`${t.h1a} ${t.h1b}`}
     >
@@ -144,24 +144,21 @@ export function HeroSlider({ lang }: { lang: Lang }) {
           )}
         </div>
       ))}
-      {/* Consistent legibility: left-side navy wash + top fade (header) + bottom fade */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(10,27,41,0.86)_0%,rgba(10,27,41,0.6)_38%,rgba(10,27,41,0.12)_72%,rgba(10,27,41,0)_100%)]" />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(10,27,41,0.55)_0%,rgba(10,27,41,0)_22%,rgba(10,27,41,0)_60%,rgba(10,27,41,0.85)_100%)]" />
-      <div
-        className="absolute -left-40 bottom-0 -z-10 h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(closest-side,rgba(225,182,115,0.28),transparent)]"
-        aria-hidden="true"
-      />
+      {/* v7e: photo stays bright; only localized soft scrims behind the copy (left on desktop, lower part on mobile). */}
+      <div className="absolute inset-x-0 top-0 -z-10 h-28 bg-[linear-gradient(180deg,rgba(10,27,41,0.4),rgba(10,27,41,0))]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(10,27,41,0)_0%,rgba(10,27,41,0)_20%,rgba(10,27,41,0.62)_32%,rgba(10,27,41,0.6)_64%,rgba(10,27,41,0.25)_100%)] md:bg-[radial-gradient(ellipse_48%_74%_at_20%_50%,rgba(10,27,41,0.76)_0%,rgba(10,27,41,0.58)_45%,rgba(10,27,41,0)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 hidden h-28 bg-[linear-gradient(0deg,rgba(10,27,41,0.4),rgba(10,27,41,0))] md:block" />
 
-      <div className="container-page flex flex-1 flex-col justify-center pt-32 pb-40 md:pb-44">
-        <p className="eyebrow !text-champagne text-shadow-hero">{t.eyebrow}</p>
-        <h1 className="text-shadow-hero mt-5 max-w-4xl text-[clamp(3.1rem,8.4vw,7.6rem)] font-semibold leading-[0.95] tracking-[-0.02em]">
+      <div className="container-page flex flex-1 flex-col justify-end pt-28 pb-24 md:justify-center md:pt-28 md:pb-32">
+        <p className="eyebrow !text-white text-shadow-hero">{t.eyebrow}</p>
+        <h1 className="text-shadow-hero mt-4 max-w-3xl text-[clamp(2.4rem,6.2vw,5.25rem)] font-bold leading-[1.02] tracking-[-0.035em]">
           <span className="block">{t.h1a}</span>
-          <span className="block font-medium italic text-gold-gradient [text-shadow:none] pb-2">
-            {t.h1b}
-          </span>
+          <span className="block font-semibold text-white">{t.h1b}</span>
         </h1>
-        <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/90 md:text-xl">{t.p}</p>
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <p className="mt-4 max-w-xl text-[1.02rem] leading-relaxed text-white text-shadow-hero md:mt-5 md:text-xl">
+          {t.p}
+        </p>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-8">
           <L href={PAGES.reservation[lang]} className={`${btn.gold} btn-lg`}>
             {t.cta} <Arrow />
           </L>
@@ -169,12 +166,12 @@ export function HeroSlider({ lang }: { lang: Lang }) {
             href={whatsappLink(lang, WA_CONTEXT["prices"]?.[lang])}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${btn.glass} btn-lg`}
+            className={`${btn.whatsapp} btn-lg`}
           >
-            <WhatsAppIcon className="h-5 w-5 text-[#25d366]" /> {t.wa}
+            <WhatsAppIcon className="h-5 w-5" /> {t.wa}
           </a>
         </div>
-        <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-white/90">
+        <ul className="mt-8 hidden flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-white text-shadow-hero md:flex">
           {t.chips.map((c) => (
             <li key={c} className="flex items-center gap-2.5">
               <span className="h-1.5 w-1.5 rotate-45 bg-gold" aria-hidden="true" />
@@ -255,11 +252,11 @@ export function HeroSlider({ lang }: { lang: Lang }) {
       </div>
       <a
         href="#ana-icerik"
-        className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-white/75 hover:text-white md:flex"
+        className="absolute bottom-24 right-10 hidden flex-col items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-white text-shadow-hero hover:text-gold lg:flex"
         aria-label={t.scroll}
       >
         {t.scroll}
-        <span className="relative h-10 w-px overflow-hidden bg-white/25" aria-hidden="true">
+        <span className="relative h-10 w-px overflow-hidden bg-white/40" aria-hidden="true">
           <span className="animate-scroll-cue absolute inset-x-0 top-0 h-1/2 bg-gold" />
         </span>
       </a>

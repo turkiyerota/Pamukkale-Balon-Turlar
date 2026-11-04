@@ -4,8 +4,8 @@
 @source not "./components/ui";
 /*
  * Self-hosted fonts, one file per face (was 16 Fontsource files, ~250 KB): Google Fonts variable
- * sources cut with fontTools to the weights we use (Manrope 400–700, Cormorant 500–700, Cormorant
- * italic 500) and to Latin + Turkish characters (ğ ı İ ş Ş …), ~73 KB total. Characters outside
+ * source cut with fontTools to the weights we use (Manrope 400–700; v7: headings use Manrope too,
+ * Cormorant serif/italic removed) and to Latin + Turkish characters (ğ ı İ ş Ş …). Characters outside
  * the unicode-range fall back to the local fonts below. Rebuild: docs/fonts.md.
  */
 @font-face {
@@ -20,32 +20,6 @@
     U+0130-0131, U+015E-015F, U+2013-2014, U+2018-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+20BA,
     U+2122, U+2190-2193, U+2197, U+2264-2265;
 }
-@font-face {
-  font-family: "Cormorant Garamond";
-  font-style: normal;
-  /* Static 600 instance (the only roman weight the site uses); the 500–700 range stops faux-bold. */
-  font-weight: 500 700;
-  font-display: swap;
-  src: url("./assets/fonts/cormorant-garamond-600-tr.woff2") format("woff2");
-  unicode-range:
-    U+0020-007E, U+00A0, U+00A9, U+00AB, U+00B0, U+00B7, U+00BB, U+00C2, U+00C7, U+00C9, U+00CE,
-    U+00D6, U+00DB, U+00DC, U+00E2, U+00E7, U+00E9, U+00EE, U+00F6, U+00FB, U+00FC, U+011E-011F,
-    U+0130-0131, U+015E-015F, U+2013-2014, U+2018-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+20BA,
-    U+2122, U+2190-2193, U+2197, U+2264-2265;
-}
-@font-face {
-  font-family: "Cormorant Garamond";
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("./assets/fonts/cormorant-garamond-italic-500-tr.woff2") format("woff2");
-  unicode-range:
-    U+0020-007E, U+00A0, U+00A9, U+00AB, U+00B0, U+00B7, U+00BB, U+00C2, U+00C7, U+00C9, U+00CE,
-    U+00D6, U+00DB, U+00DC, U+00E2, U+00E7, U+00E9, U+00EE, U+00F6, U+00FB, U+00FC, U+011E-011F,
-    U+0130-0131, U+015E-015F, U+2013-2014, U+2018-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+20BA,
-    U+2122, U+2190-2193, U+2197, U+2264-2265;
-}
-
 /*
  * Metric-matched fallbacks: while the web fonts load (font-display: swap), text is drawn in a
  * local Arial / Times face scaled to the web font's width and line metrics, so the swap does not
@@ -59,31 +33,10 @@
   descent-override: 29.2%;
   line-gap-override: 0%;
 }
-@font-face {
-  font-family: "Cormorant Fallback";
-  font-style: normal;
-  font-weight: 400 700;
-  src: local("Times New Roman Bold"), local("Liberation Serif Bold"), local("Times-Bold");
-  size-adjust: 91%;
-  ascent-override: 101.5%;
-  descent-override: 31.5%;
-  line-gap-override: 0%;
-}
-@font-face {
-  font-family: "Cormorant Fallback";
-  font-style: italic;
-  font-weight: 400 700;
-  src: local("Times New Roman Italic"), local("Liberation Serif Italic"), local("Times-Italic");
-  size-adjust: 88.4%;
-  ascent-override: 104.5%;
-  descent-override: 32.5%;
-  line-gap-override: 0%;
-}
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Cormorant Garamond", "Cormorant Fallback", ui-serif, Georgia, serif;
+  --font-display: "Manrope", "Manrope Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Manrope", "Manrope Fallback", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: var(--radius);
@@ -205,8 +158,8 @@
   h3 {
     font-family: var(--font-display);
     font-weight: 600;
-    letter-spacing: -0.01em;
-    line-height: 1.1;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
   }
   :focus-visible {
     outline: 2px solid var(--gold-deep);
@@ -276,7 +229,9 @@
 }
 
 @utility text-shadow-hero {
-  text-shadow: 0 2px 30px rgb(10 25 40 / 0.45);
+  text-shadow:
+    0 1px 2px rgb(10 25 40 / 0.45),
+    0 2px 28px rgb(10 25 40 / 0.55);
 }
 
 @utility shadow-soft {

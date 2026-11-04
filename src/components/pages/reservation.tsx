@@ -158,7 +158,7 @@ export function ReservationPage({ lang }: { lang: Lang }) {
         }
         crumbs={crumbs(lang, "reservation")}
       />
-      <section className="container-page py-16 md:py-24">
+      <section className="container-page py-7 md:py-11">
         <ol className="grid gap-4 md:grid-cols-3">
           {steps.map(([Icon, h, p], i) => (
             <li key={h as string} className="card-lux flex items-start gap-4 p-6">
@@ -175,7 +175,7 @@ export function ReservationPage({ lang }: { lang: Lang }) {
             </li>
           ))}
         </ol>
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1.6fr_1fr]">
+        <div className="mt-7 grid gap-10 lg:grid-cols-[1.6fr_1fr]">
           <div id="rezervasyon-formu" className="card-lux scroll-mt-28 p-6 sm:p-10">
             {ready ? (
               <div role="status">

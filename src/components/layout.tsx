@@ -394,7 +394,7 @@ export function Footer() {
   return (
     <footer className="relative bg-navy-deep pb-20 text-on-dark md:pb-0">
       <div className="h-px bg-gold-gradient opacity-70" aria-hidden="true" />
-      <div className="container-page grid gap-12 py-16 md:grid-cols-2 md:py-20 lg:grid-cols-[1.3fr_1.1fr_1fr_1.1fr]">
+      <div className="container-page grid gap-8 py-9 md:grid-cols-2 md:py-11 lg:grid-cols-[1.3fr_1.1fr_1fr_1.1fr]">
         <div>
           <img
             src={SITE.logo.onDarkSm}
@@ -497,7 +497,7 @@ export function Footer() {
       </div>
       <nav
         aria-label={tr ? "Pamukkale balon turu rehberleri" : "Pamukkale balloon ride guides"}
-        className="container-page border-t border-white/10 py-10"
+        className="container-page border-t border-white/10 py-6"
       >
         <h2 className="font-sans text-xs font-bold uppercase tracking-[0.24em] text-champagne">
           {tr ? "Rehberler" : "Guides"}
