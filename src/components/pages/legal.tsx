@@ -150,21 +150,19 @@ export function LegalPage({ lang, kind }: { lang: Lang; kind: Kind }) {
         title={d.title}
         crumbs={crumbs(lang, kind)}
       />
-      <section className="container-page max-w-3xl py-16 md:py-24">
+      <section className="container-page max-w-3xl py-7 md:py-11">
         <ol className="space-y-6">
           {d.s.map(([h, p], i) => (
-            <li key={h} className="card-lux p-7 md:p-8">
+            <li key={h} className="card-lux p-6 md:p-8">
               <h2 className="flex items-baseline gap-4 text-3xl">
-                <span className="font-display italic text-bronze">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+                <span className="font-display text-bronze">{String(i + 1).padStart(2, "0")}</span>
                 {h}
               </h2>
               <p className="mt-3 text-[1.0625rem] leading-relaxed text-muted-foreground">{p}</p>
             </li>
           ))}
         </ol>
-        <p className="mt-10 text-sm text-muted-foreground">
+        <p className="mt-7 text-sm text-muted-foreground">
           {tr ? `Sorularınız için: ${SITE.contact.email}` : `Questions: ${SITE.contact.email}`}
         </p>
       </section>

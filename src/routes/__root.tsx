@@ -34,7 +34,7 @@ function NotFoundComponent() {
     { href: PAGES.contact[lang], label: tr ? "İletişim" : "Contact" },
   ];
   return (
-    <div className="grain relative isolate flex min-h-[85svh] items-center justify-center overflow-hidden bg-navy-deep px-4 py-20 text-on-dark">
+    <div className="grain relative isolate flex min-h-[85svh] items-center justify-center overflow-hidden bg-navy-deep px-4 py-14 text-on-dark">
       <img
         src={notFoundBg}
         {...rs(notFoundBg, "100vw")}
@@ -52,7 +52,7 @@ function NotFoundComponent() {
           height={136}
           className="mx-auto h-20 w-auto"
         />
-        <p className="mt-10 font-display text-8xl italic text-gold-gradient md:text-9xl">404</p>
+        <p className="mt-10 font-display text-8xl text-gold-gradient md:text-9xl">404</p>
         <h1 className="mt-2 text-3xl md:text-4xl">
           {tr ? "Bu sayfa rüzgârla uçup gitmiş olmalı" : "This page seems to have drifted away"}
         </h1>
@@ -94,7 +94,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 
   const tr = langFromPath(useRouterState({ select: (st) => st.location.pathname })) === "tr";
   return (
-    <div className="flex min-h-[70svh] items-center justify-center bg-background px-4 py-20">
+    <div className="flex min-h-[70svh] items-center justify-center bg-background px-4 py-14">
       <div className="max-w-md text-center">
         <h1 className="text-4xl">{tr ? "Sayfa yüklenemedi" : "This page didn't load"}</h1>
         <p className="mt-3 text-muted-foreground">
@@ -214,7 +214,7 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const pathname = useRouterState({ select: (st) => st.location.pathname });
   const tr = langFromPath(pathname) === "tr";
-  useReveal(pathname);
+  useReveal();
 
   return (
     <>

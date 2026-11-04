@@ -100,7 +100,7 @@ export function SectionHeading({
   return (
     <div className={`max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
       {eyebrow && <p className={`eyebrow ${dark ? "!text-champagne" : ""}`}>{eyebrow}</p>}
-      <h2 className="mt-4 text-4xl leading-[1.05] md:text-[3.4rem]">{title}</h2>
+      <h2 className="mt-4 text-[2rem] leading-[1.12] md:text-[2.75rem]">{title}</h2>
       {intro && (
         <p
           className={`mt-5 text-lg leading-relaxed ${dark ? "text-on-dark-muted" : "text-muted-foreground"}`}

@@ -226,8 +226,8 @@ export function PackageCard({
           </span>
         </div>
       )}
-      <div className="flex flex-1 flex-col p-8 md:p-9">
-        <H className="text-[2.1rem] leading-tight">{p.name[lang]}</H>
+      <div className="flex flex-1 flex-col p-6 md:p-8">
+        <H className="text-[1.75rem] leading-tight">{p.name[lang]}</H>
         <p className="mt-3 leading-relaxed text-muted-foreground">{p.summary[lang]}</p>
         {x && (
           <ul className="mt-6 grid gap-2.5">
@@ -239,8 +239,8 @@ export function PackageCard({
             ))}
           </ul>
         )}
-        <div className="mt-auto pt-8">
-          <div className="flex items-baseline justify-between gap-4 border-t border-navy/10 pt-6">
+        <div className="mt-auto pt-6">
+          <div className="flex items-baseline justify-between gap-4 border-t border-navy/10 pt-5">
             <span className="text-sm font-semibold uppercase tracking-wider text-bronze">
               {tr ? "Fiyat" : "Price"}
             </span>
@@ -280,20 +280,21 @@ export function CtaBand({ lang }: { lang: Lang }) {
         className="absolute inset-0 -z-10 h-full w-full object-cover opacity-30"
       />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgba(10,27,41,0.95)_0%,rgba(16,40,58,0.82)_55%,rgba(16,40,58,0.55)_100%)]" />
-      <div className="container-page grid items-center gap-10 py-20 md:py-24 lg:grid-cols-[1.3fr_1fr]">
+      <div className="container-page grid items-center gap-10 py-7 md:py-11 lg:grid-cols-[1.3fr_1fr]">
         <div>
           <p className="eyebrow !text-champagne">
             {tr ? "Bilgi ve rezervasyon" : "Questions & bookings"}
           </p>
-          <h2 className="mt-4 text-4xl md:text-6xl">
+          <h2 className="mt-4 text-[2rem] md:text-5xl">
             {tr ? (
               <>
-                Gün doğumunu <em className="text-gold-gradient">gökyüzünden</em> izlemeye hazır
-                mısınız?
+                Gün doğumunu <em className="not-italic text-gold-gradient">gökyüzünden</em> izlemeye
+                hazır mısınız?
               </>
             ) : (
               <>
-                Ready to watch the sunrise <em className="text-gold-gradient">from the sky</em>?
+                Ready to watch the sunrise{" "}
+                <em className="not-italic text-gold-gradient">from the sky</em>?
               </>
             )}
           </h2>
@@ -408,10 +409,10 @@ export const GALLERY: {
 export function Gallery({ lang }: { lang: Lang }) {
   const tr = lang === "tr";
   return (
-    <section className="container-page py-24 md:py-32" aria-labelledby="galeri-baslik">
+    <section className="container-page py-7 md:py-11" aria-labelledby="galeri-baslik">
       <div className="max-w-2xl">
         <p className="eyebrow">{tr ? "Galeri" : "Gallery"}</p>
-        <h2 id="galeri-baslik" className="mt-4 text-4xl md:text-6xl">
+        <h2 id="galeri-baslik" className="mt-4 text-[2rem] md:text-5xl">
           {tr ? "Gökyüzünden Pamukkale" : "Pamukkale from the sky"}
         </h2>
         <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
@@ -420,7 +421,7 @@ export function Gallery({ lang }: { lang: Lang }) {
             : "Travertines, turquoise pools, Hierapolis and golden sunrise light: the views waiting for you on the flight morning."}
         </p>
       </div>
-      <ul className="mt-12 grid auto-rows-[15rem] gap-4 sm:grid-cols-2 md:auto-rows-[17rem] lg:grid-cols-4">
+      <ul className="mt-7 grid auto-rows-[15rem] gap-4 sm:grid-cols-2 md:auto-rows-[17rem] lg:grid-cols-4">
         {GALLERY.map((g, i) => (
           <li
             key={g.src}

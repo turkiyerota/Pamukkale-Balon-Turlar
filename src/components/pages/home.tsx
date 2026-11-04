@@ -191,7 +191,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       {/* Intro + at a glance */}
       <section
         id="ana-icerik"
-        className="container-page grid items-start gap-14 py-24 md:grid-cols-[1.15fr_1fr] md:py-32"
+        className="container-page grid items-start gap-10 py-7 md:grid-cols-[1.15fr_1fr] md:py-11"
       >
         <div className="reveal">
           <SectionHeading eyebrow={t.introEy} title={t.introH} />
@@ -223,7 +223,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* Packages */}
-      <section className="relative overflow-hidden bg-secondary py-24 md:py-32">
+      <section className="relative overflow-hidden bg-secondary py-7 md:py-11">
         <div className="container-page">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading eyebrow={t.priceEy} title={t.priceH} intro={t.priceNote} />
@@ -231,7 +231,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               {t.allPrices} <Arrow />
             </L>
           </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
+          <div className="mt-7 grid gap-8 md:grid-cols-2">
             {PACKAGES.map((p, i) => (
               <PackageCard key={p.id} p={p} lang={lang} index={i} />
             ))}
@@ -240,7 +240,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* Clear quote */}
-      <section className="container-page grid items-center gap-14 py-24 md:grid-cols-2 md:py-32">
+      <section className="container-page grid items-center gap-10 py-7 md:grid-cols-2 md:py-11">
         <div className="relative reveal">
           <img
             src={imgInflation}
@@ -257,7 +257,7 @@ export function HomePage({ lang }: { lang: Lang }) {
             className="aspect-[4/5] w-full rounded-[1.5rem] object-cover shadow-lift md:aspect-[4/4.4]"
           />
           <div className="absolute -bottom-6 -right-4 hidden rounded-2xl bg-navy-deep px-6 py-5 text-on-dark shadow-lift sm:block">
-            <p className="font-display text-3xl italic text-gold-gradient">
+            <p className="font-display text-3xl text-gold-gradient">
               {lang === "tr" ? "Yazılı teyit" : "Written confirmation"}
             </p>
             <p className="mt-1 text-sm text-on-dark-muted">
@@ -322,14 +322,14 @@ export function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* Steps */}
-      <section className="grain relative overflow-hidden bg-navy-deep py-24 text-on-dark md:py-32">
+      <section className="grain relative overflow-hidden bg-navy-deep py-7 text-on-dark md:py-11">
         <div
           className="absolute -right-40 -top-40 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(closest-side,rgba(225,182,115,0.18),transparent)]"
           aria-hidden="true"
         />
         <div className="container-page relative">
           <SectionHeading eyebrow={t.stepsEy} title={t.stepsH} dark />
-          <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-7 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {t.steps.map(([h, p], i) => (
               <li
                 key={i}
@@ -344,7 +344,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               </li>
             ))}
           </ol>
-          <div className="mt-12 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-wrap gap-3">
             <L href={PAGES.reservation[lang]} className={`${btn.gold} btn-lg`}>
               {t.stepsCta} <Arrow />
             </L>
@@ -361,9 +361,9 @@ export function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* Quick answers (internal links to guides) */}
-      <section className="container-page py-24 md:py-28">
+      <section className="container-page py-7 md:py-11">
         <SectionHeading eyebrow={t.guidesEy} title={t.guidesH} />
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {GUIDES[lang].map(([q, slug], i) => (
             <li
               key={slug}
@@ -385,8 +385,8 @@ export function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-secondary py-24 md:py-28">
-        <div className="container-page grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+      <section className="bg-secondary py-7 md:py-11">
+        <div className="container-page grid gap-8 lg:grid-cols-[1fr_1.6fr]">
           <div>
             <SectionHeading eyebrow={t.faqEy} title={t.faqH} />
             <div className="mt-8 flex flex-wrap gap-3">
@@ -419,13 +419,13 @@ export function HomePage({ lang }: { lang: Lang }) {
           className="absolute inset-0 -z-10 h-full w-full object-cover opacity-60"
         />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(10,27,41,0.92)_0%,rgba(10,27,41,0.65)_55%,rgba(10,27,41,0.3)_100%)]" />
-        <div className="container-page py-28 md:py-40">
+        <div className="container-page py-10 md:py-14">
           <div className="max-w-2xl reveal">
             <p className="eyebrow !text-champagne">{t.destEy}</p>
-            <h2 className="mt-4 text-5xl md:text-7xl">{t.destH}</h2>
+            <h2 className="mt-4 text-[2.5rem] md:text-6xl">{t.destH}</h2>
             <p className="mt-6 text-lg leading-relaxed text-on-dark/85">{t.destP}</p>
           </div>
-          <dl className="mt-14 grid max-w-3xl gap-6 sm:grid-cols-3">
+          <dl className="mt-7 grid max-w-3xl gap-6 sm:grid-cols-3">
             {t.destFacts.map(([k, v]) => (
               <div key={k} className="border-l border-gold/50 pl-5">
                 <dt className="font-display text-4xl font-semibold text-gold-gradient">{k}</dt>
@@ -439,7 +439,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       <Gallery lang={lang} />
 
       {/* Why */}
-      <section className="container-page grid items-center gap-14 py-24 md:grid-cols-[1fr_1.1fr] md:py-32">
+      <section className="container-page grid items-center gap-10 py-7 md:grid-cols-[1fr_1.1fr] md:py-11">
         <div className="reveal">
           <SectionHeading eyebrow={t.whyEy} title={t.whyH} />
           <img
@@ -454,18 +454,18 @@ export function HomePage({ lang }: { lang: Lang }) {
             height={907}
             loading="lazy"
             decoding="async"
-            className="mt-10 aspect-[4/3] w-full rounded-[1.5rem] object-cover shadow-lift"
+            className="mt-7 aspect-[4/3] w-full rounded-[1.5rem] object-cover shadow-lift"
           />
         </div>
         <ul className="flex flex-col gap-6">
           {t.why.map(([h, p], i) => (
             <li
               key={h}
-              className="card-lux reveal p-8"
+              className="card-lux reveal p-6 md:p-8"
               style={{ ["--reveal-delay" as string]: `${i * 90}ms` }}
             >
               <div className="flex items-start gap-5">
-                <span className="font-display text-4xl italic text-bronze">0{i + 1}</span>
+                <span className="font-display text-4xl text-bronze">0{i + 1}</span>
                 <div>
                   <h3 className="text-3xl">{h}</h3>
                   <p className="mt-2 leading-relaxed text-muted-foreground">{p}</p>
@@ -477,7 +477,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* Blog */}
-      <section className="bg-secondary py-24 md:py-28">
+      <section className="bg-secondary py-7 md:py-11">
         <div className="container-page">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading eyebrow={t.blogEy} title={t.blogH} />
@@ -485,7 +485,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               {t.blogAll} <Arrow />
             </L>
           </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-7 grid gap-8 md:grid-cols-3">
             {latest.map((a) => (
               <ArticleCard key={a.id} a={a} />
             ))}
